@@ -1,0 +1,16 @@
+.article {
+    color: var(--color-text);
+    line-height: 1.5em;
+}
+
+.article a {
+    color: var(--color-blue);
+}
+
+.article a:hover {
+    font-weight: bold;
+}
+
+.article p {
+    margin-top: 0;
+}

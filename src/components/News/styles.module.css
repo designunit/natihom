@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: white;
+}
+
+.section {
+    gap: 2rem;
+}
+.section:not(:last-of-type) {
+    padding-bottom: unset !important;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+.head > * {
+    margin: 0;
+    text-align: start;
+}
+
+.picture {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    max-width: 1200px;
+    min-width: 200px;
+}
+
+.picture img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.text {
+    flex: 1;
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+    .picture {
+        width: 100%;
+        padding: 0;
+    }
+    .text {
+        padding: 0;
+    }
+}

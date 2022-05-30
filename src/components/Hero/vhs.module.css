@@ -1,0 +1,151 @@
+.scanlines {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+    will-change: opacity;
+    animation: opacity 3s linear infinite;
+}
+
+.scanlines:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.5) 51%);
+    background-size: 100% 4px;
+    will-change: background, background-size;
+    animation: scanlines 0.2s linear infinite;
+}
+
+.abberation {
+    animation: rgbText 1s steps(9) 0s infinite alternate;
+}
+
+.abberationBlock {
+    animation: rgbBlock 1s steps(9) 0s infinite alternate;
+}
+
+.flick {
+    animation: track 20ms infinite;
+}
+
+@keyframes scanlines {
+    from {
+        background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+        background-size: 100% 4px;
+    }
+
+    to {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 50%, transparent 51%);
+        background-size: 100% 4px;
+    }
+}
+
+@keyframes rgbText {
+    0% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(0px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 0px 3px rgba(0, 233, 235, 0.8)) drop-shadow(0px 0 3px rgba(0, 242, 14, 0.8)) drop-shadow(0 0px 3px rgba(244, 45, 0, 0.8)) drop-shadow(0px 0 3px rgba(59, 0, 226, 0.8));
+    }
+
+    25% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(0px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 0px 3px rgba(0, 233, 235, 0.8)) drop-shadow(0px 0 3px rgba(0, 242, 14, 0.8)) drop-shadow(0 0px 3px rgba(244, 45, 0, 0.8)) drop-shadow(0px 0 3px rgba(59, 0, 226, 0.8));
+    }
+
+    45% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(5px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 5px 1px rgba(0, 233, 235, 0.8)) drop-shadow(-5px 0 1px rgba(0, 242, 14, 0.8)) drop-shadow(0 -5px 1px rgba(244, 45, 0, 0.8)) drop-shadow(5px 0 1px rgba(59, 0, 226, 0.8));
+    }
+
+    50% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(-5px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 -5px 1px rgba(0, 233, 235, 0.8)) drop-shadow(5px 0 1px rgba(0, 242, 14, 0.8)) drop-shadow(0 5px 1px rgba(244, 45, 0, 0.8)) drop-shadow(-5px 0 1px rgba(59, 0, 226, 0.8));
+    }
+
+    55% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(0px 0 3px rgba(251, 0, 231, 0.8)) drop-shadow(0 0px 3px rgba(0, 233, 235, 0.8)) drop-shadow(0px 0 3px rgba(0, 242, 14, 0.8)) drop-shadow(0 0px 3px rgba(244, 45, 0, 0.8)) drop-shadow(0px 0 3px rgba(59, 0, 226, 0.8));
+    }
+
+    90% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(-5px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 5px 1px rgba(0, 233, 235, 0.8)) drop-shadow(5px 0 1px rgba(0, 242, 14, 0.8)) drop-shadow(0 -5px 1px rgba(244, 45, 0, 0.8)) drop-shadow(5px 0 1px rgba(59, 0, 226, 0.8));
+    }
+
+    100% {
+        filter:
+            drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.6)) drop-shadow(1px -1px 1px rgba(255, 255, 235, 0.7)) drop-shadow(5px 0 1px rgba(251, 0, 231, 0.8)) drop-shadow(0 -5px 1px rgba(0, 233, 235, 0.8)) drop-shadow(-5px 0 1px rgba(0, 242, 14, 0.8)) drop-shadow(0 5px 1px rgba(244, 45, 0, 0.8)) drop-shadow(-5px 0 1px rgba(59, 0, 226, 0.8));
+    }
+}
+
+@keyframes rgbBlock {
+    0% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+
+    25% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+
+    45% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+
+    50% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+
+    55% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 3px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+    }
+
+    90% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+
+    100% {
+        box-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+    }
+}
+
+@keyframes track {
+    40% {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        transform: scale(1, 1);
+        transform: skew(0, 0);
+    }
+
+    41% {
+        opacity: 0.3;
+        top: 0px;
+        left: -10px;
+        transform: scale(1, 1.02);
+        transform: skew(3deg, 0);
+    }
+
+    42% {
+        opacity: 0.3;
+        top: 0px;
+        left: 20px;
+        transform: scale(1, 1.05);
+        transform: skew(-4deg, 0);
+    }
+
+    43% {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        transform: scale(1, 1);
+        transform: skew(0, 0);
+    }
+}

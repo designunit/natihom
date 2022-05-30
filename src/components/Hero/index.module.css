@@ -1,0 +1,130 @@
+.container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    min-height: 50vh;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "logo text"
+        "logos text";
+    gap: 40px 80px;
+}
+
+.content>div {
+    flex: 1 0 50%;
+}
+
+.logo {
+    grid-area: logo;
+    justify-self: flex-end;
+    position: relative;
+    height: 100%;
+}
+
+.logo>span {
+    overflow: visible !important;
+}
+
+.logos {
+    grid-area: logos;
+    justify-self: flex-end;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.logos>span {
+    flex: 0 0 calc(33% - .5rem);
+}
+
+.text {
+    flex: 1 0 auto !important;
+    grid-area: text;
+    background: rgba(255, 255, 255, .5);
+    padding: 1em;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.text>p {
+    margin: 0;
+    font-weight: 400;
+    line-height: 26px;
+    white-space: break-spaces;
+}
+
+.buttons {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.buttons>button {
+    flex: 1 1 calc(50% - 1rem);
+}
+
+.contacts {
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    color: white;
+    white-space: pre-line;
+}
+
+@media screen and (max-width: 1280px) {
+    .logos {
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .content {
+        display: flex;
+        flex-flow: column;
+        gap: 2rem;
+    }
+
+    .logos {
+        order: 3;
+    }
+
+    .contacts {
+        margin-top: -2rem;
+        align-items: flex-end;
+        text-align: right;
+    }
+}
