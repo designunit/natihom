@@ -47,7 +47,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         />
                     </div>
 
-                    <div className={s.logos}>
+                    {/* <div className={s.logos}>
                         <Image
                             src={unitlogo}
                             alt=''
@@ -90,8 +90,8 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                                 форма обратной связи
                             </Button>
                         </div>
-                    </div>
-                    <div />
+                    </div> */}
+                    {/* <div /> */}
                     <div className={s.contacts}>
                         <div>
                             по вопросам сотрудничества: <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>

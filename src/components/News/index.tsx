@@ -4,8 +4,6 @@ import React from 'react'
 import { Article } from '../Article'
 import { Section } from '../Section'
 import { Title } from '../Title'
-import { PrismicRichText } from '@prismicio/react'
-import * as prismicH from '@prismicio/helpers'
 
 export const News: React.FC<{ data: any }> = ({ data }) => (
     <div>
@@ -20,7 +18,7 @@ export const News: React.FC<{ data: any }> = ({ data }) => (
                         color: 'var(--color-blue-dark)',
                         fontWeight: 'bold',
                     }}>
-                        {x.primary?.date && prismicH.asDate(x.primary.date).toLocaleDateString()}
+                        date
                     </Title>
                     <Title level={2}>
                         {x.primary.title?.[0]?.text ?? ''}
@@ -36,7 +34,7 @@ export const News: React.FC<{ data: any }> = ({ data }) => (
                     </div>
                     <div className={s.text}>
                         <Article>
-                            <PrismicRichText field={x.primary.content} />
+                            content
                         </Article>
                     </div>
                 </div>

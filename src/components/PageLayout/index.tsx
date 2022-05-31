@@ -18,14 +18,14 @@ export const PageLayout: React.FC<any> = props => {
         <main style={{ position: 'relative' }}>
             <NextSeo
                 title='Юнит на тихом'
-                description='Описание, пока что нету ):'
+                description='турслет от дизайн юнита'
                 openGraph={{
                     images: [
                         {
                             url: '/static/logo-small.svg',
                             width: 226,
                             height: 226,
-                            type: 'image/png',
+                            type: 'image/svg+xml',
                         }
                     ]
                 }}
