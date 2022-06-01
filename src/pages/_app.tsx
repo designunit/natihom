@@ -14,6 +14,8 @@ const App: AppType = ({ Component, pageProps }) => {
             }}
         >
             <Head>
+
+                <link rel="icon" href="/static/logo-small.svg" type="image/svg+xml"></link>
                 <meta charSet='utf-8' />
                 <meta
                     name='viewport'

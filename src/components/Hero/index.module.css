@@ -18,14 +18,15 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas:
         "logo text"
         "logos text";
-    gap: 40px 80px;
+    gap: 10px 40px;
 }
 
 .content>div {
+    height: fit-content;
     flex: 1 0 50%;
 }
 
@@ -64,7 +65,7 @@
 
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    gap: 1em;
 }
 
 .text>p {
@@ -75,7 +76,6 @@
 }
 
 .buttons {
-    margin-top: 1rem;
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
@@ -92,6 +92,11 @@
     gap: .5rem;
     color: white;
     white-space: pre-line;
+}
+
+.about {
+    color: white;
+    text-align: end;
 }
 
 @media screen and (max-width: 1280px) {
@@ -115,7 +120,7 @@
     .content {
         display: flex;
         flex-flow: column;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .logos {
@@ -123,7 +128,7 @@
     }
 
     .contacts {
-        margin-top: -2rem;
+        margin-top: -1rem;
         align-items: flex-end;
         text-align: right;
     }
