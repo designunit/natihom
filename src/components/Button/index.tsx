@@ -87,7 +87,7 @@ export const Button: React.FC<ButtonProps> =
                 <a
                     {...props as any}
                     download
-                    href='/static/test.pdf'
+                    href='/static/unit-na-tihom.pdf'
                     className={cx(
                         s.button,
                         themeClass[theme],

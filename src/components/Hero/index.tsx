@@ -18,6 +18,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                 priority
                 loading='eager'
                 quality={100}
+                className={s.bg}
             />
 
             <div className={vhs.scanlines} />
@@ -38,10 +39,9 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     </div>
                     <div className={s.about}>
                         <p>
-                            15-17 июля 2022 года<br />
-                            трёхдневная лесная резиденция для<br />
-                            архитекторов / дизайнеров / создающих<br />
-                            всех причастных к городской культуре
+                            трёхдневная лесная резиденция<br />
+                            архитекторов, дизайнеров<br />
+                            и всех причастных к городской культуре
                         </p>
                     </div>
                     {/* <div className={s.logos}>
@@ -85,14 +85,14 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                                 className={vhs.abberationBlock}
                                 download
                             >
-                                скачиват презентаций
+                                скачать презентацию
                             </Button>
                             <Button
                                 theme='primary'
                                 className={vhs.abberationBlock}
                                 onClick={openModal}
                             >
-                                форма обратной связи
+                                зарегитстрироваться
                             </Button>
                         </div>
                     </div>
