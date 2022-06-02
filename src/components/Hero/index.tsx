@@ -6,6 +6,8 @@ import Image from 'next/image'
 import hero from '/public/static/hero.jpg'
 import logo from '/public/static/logo.svg'
 import unitlogo from '/public/static/unitlogo.svg'
+import vstretimsa from '/public/static/vstretimsa.svg'
+
 
 export const Hero: React.FC<any> = ({ openModal }) => {
     return (
@@ -92,7 +94,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                                 className={vhs.abberationBlock}
                                 onClick={openModal}
                             >
-                                зарегитстрироваться
+                                зарегистрироваться
                             </Button>
                         </div>
                     </div>
@@ -107,6 +109,9 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         </div>
                     </div>
                 </div>
+                {/* <Image 
+                    src={vstretimsa}
+                /> */}
             </div>
         </>
     )
