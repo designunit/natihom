@@ -94,7 +94,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                 />
             </div>
 
-            <select
+            {/* <select
                 {...register('role', { required: true })}
                 className={s.select}
             >
@@ -106,7 +106,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                         {x}
                     </option>
                 ))}
-            </select>
+            </select> */}
 
             <textarea
                 {...register('comment')}
@@ -114,6 +114,10 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                 rows={8}
                 placeholder='Комментарий'
             />
+
+            <div>
+                После отправки регистрации вы получите письмо с подтверждением и ссылкой на оплату.
+            </div>
 
             <Button
                 type='submit'
