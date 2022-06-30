@@ -5,7 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5% 10%;
+    padding: 0 10%;
+}
+
+.bgContainer>span {
+    max-height: 100vh;
 }
 
 .content {
@@ -26,7 +30,6 @@
 }
 
 .content>div {
-    height: fit-content;
     flex: 1 0 50%;
 }
 
@@ -44,12 +47,14 @@
 .logos {
     grid-area: logos;
     justify-self: flex-end;
-    width: 50%;
-    height: 100%;
+    width: 75%;
+    height: 100% !important;
+    margin-top: 1rem;
     position: relative;
     display: flex;
     gap: .5rem;
     justify-content: flex-end;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -59,6 +64,7 @@
 
 .text {
     flex: 1 0 auto !important;
+    height: 100%;
     grid-area: text;
     background: rgba(255, 255, 255, .5);
     padding: 1em;
@@ -80,6 +86,7 @@
     flex-flow: column;
     flex-wrap: wrap;
     gap: .5rem;
+    margin-top: auto;
 }
 
 .buttons>button {
@@ -87,6 +94,7 @@
 }
 
 .contacts {
+    padding-top: 1rem;
     display: flex;
     flex-flow: column;
     gap: .5rem;
@@ -95,6 +103,7 @@
 }
 
 .about {
+    margin-top: auto;
     color: white;
     text-align: end;
 }
@@ -125,13 +134,22 @@
 
     .logos {
         order: 3;
+        margin-top: unset;
+    }
+
+    .logos>span {
+        flex: 0 0 calc(50% - .5rem);
     }
 
     .contacts {
-        margin-top: -1rem;
+        padding-top: unset;
         align-items: flex-end;
         text-align: right;
-        padding-bottom: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    .bgContainer>span {
+        max-height: 100%;
     }
 
     .bg {

@@ -23,8 +23,11 @@ const Index: NextPage<PageProps> = () => {
             <Hero
                 openModal={() => setModalIsOpen(true)}
             />
-
-            {/* <Footer /> */}
+            {/* <Programm />
+            <People />
+            <Participation
+                openModal={() => setModalIsOpen(true)}
+            /> */}
         </PageLayout>
     )
 }
