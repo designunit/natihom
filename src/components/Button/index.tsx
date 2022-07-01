@@ -16,6 +16,7 @@ export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTM
     href?: string
     underlineRef?: MutableRefObject<null>
     download?: boolean
+    downloadHref?: string
 }
 
 const themeClass = {
@@ -37,7 +38,7 @@ const shapeClass = {
 }
 
 export const Button: React.FC<ButtonProps> =
-    ({ href, size, theme = 'default', shape, children, underlineRef, download = false, ...props }) => {
+    ({ href, size, theme = 'default', shape, children, underlineRef, download = false, downloadHref, ...props }) => {
         const config = useContext(ControlsContext)
         const sizeValue = size ?? config.size ?? 'default'
         const shapeValue = shape ?? config.shape ?? 'default'
@@ -87,7 +88,7 @@ export const Button: React.FC<ButtonProps> =
                 <a
                     {...props as any}
                     download
-                    href='/static/unit-na-tihom.pdf'
+                    href={downloadHref ?? '/static/unit-na-tihom.pdf'}
                     className={cx(
                         s.button,
                         themeClass[theme],

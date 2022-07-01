@@ -66,6 +66,9 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         {isMobile && aboutBlock}
 
                         <div className={s.logos}>
+
+                            {!isMobile && aboutBlock}
+                            
                             <Image
                                 src={unitlogo}
                                 alt=''
@@ -77,8 +80,6 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                                 alt=''
                                 quality={100}
                             />
-
-                            {!isMobile && aboutBlock}
                         </div>
                         <div />
 

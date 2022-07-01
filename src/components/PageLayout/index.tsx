@@ -15,7 +15,7 @@ export const PageLayout: React.FC<any> = props => {
     }, [])
 
     return (
-        <main style={{ position: 'relative' }}>
+        <main style={{ position: 'relative', marginBottom: '2rem' }}>
             <NextSeo
                 title='Юнит на тихом'
                 description='

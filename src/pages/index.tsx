@@ -3,6 +3,12 @@ import { Hero } from 'src/components/Hero'
 import { PageLayout } from 'src/components/PageLayout'
 import React, { useState } from 'react'
 import { Modal } from 'src/components/Modal'
+import { Participation } from 'src/components/Participation'
+import { People } from 'src/components/People'
+import { Programm } from 'src/components/Programm'
+import { Schedule } from 'src/components/Schedule'
+import { Fancy } from 'src/components/Fancy'
+import { Road } from 'src/components/Road'
 
 interface PageProps {
 
@@ -23,11 +29,17 @@ const Index: NextPage<PageProps> = () => {
             <Hero
                 openModal={() => setModalIsOpen(true)}
             />
-            {/* <Programm />
-            <People />
+            <Fancy />
+            <Schedule />
+            <Programm />
+
+            {/* <People /> */}
             <Participation
                 openModal={() => setModalIsOpen(true)}
-            /> */}
+            />
+
+            <Road />
+            
         </PageLayout>
     )
 }
