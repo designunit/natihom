@@ -81,6 +81,10 @@
     border-left: solid 4px transparent !important;
 }
 
+.panelHeder:hover {
+    border: solid 2px var(--color-green) !important;
+}
+
 .panel>:nth-child(2) {
     padding: 0;
 }
