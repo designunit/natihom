@@ -37,10 +37,12 @@ export const Programm: React.FC<any> = () => {
                     <Collapse
                         accordion={true}
                         className={s.collapse}
+                        defaultActiveKey='сцена'
                     >
                         <Panel header='СЦЕНА'
                             className={s.panel}
                             headerClass={s.panelHeder}
+                            key='сцена'
                         >
                             <div className={s.text}>
                                 <div>секция</div>
@@ -75,6 +77,7 @@ export const Programm: React.FC<any> = () => {
                         <Panel header='ЛЕСНАЯ ПАНЕЛЬ'
                             className={s.panel}
                             headerClass={s.panelHeder}
+                            key='панель'
                         >
                             <div className={s.text}>
                                 <div>секция</div>
@@ -109,6 +112,7 @@ export const Programm: React.FC<any> = () => {
                         <Panel header='ЛЕСНОЙ КРУЖОК'
                             className={s.panel}
                             headerClass={s.panelHeder}
+                            key='кружок'
                         >
                             <div className={s.text}>
                                 <div>секция</div>
