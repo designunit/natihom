@@ -26,10 +26,10 @@ export const PageLayout: React.FC<any> = props => {
                 openGraph={{
                     images: [
                         {
-                            url: '/static/logo-small.svg',
-                            width: 226,
-                            height: 226,
-                            type: 'image/svg+xml',
+                            url: '/static/meta.jpeg',
+                            width: 765,
+                            height: 760,
+                            type: 'image/jpeg',
                         }
                     ]
                 }}
