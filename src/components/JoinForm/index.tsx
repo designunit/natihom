@@ -94,6 +94,13 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                 />
             </div>
 
+            <input
+                {...register('code')}
+                type='text'
+                className={s.textline}
+                placeholder='Промо-код'
+            />
+
             {/* <select
                 {...register('role', { required: true })}
                 className={s.select}
