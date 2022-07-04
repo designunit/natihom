@@ -11,14 +11,15 @@ export const Participation: React.FC<any> = ({ openModal }) => {
                 className={s.container}
             >
                 <div className={s.wrapper}>
-                    <div
-                        style={{
-                            flex: '0 1 50%'
-                        }}
-                    >
+                    <div>
                         <h2 className={s.h2}>
-                            Участие
+                            УЧАСТИЕ
                         </h2>
+                    </div>
+
+                    <div
+                        className={s.flex}
+                    >
                         <div
                             style={{
                                 lineHeight: '1.5rem',
@@ -34,13 +35,7 @@ export const Participation: React.FC<any> = ({ openModal }) => {
                             / использования всех возможных активностей от наших партнеров; <br />
                             / арт-объекты, фудкорт, маркет и чилл зона, медпункт.
                         </div>
-                    </div>
 
-                    <div
-                        style={{
-                            flex: 1,
-                        }}
-                    >
                         <div
                             className={s.collapse}
                         >
@@ -72,6 +67,7 @@ export const Participation: React.FC<any> = ({ openModal }) => {
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </>

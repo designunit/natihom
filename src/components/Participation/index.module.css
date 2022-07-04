@@ -16,8 +16,9 @@
     flex: 1 0 100%;
     max-width: 1200px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    flex-flow: column;
     gap: 1rem;
     margin-top: 4rem;
     border-left: var(--border);
@@ -41,6 +42,15 @@
     left: -50vw;
     width: 200vw;
     border-bottom: var(--border);
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.flex>div {
+    flex: 1 1 50%;
 }
 
 .h2 {
@@ -96,10 +106,8 @@
         margin-top: 2rem;
     }
 
-    .wrapper {
-        align-items: flex-start;
+    .flex {
         flex-flow: column;
-        align-items: stretch;
     }
 
     .panel {
