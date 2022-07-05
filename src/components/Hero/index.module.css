@@ -8,10 +8,6 @@
     padding: 0 10%;
 }
 
-.bgContainer>span {
-    max-height: 100vh;
-}
-
 .content {
     width: 100%;
     height: 100%;
@@ -94,6 +90,7 @@
 
 .contacts {
     padding-top: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-flow: column;
     gap: .5rem;
@@ -150,7 +147,6 @@
         padding-top: unset;
         align-items: flex-end;
         text-align: right;
-        padding-bottom: 2rem;
     }
 
     .bgContainer>span {
