@@ -15,6 +15,8 @@ const App: AppType = ({ Component, pageProps }) => {
         >
             <Head>
 
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:image" content="https://natihom.unit4.io/static/meta.jpeg" />
                 <link rel="icon" href="/static/logo-small.svg" type="image/svg+xml"></link>
                 <meta charSet='utf-8' />
                 <meta
