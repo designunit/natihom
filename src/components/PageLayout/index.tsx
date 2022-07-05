@@ -17,7 +17,7 @@ export const PageLayout: React.FC<any> = props => {
     return (
         <main style={{ position: 'relative', marginBottom: '2rem' }}>
             <NextSeo
-                title='Юнит на тихом'
+                title='Unit на тихом'
                 description='
                     Трёхдневная лесная резиденция для
                     архитекторов / дизайнеров / создающих / всех причастных к городской культуре.
@@ -27,8 +27,8 @@ export const PageLayout: React.FC<any> = props => {
                     images: [
                         {
                             url: '/static/meta.jpeg',
-                            width: 765,
-                            height: 760,
+                            width: 1280,
+                            height: 641,
                             type: 'image/jpeg',
                         }
                     ]
