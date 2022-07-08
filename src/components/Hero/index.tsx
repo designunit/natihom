@@ -46,7 +46,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     />
                 </div>
 
-                {/* <div className={vhs.scanlines} /> */}
+                <div className={vhs.scanlines} />
 
                 <div
                     className={s.container}
