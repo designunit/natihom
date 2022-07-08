@@ -46,7 +46,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     />
                 </div>
 
-                <div className={vhs.scanlines} />
+                {/* <div className={vhs.scanlines} /> */}
 
                 <div
                     className={s.container}
@@ -104,7 +104,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                             </p>
                             <div className={s.buttons}>
                                 <Button
-                                    className={vhs.abberationBlock}
+                                    // className={vhs.abberationBlock}
                                     download
                                 >
                                     скачать презентацию

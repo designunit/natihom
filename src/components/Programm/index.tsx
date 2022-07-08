@@ -27,9 +27,10 @@ export const Programm: React.FC<any> = () => {
                             style={{
                                 textAlign: 'center',
                                 paddingBottom: '2rem',
+                                fontWeight: 'bold',
                             }}
                         >
-                            лекции, воркшопы, дикусии<br />
+                            лекции, воркшопы, дикуссии<br />
                             архитектура и город, культура и искусство, настоящее и будущее
                         </div>
                     </div>
@@ -146,7 +147,7 @@ export const Programm: React.FC<any> = () => {
                     </Collapse>
 
                     <Button
-                        className={vhs.abberationBlock}
+                        // className={vhs.abberationBlock}
                         download
                         downloadHref='/static/Лекторий-unit-натихом.pdf'
                         style={{
@@ -155,6 +156,7 @@ export const Programm: React.FC<any> = () => {
                             width: '100%',
                             alignSelf: 'center',
                         }}
+                        className={s.test}
                     >
                         СКАЧАТЬ подробное описание
                     </Button>
