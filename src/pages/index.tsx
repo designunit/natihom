@@ -9,6 +9,7 @@ import { Programm } from 'src/components/Programm'
 import { Schedule } from 'src/components/Schedule'
 import { Fancy } from 'src/components/Fancy'
 import { Road } from 'src/components/Road'
+import { Party } from 'src/components/Party'
 
 interface PageProps {
 
@@ -32,6 +33,7 @@ const Index: NextPage<PageProps> = () => {
             <Fancy />
             <Schedule />
             <Programm />
+            <Party />
 
             {/* <People /> */}
             <Participation
