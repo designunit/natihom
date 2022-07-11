@@ -21,11 +21,11 @@ const data1 = [
 ]
 
 const data2 = [
-    {
-        name: '22:00',
-        style: 'ambient & drone',
-        event: 'Stepan Rozenberg',
-    },
+    // {
+    //     name: '22:00',
+    //     style: 'ambient & drone',
+    //     event: 'Stepan Rozenberg',
+    // },
     {
         name: '23:00',
         style: 'fanny staff & speed geredj',
@@ -46,6 +46,11 @@ const data2 = [
         style: 'experimental four on the floor, live rhythm research, triokorgo timbre',
         event: 'Ply Tone',
     },
+    {
+        name: '03:00 - 04:00',
+        style: 'are grooves, vintage psychedelic, limited edition fresh',
+        event: 'MR. GUYVER',
+    }
 ]
 
 const data3 = [
