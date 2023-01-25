@@ -1,11 +1,8 @@
 import s from './styles.module.css'
 
 import ReactModal from 'react-modal'
-import { Button } from '../Button'
-import React, { useState } from 'react'
-import { Title } from '../Title'
-import { Article } from '../Article'
 import { JoinForm } from '../JoinForm'
+import { VolunteerForm } from '../Volunteers/VolunteerForm'
 
 
 export type ModalProps = Omit<ReactModal.Props, 'closeTimeoutMS'>
@@ -13,7 +10,8 @@ export type ModalProps = Omit<ReactModal.Props, 'closeTimeoutMS'>
 export const Modal: React.FC<{
     modalIsOpen: boolean
     setModalIsOpen: (isOpen: boolean) => void
-}> = ({ modalIsOpen, setModalIsOpen }) => {
+    tag?: string
+}> = ({ modalIsOpen, setModalIsOpen, tag = 'default' }) => {
     const delay = 250
 
     return (
@@ -26,9 +24,16 @@ export const Modal: React.FC<{
             ariaHideApp={false}
         >
             <>
-                <JoinForm 
-                    setModalIsOpen={setModalIsOpen}
-                />
+                {tag == 'default' && (
+                    <JoinForm
+                        setModalIsOpen={setModalIsOpen}
+                    />
+                )}
+                {tag == 'volunteers' && (
+                    <VolunteerForm
+                        setModalIsOpen={setModalIsOpen}
+                    />
+                )}
             </>
         </ReactModal>
     )
