@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import { Modal } from 'src/components/Modal'
 import { VolunteerTypes } from 'src/components/Volunteers/VolunteerTypes'
 import { VolunteerHero } from 'src/components/Volunteers/VolunteerHero'
-import { VolunteerButton } from 'src/components/Volunteers/VolunteerButton'
 import { VolunteerWeOpen } from 'src/components/Volunteers/VolunteerWeOpen'
 
 
@@ -32,9 +31,6 @@ const Index: NextPage<PageProps> = () => {
                 openModal={() => setModalIsOpen(true)}
             />
             <VolunteerWeOpen />
-            {/* <VolunteerButton
-                openModal={() => setModalIsOpen(true)}
-            /> */}
 
 
         </PageLayout>

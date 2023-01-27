@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from 'src/components/Button'
 
 import vhs from '../../Hero/vhs.module.css'
+import { Title } from 'src/components/Title'
 
 export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
     return (
@@ -12,22 +13,17 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
             >
                 <div className={s.wrapper}>
 
-                    <h2 className={s.h2}
-                        style={{
-                            color: 'black',
-                            fontSize: '3rem',
-                        }}
-                    >
+                    <Title level={2}>
                         волонтеры
-                    </h2>
+                    </Title>
 
                     <div className={s.flex}>
                         <div
                             className={s.collapse}
                         >
-                            <h2 className={s.h2}>
+                            <Title level={2} className={s.h2}>
                                 Инфоцентр
-                            </h2>
+                            </Title>
                             <div className={s.textlist}>
                                 <p>
                                     Вы первый к кому приходят гости фестиваля со всеми вопросами и переживаниями. Мы заранее собираем всю нужную информацию, за пару дней до начала фестиваля оформляем стенды. На самом фестивале — посменно дежурим и общаемся с посетителями. А ещё ставим телефоны на зарядку и продаём красивые футболки.
@@ -45,14 +41,9 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                         <div
                             className={s.collapse}
                         >
-                            <h2 className={s.h2}
-                                style={{
-                                    color: 'var(--color-green)',
-                                    fontSize: '2rem',
-                                }}
-                            >
+                            <Title level={2} className={s.h2}>
                                 Строительство
-                            </h2>
+                            </Title>
                             <div className={s.textlist}>
                                 <p>
                                     Все постройки мы возводим заново, а после фестиваля — разбираем, поэтому строители нужны нам всегда.
@@ -72,14 +63,9 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                         <div
                             className={s.collapse}
                         >
-                            <h2 className={s.h2}
-                                style={{
-                                    color: 'var(--color-green)',
-                                    fontSize: '2rem',
-                                }}
-                            >
+                            <Title level={2} className={s.h2}>
                                 Кухня
-                            </h2>
+                            </Title>
                             <div className={s.textlist}>
                                 <p>
                                     Наша задача — накормить и напоить всех волонтеров, организаторов, спикеров, журналистов, фотографов и партнеров, учитывая пожелания и особенности (если они есть).
@@ -99,14 +85,9 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                         <div
                             className={s.collapse}
                         >
-                            <h2 className={s.h2}
-                                style={{
-                                    color: 'var(--color-green)',
-                                    fontSize: '2rem',
-                                }}
-                            >
+                            <Title level={2} className={s.h2}>
                                 эко
-                            </h2>
+                            </Title>
                             <div className={s.textlist}>
                                 <p>
                                     Наша главная задача — сделать так, чтобы после фестиваля остался минимальный экологический след. Мы собираем отходы и отправляем на переработку то, что можно переработать, вывозим на полигон то, что переработать нельзя, и учим посетителей отличать одно от другого. Организуем точки сбора мусора и место его хранения, раздаем пакеты для раздельного сбора, следим за чистотой на поляне. А ещё ставим шатер от наших партнеров, где рассказываем всем желающим, как беречь природу и делать мир чище и уютнее.
@@ -134,11 +115,11 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                                 Важно:
                             </h2>
                             <p>
-                                / привезем и отвезем вас до места проведения фестиваля от ближайшей станции или города<br/>
-                                / живём в палатках в лесу (нужно своё снаряжение или мы возьмем его в аренду для вас)<br/>
-                                / бесплатное питание, питьевая вода<br/>
-                                / можно зарядить гаджеты: есть электричество<br/>
-                                / для организаторов и волонтёров есть интернет<br/>
+                                / привезем и отвезем вас до места проведения фестиваля от ближайшей станции или города<br />
+                                / живём в палатках в лесу (нужно своё снаряжение или мы возьмем его в аренду для вас)<br />
+                                / бесплатное питание, питьевая вода<br />
+                                / можно зарядить гаджеты: есть электричество<br />
+                                / для организаторов и волонтёров есть интернет<br />
                                 / на территории есть туалеты и душевые
                             </p>
                         </div>

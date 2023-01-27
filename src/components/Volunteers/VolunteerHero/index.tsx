@@ -16,7 +16,7 @@ export const VolunteerHero: React.FC<any> = ({ openModal }) => {
     return (
         <>
             <div style={{
-                position: 'relative'
+                position: 'relative',
             }}>
                 <div className={s.bgContainer}>
                     <Image

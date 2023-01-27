@@ -1,6 +1,7 @@
 import s from './index.module.css'
 import React from 'react'
 import { Button } from 'src/components/Button'
+import { Title } from 'src/components/Title'
 
 export const VolunteerWeOpen: React.FC<any> = () => {
     return (
@@ -10,9 +11,9 @@ export const VolunteerWeOpen: React.FC<any> = () => {
             >
                 <div className={s.wrapper}>
 
-                    <h2 className={s.h2}>
+                    <Title level={2}>
                         Мы всегда открыты<br />предложениям и идеям!
-                    </h2>
+                    </Title>
 
                     <div className={s.flex}>
                         <div className={s.textlist}>

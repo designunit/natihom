@@ -94,6 +94,8 @@
 }
 
 .about {
+    /* logo width */
+    flex: 0 1 368px; 
     align-self: flex-start;
     color: white;
     text-align: end;
