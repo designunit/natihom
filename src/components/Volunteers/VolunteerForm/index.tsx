@@ -32,7 +32,7 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
         setButton(state.fetch)
 
         await fetch(
-            '/api',
+            '/api/volunteers',
             {
                 method: 'POST',
                 body: JSON.stringify(data),
