@@ -15,10 +15,10 @@ const state = {
 }
 
 const roles = [
-    'Участник',
-    'Волонтер',
-    'Спикер',
-    'Партнер',
+    'Инфоцентр',
+    'МАСТЕРСКАЯ',
+    'КУХНЯ',
+    'БИОСТАНЦИЯ',
 ]
 
 export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
@@ -57,7 +57,7 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
         >
             <div>
                 <Title>
-                    я буду!
+                    я в деле!
                 </Title>
             </div>
 
@@ -67,6 +67,7 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
                 <Image
                     src={logo}
                     layout='fill'
+                    alt=''
                 />
             </div>
 
@@ -85,7 +86,6 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
                     placeholder='*Телефон'
                 />
 
-
                 <input
                     {...register('email', { required: true })}
                     type='email'
@@ -94,14 +94,7 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
                 />
             </div>
 
-            <input
-                {...register('code')}
-                type='text'
-                className={s.textline}
-                placeholder='Промокод'
-            />
-
-            {/* <select
+            <select
                 {...register('role', { required: true })}
                 className={s.select}
             >
@@ -113,18 +106,14 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
                         {x}
                     </option>
                 ))}
-            </select> */}
+            </select>
 
             <textarea
-                {...register('comment')}
+                {...register('social')}
                 className={s.textarea}
                 rows={8}
-                placeholder='Комментарий'
+                placeholder='ссылка на вашу соц. сеть'
             />
-
-            <div>
-                После отправки регистрации вы получите письмо с подтверждением и ссылкой на оплату.
-            </div>
 
             <Button
                 type='submit'

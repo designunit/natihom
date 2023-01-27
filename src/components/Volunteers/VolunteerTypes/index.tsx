@@ -4,6 +4,7 @@ import { Button } from 'src/components/Button'
 
 import vhs from '../../Hero/vhs.module.css'
 import { Title } from 'src/components/Title'
+import Link from 'next/link'
 
 export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
     return (
@@ -13,9 +14,28 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
             >
                 <div className={s.wrapper}>
 
-                    <Title level={2}>
-                        волонтеры
-                    </Title>
+                    {/* <Title level={2}
+                        style={{
+                            fontSize: '2rem',
+                        }}
+                    >
+                        Приглашаем присоединиться к нашей команде!
+                    </Title> */}
+                    <div
+                        className={s.collapse}
+                        style={{
+                            borderColor: 'var(--color-green)',
+                        }}
+                    >
+                        <div className={s.textlist}>
+                            <p>
+                                Мы <Link href='https://unit4.io/'>unit4</Link> разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом проведем лесную резиденцию архитекторов, дизайнеров и всех причастных для поиска смыслов, расширения экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря.  Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.
+                            </p>
+                            <p>
+                                Предлагаем вместе отойти от городской суеты, шума,  восстав против инфляции смыслов и присоединиться к нашей команде!
+                            </p>
+                        </div>
+                    </div>
 
                     <div className={s.flex}>
                         <div
@@ -29,7 +49,7 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                                     Вы первый к кому приходят гости фестиваля со всеми вопросами и переживаниями. Мы заранее собираем всю нужную информацию, за пару дней до начала фестиваля оформляем стенды. На самом фестивале — посменно дежурим и общаемся с посетителями. А ещё ставим телефоны на зарядку и продаём красивые футболки.
                                 </p>
                                 <p>
-                                    "Инфоцентр" также работает в онлайн-формате до фестиваля. Мы общаемся с подписчиками в социальных сетях, отвечаем на вопросы из почты и с сайта. Это не страшно и много времени не занимает — всему научим!
+                                    «Инфоцентр» также работает в онлайн-формате до фестиваля. Мы общаемся с подписчиками в социальных сетях, отвечаем на вопросы из почты и с сайта. Это не страшно и много времени не занимает — всему научим!
                                 </p>
                                 <p>
                                     Мы будем рады людям, которые: ответственны и инициативны, умеют находить общий язык с другими людьми, быстро учатся и ещё быстрее соображают, способны сохранять спокойствие в самых невообразимых ситуациях.
@@ -42,7 +62,7 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                             className={s.collapse}
                         >
                             <Title level={2} className={s.h2}>
-                                Строительство
+                                Мастерская
                             </Title>
                             <div className={s.textlist}>
                                 <p>
@@ -86,7 +106,7 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                             className={s.collapse}
                         >
                             <Title level={2} className={s.h2}>
-                                эко
+                                Биостанция
                             </Title>
                             <div className={s.textlist}>
                                 <p>
@@ -106,7 +126,7 @@ export const VolunteerTypes: React.FC<any> = ({ openModal }) => {
                                 className={vhs.abberationBlock}
                                 onClick={openModal}
                             >
-                                я в деле!
+                                присоедениться
                             </Button>
                         </div>
 

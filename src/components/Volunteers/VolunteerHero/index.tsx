@@ -41,27 +41,27 @@ export const VolunteerHero: React.FC<any> = ({ openModal }) => {
                         className={s.content}
                     >
                         <div className={s.logo}>
-                                <Image
-                                    src={logo}
-                                    alt=''
-                                    quality={100}
-                                    className={vhs.abberation}
-                                />
-                            </div>
+                            <Image
+                                src={logo}
+                                alt=''
+                                quality={100}
+                                className={vhs.abberation}
+                            />
+                        </div>
 
-                            <div className={s.about}>
-                                <p>
-                                    <span style={{
-                                        fontSize: '1.5rem'
-                                    }} >
-                                        <b>лето 2032</b><br />
-                                        {/* <b>скорее всего<br />снова на озере Тихое</b><br /> */}
-                                    </span>
-                                    лесная резиденция<br />
-                                    архитекторов, дизайнеров<br />
-                                    и всех причастных к городской культуре
-                                </p>
-                            </div>
+                        <div className={s.about}>
+                            <p>
+                                <span style={{
+                                    fontSize: '1.5rem'
+                                }} >
+                                    <b>лето 2023</b><br />
+                                    {/* <b>скорее всего<br />снова на озере Тихое</b><br /> */}
+                                </span>
+                                лесная резиденция<br />
+                                архитекторов, дизайнеров<br />
+                                и всех причастных к городской культуре
+                            </p>
+                        </div>
 
                         <div className={s.logos}>
                             <Image
@@ -76,14 +76,13 @@ export const VolunteerHero: React.FC<any> = ({ openModal }) => {
                             style={{
                                 flex: '0 1 auto',
                                 marginTop: 'auto',
-                                width: 'fit-content',
-                                alignSelf: 'center',
-                                color: 'white',
-                                fontSize: '2rem',
                             }}
-                            className={vhs.abberation}
+                            className={`${vhs.abberation} ${s.h1}`}
                         >
-                            ↓ ↓ ↓
+                            <h1>
+                                Open call<br />
+                                для волонтеров
+                            </h1>
                         </div>
                         {/* <Button
                             theme='primary'

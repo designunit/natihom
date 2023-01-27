@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo'
+import { Footer } from '../Footer'
 
 export const PageLayout: React.FC<any> = props => {
     return (
@@ -22,6 +23,7 @@ export const PageLayout: React.FC<any> = props => {
                 }}
             />
             {props.children}
+            <Footer />
         </main>
     )
 }
