@@ -7,10 +7,10 @@ export type LogoProps = {
 
 export const Logo: React.SFC<LogoProps> = props => {
     return (
-        <Link href='/'>
-            <a className={s.logo} style={props.style}>
+        <Link href='/' className={s.logo} style={props.style}>
+            
             УЛЬЯНОВСКАЯ ОБЛАСТЬ
-            </a>
+            
         </Link>
-    )
+    );
 }
