@@ -80,6 +80,7 @@ export const Numbers = () => {
                             style={{
                                 background: '#377EB8',
                             }}
+                            alt=''
                         />
                     </>
                 )}

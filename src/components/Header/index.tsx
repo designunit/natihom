@@ -36,6 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ transparent = false, isOpen, onC
                         src='/static/menu.svg'
                         width={16}
                         height={14}
+                        alt=''
                     />
                 </button>
             </header>
@@ -57,6 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ transparent = false, isOpen, onC
                         src='/static/closeMenu.svg'
                         width={14}
                         height={14}
+                        alt=''
                     />
                 </button>
                 {props.menu}

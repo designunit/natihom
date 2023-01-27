@@ -67,6 +67,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                 <Image
                     src={logo}
                     layout='fill'
+                    alt=''
                 />
             </div>
 
