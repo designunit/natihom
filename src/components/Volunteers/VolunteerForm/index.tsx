@@ -2,10 +2,10 @@ import * as React from 'react'
 import s from './index.module.css'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button } from '../Button'
 import Image from 'next/image'
 import logo from '/public/static/logo-small.svg'
-import { Title } from '../Title'
+import { Title } from 'src/components/Title'
+import { Button } from 'src/components/Button'
 
 const state = {
     start: 'отправить',
@@ -15,13 +15,13 @@ const state = {
 }
 
 const roles = [
-    'Участник',
-    'Волонтер',
-    'Спикер',
-    'Партнер',
+    'Инфоцентр',
+    'МАСТЕРСКАЯ',
+    'КУХНЯ',
+    'БИОСТАНЦИЯ',
 ]
 
-export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
+export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
     const { register, handleSubmit, formState: { errors, isValid } } = useForm({
         mode: 'onChange',
     })
@@ -32,7 +32,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
         setButton(state.fetch)
 
         await fetch(
-            '/api',
+            '/api/volunteers',
             {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -57,7 +57,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
         >
             <div>
                 <Title>
-                    я буду!
+                    я в деле!
                 </Title>
             </div>
 
@@ -86,7 +86,6 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                     placeholder='*Телефон'
                 />
 
-
                 <input
                     {...register('email', { required: true })}
                     type='email'
@@ -95,14 +94,7 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                 />
             </div>
 
-            <input
-                {...register('code')}
-                type='text'
-                className={s.textline}
-                placeholder='Промокод'
-            />
-
-            {/* <select
+            <select
                 {...register('role', { required: true })}
                 className={s.select}
             >
@@ -114,18 +106,14 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
                         {x}
                     </option>
                 ))}
-            </select> */}
+            </select>
 
             <textarea
-                {...register('comment')}
+                {...register('social')}
                 className={s.textarea}
                 rows={8}
-                placeholder='Комментарий'
+                placeholder='ссылка на вашу соц. сеть'
             />
-
-            <div>
-                После отправки регистрации вы получите письмо с подтверждением и ссылкой на оплату.
-            </div>
 
             <Button
                 type='submit'

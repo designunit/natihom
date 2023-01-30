@@ -11,6 +11,7 @@
     margin: 0;
 
     align-self: flex-start;
+    width: 100%;
 }
 
 .h1 {
@@ -21,9 +22,12 @@
 }
 
 .h2 {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 3rem;
+    line-height: 2.5rem;
     font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: .9em 0;
 }
 
 .h3 {
@@ -39,8 +43,8 @@
         text-align: center;
     }
     .h2 {
-        font-size: 28px;
-        line-height: 30px;
+        font-size: 2rem;
+        line-height: 2.2rem;
+        margin-top: 2rem;
     }
 }
-

@@ -1,19 +1,7 @@
-import { Header } from 'src/components/Header'
-import { useState, useCallback } from 'react'
-import { Menu } from '../Menu'
 import { NextSeo } from 'next-seo'
+import { Footer } from '../Footer'
 
 export const PageLayout: React.FC<any> = props => {
-    const [isOpen, setIsOpen] = useState(false)
-    const onClickMenu = useCallback(() => setIsOpen(!isOpen), [isOpen])
-    const onClick = useCallback((x, e) => {
-        setIsOpen(false)
-        if (x.href == '/') {
-            e.preventDefault()
-            props.openModal()
-        }
-    }, [])
-
     return (
         <main style={{ position: 'relative', marginBottom: '2rem' }}>
             <NextSeo
@@ -26,15 +14,16 @@ export const PageLayout: React.FC<any> = props => {
                 openGraph={{
                     images: [
                         {
-                            url: '/static/meta.jpeg',
-                            width: 1280,
-                            height: 641,
-                            type: 'image/jpeg',
+                            url: '/static/logo-small.png',
+                            width: 283,
+                            height: 283,
+                            type: 'image/png',
                         }
                     ]
                 }}
             />
             {props.children}
+            <Footer />
         </main>
     )
 }
