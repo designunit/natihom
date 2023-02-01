@@ -2,7 +2,7 @@ import s from './styles.module.css'
 
 import ReactModal from 'react-modal'
 import { JoinForm } from '../JoinForm'
-import { VolunteerForm } from '../Volunteers/VolunteerForm'
+import { VolunteerForm } from '../VolunteerForm'
 import { useContext } from 'react'
 import { ModalContext } from 'src/context/modal'
 
