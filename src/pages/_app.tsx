@@ -9,11 +9,6 @@ import { useRouter } from 'next/router'
 import { Modal } from 'src/components/Modal'
 import { ModalContext, ModalStateType } from 'src/context/modal'
 
-export type PageProps = {
-    modalState: boolean
-    setModalState: Dispatch<SetStateAction<boolean>>
-}
-
 const App: AppType = ({ Component, pageProps }) => {
     const router = useRouter()
 
@@ -36,11 +31,6 @@ const App: AppType = ({ Component, pageProps }) => {
         setModalIsOpen(false)
     }, [router.pathname])
 
-    const props = {
-        ...pageProps,
-        modalState, setModalState,
-    }
-
     return (
         <>
             <Head>
@@ -57,7 +47,7 @@ const App: AppType = ({ Component, pageProps }) => {
             <ModalContext.Provider value={{ modalState, setModalState }}>
                 <PageLayout>
                     <Modal />
-                    <Component {...props} />
+                    <Component {...pageProps} />
                 </PageLayout>
             </ModalContext.Provider>
         </>

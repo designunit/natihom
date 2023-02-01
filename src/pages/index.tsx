@@ -1,10 +1,9 @@
 import { NextPage } from 'next'
-import { PageProps } from './_app'
 import { Button } from 'src/components/Button'
 import { Section } from 'src/components/Section'
 import { Flex } from 'src/components/Flex'
 
-const Index: NextPage<PageProps> = () => {
+const Index: NextPage = () => {
     return (
         <>
             <Section>
