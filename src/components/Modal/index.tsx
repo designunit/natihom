@@ -3,7 +3,7 @@ import s from './styles.module.css'
 import ReactModal from 'react-modal'
 import { JoinForm } from '../JoinForm'
 import { VolunteerForm } from '../VolunteerForm'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ModalContext } from 'src/context/modal'
 
 
@@ -14,6 +14,11 @@ export const Modal: React.FC<{
 }> = ({ tag = 'default' }) => {
     const { modalState, setModalState } = useContext(ModalContext)
     const delay = 250
+
+    useEffect(() => {
+        if (!document) return
+        document.body.style.overflow = modalState.modalIsOpen ? 'hidden' : 'unset'
+    }, [modalState.modalIsOpen])
 
     if (!modalState.modalIsOpen) return null
 
@@ -27,6 +32,7 @@ export const Modal: React.FC<{
             ariaHideApp={false}
         >
             <>
+                modal content
                 {/* {tag == 'default' && (
                     <JoinForm
                         setModalIsOpen={setModalIsOpen}
