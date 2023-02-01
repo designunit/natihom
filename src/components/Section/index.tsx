@@ -4,13 +4,14 @@ import s from './styles.module.css'
 
 export type SectionProps = {
     className?: string
+    bg?: boolean
 }
 
-export const Section: React.FC<SectionProps> = ({ className, children, ...props }) => {
+export const Section: React.FC<SectionProps> = ({ bg = false, className, children, ...props }) => {
     return (
         <div
             {...props}
-            className={classNames(s.container, className)}
+            className={classNames(s.container, bg && s.bg, className)}
         >
             <div>
                 {children}
