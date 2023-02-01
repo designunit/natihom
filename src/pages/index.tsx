@@ -1,15 +1,19 @@
 import { NextPage } from 'next'
 import { PageProps } from './_app'
 import { Button } from 'src/components/Button'
+import { Section } from 'src/components/Section'
 
 const Index: NextPage<PageProps> = () => {
     return (
         <>
-            index page
-
-            <Button>
-                with button
-            </Button>
+            <Section>
+                index page
+            </Section>
+            <Section>
+                <Button>
+                    with button
+                </Button>
+            </Section>
         </>
     )
 }

@@ -1,24 +1,13 @@
-.stories {
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5% 10%;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 40px;
 }
 
-@media screen and (max-width : 1280px) {
-    .stories {
-        padding: 5%;
-    }
+.container>div {
+    flex: 1 0 auto;
+    max-width: 1512px;
 }
 
-@media screen and (max-width : 480px) {
-    .storiesButton {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 24px;
-    }
-
-    .stories {
-        padding-top: 20%;
-    }
-}
+@media screen and (max-width : 480px) {}

@@ -1,17 +1,20 @@
 import classNames from 'classnames'
+import React from 'react'
 import s from './styles.module.css'
 
 export type SectionProps = {
-    backgroundColor?: string
     className?: string
 }
 
-export const Section: React.FC<SectionProps> = ({ backgroundColor = 'white', ...props }) => {
+export const Section: React.FC<SectionProps> = ({ className, children, ...props }) => {
     return (
-        <div className={classNames(s.stories, props.className)} style={{
-            backgroundColor,
-        }}>
-            {props.children}
-        </div>
+        <div
+            {...props}
+            className={classNames(s.container, className)}
+        >
+            <div>
+                {children}
+            </div>
+        </div >
     )
 }
