@@ -116,8 +116,7 @@ export const VolunteerForm: React.FC<any> = ({ setModalIsOpen }) => {
             />
 
             <Button
-                theme='submit'
-                theme='primary'
+                type='submit'
                 disabled={buttonDisabled}
             >
                 {button}
