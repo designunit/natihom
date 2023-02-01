@@ -22,70 +22,27 @@
     --color-text: black;
 }
 
+.button:hover {
+
+}
+
+.fancy {
+    
+}
+
+.fancy:hover {
+
+}
+
 .button[disabled] {
     cursor: not-allowed;
 }
 
-.button:hover:not([disabled]):not(.themeLink) {
-    --color-border: black;
-    --color-text: black;
+/* styles for parent <Link> component when button has href */
+.link {
+    text-decoration: none;
 }
 
-/* THEME */
-
-.themeDefault {
-    background: var(--color-bg);
-    color: var(--color-text);
-    border: 3px solid var(--color-border);
-}
-
-.themePrimary {
-    --color-text: white;
-    background: var(--color-green);
-    color: var(--color-text);
-    border: 3px solid var(--color-border);
-}
-
-.themeLink {
-    color: var(--color-text);
-    background: none;
-}
-
-/* SIZE */
-
-.sizeSmall {
-    padding: 4px 20px;
-    font-size: 12px;
-    line-height: 18px;
-}
-
-.sizeDefault {
-    padding: 16px 24px;
-
-    font-size: 20px;
-    line-height: 26px;
-}
-
-.sizeBig {
-    padding: 16px 48px;
-
-    font-size: 16px;
-    line-height: 26px;
-}
-
-/* SHAPE */
-
-.shapeDefault {
-    border-radius: var(--button-border-radius);
-}
-
-.shapePill {
-    border-radius: 100px;
-}
-
-.shapeCircle {
-    border-radius: 50%;
-}
 
 @media screen and (max-width : 480px) {
     .button {

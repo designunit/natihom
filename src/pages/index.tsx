@@ -10,11 +10,16 @@ import { Fancy } from 'src/components/Fancy'
 import { Road } from 'src/components/Road'
 import { Party } from 'src/components/Party'
 import { PageProps } from './_app'
+import { Button } from 'src/components/Button'
 
 const Index: NextPage<PageProps> = ({ modalState, setModalState }) => {
     return (
         <>
-            index page
+            <Button 
+
+            >
+                Text button
+            </Button>
         </>
     )
 }
