@@ -105,12 +105,12 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                             <div className={s.buttons}>
                                 <Button
                                     // className={vhs.abberationBlock}
-                                    download
+                                    // download
                                 >
                                     скачать презентацию
                                 </Button>
                                 <Button
-                                    theme='primary'
+                                    // theme='primary'
                                     className={vhs.abberationBlock}
                                     onClick={openModal}
                                 >

@@ -25,8 +25,7 @@ export const Menu: React.FC<MenuProps> = ({ onClick }) => {
                 <Button
                     key={i}
                     href={x.href}
-                    theme={'link'}
-                    underlineRef={underline}
+                    // theme={'link'}
                     onClick={e => onClick(x, e)}
                     style={{
                         fontSize: '1.05em',
