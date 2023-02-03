@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import s from './styles.module.css'
 
-export type FlexProps = {
+export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     className?: string
     col?: boolean
 }

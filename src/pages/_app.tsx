@@ -8,6 +8,7 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'reac
 import { useRouter } from 'next/router'
 import { Modal } from 'src/components/Modal'
 import { ModalContext, ModalStateType } from 'src/context/modal'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const App: AppType = ({ Component, pageProps }) => {
     const router = useRouter()
@@ -45,10 +46,12 @@ const App: AppType = ({ Component, pageProps }) => {
             </Head>
 
             <ModalContext.Provider value={{ modalState, setModalState }}>
-                <PageLayout>
-                    <Modal />
-                    <Component {...pageProps} />
-                </PageLayout>
+                <ParallaxProvider>
+                    <PageLayout>
+                        <Modal />
+                        <Component {...pageProps} />
+                    </PageLayout>
+                </ParallaxProvider>
             </ModalContext.Provider>
         </>
     )

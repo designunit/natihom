@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import s from './styles.module.css'
 
-export type SectionProps = {
+export type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
     className?: string
     bg?: boolean
 }

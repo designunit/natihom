@@ -1,38 +1,35 @@
 .button {
     cursor: pointer;
-    border: none;
+    border: solid 4px black;
+    border-radius: 100px;
 
     color: var(--color-text);
-
     text-transform: uppercase;
-    font-weight: 800;
     font-family: var(--font-family);
-
+    font-size: 20px;
+    letter-spacing: 2.25px;
     white-space: pre-line;
     text-align: center;
 
-    /* FOR LINK */
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: .9em 3em;
 
     --color-bg: white;
     --color-border: rgba(0, 0, 0, .01);
     --color-text: black;
 }
 
-.button:hover {
-
-}
+.button:hover {}
 
 .fancy {
-    
+    font-size: 33px;
+    color: white;
+    background-image: url('/button.png');
+    background-position: center;
+    background-size: contain;
+    border: none;
 }
 
-.fancy:hover {
-
-}
+.fancy:hover {}
 
 .button[disabled] {
     cursor: not-allowed;

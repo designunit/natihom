@@ -1,29 +1,36 @@
 .header {
     position: fixed;
     width: 100%;
-
-    display: flex;
-    align-items: center;
     z-index: 100;
 
-    padding: 4px 10% 4px 10%;
+    display: flex;
+    justify-content: space-between;
 
-    background-color: white;
-    
-    box-shadow: 0 3px 5px rgba(9, 17, 51, 0.1)
+    padding: var(--content-spacing) var(--section-spacing);
+
+    background-color: rgba(255, 255, 255, .8);    
+}
+/* spacer creates space as if .header was positioned relatevely */
+.headerSpacer {
+    position: relative;
+    width: 100%;
 }
 
-.menu {
-    flex: 1;
+.nav {
     display: flex;
-    justify-content: flex-end;
+    gap: calc(var(--content-spacing) * 5);
+}
+
+.navItem {
+    text-transform: uppercase;
 }
 
 .menuButton {
     display: none;
 }
 
-.mobileMenu a, .mobileMenu button:not(.closeMenu) {
+.mobileMenu a,
+.mobileMenu button:not(.closeMenu) {
     font-family: var(--font-family-hero);
     font-size: 36px;
     line-height: 2rem;
@@ -56,18 +63,8 @@
     margin: 5px 10px 1rem 0;
 }
 
-.transparent {
-    background-color: transparent;
-}
-
-@media screen and (max-width : 1280px) {
-    .header {
-        padding: 4px 5%;
-    }
-}
-
 @media screen and (max-width : 480px) {
-    .menu {
+    .nav {
         display: none;
     }
 
