@@ -6,6 +6,7 @@ import logo from '../../../public/logo.png'
 import { useRef } from 'react'
 import { Flex } from '../Flex'
 import Link from 'next/link'
+import { Section } from '../Section'
 
 export type HeaderProps = {
 
@@ -62,39 +63,43 @@ export const Header: React.FC<HeaderProps> = () => {
             <header className={s.header}
                 ref={headerRef}
             >
-                <nav className={s.nav}>
-                    {Object.entries(menu).map(([key, links]) => (
-                        <div className={s.navItem}
-                            key={key}
-                        >
-                            <div style={{
-                                marginBottom: '1rem',
-                            }}>
-                                {key}<span>&nbsp;</span><span>&nbsp;</span>{'>'}
-                            </div>
-                            <Flex col
-                                style={{
-                                    gap: '.5rem',
-                                }}
+                <Section
+                    className={s.headerSection}
+                >
+                    <nav className={s.nav}>
+                        {Object.entries(menu).map(([key, links]) => (
+                            <div className={s.navItem}
+                                key={key}
                             >
-                                {links.map(x => (
-                                    <Link
-                                        key={x.text}
-                                        href={x.href}
-                                    >
-                                        {x.text}
-                                    </Link>
-                                ))}
-                            </Flex>
-                        </div>
-                    ))}
-                </nav>
-                <Link href='/'>
-                    <Image
-                        src={logo}
-                        alt='лого юнит на тихом'
-                    />
-                </Link>
+                                <div style={{
+                                    marginBottom: '1rem',
+                                }}>
+                                    {key}<span>&nbsp;</span><span>&nbsp;</span>{'>'}
+                                </div>
+                                <Flex col
+                                    style={{
+                                        gap: '.5rem',
+                                    }}
+                                >
+                                    {links.map(x => (
+                                        <Link
+                                            key={x.text}
+                                            href={x.href}
+                                        >
+                                            {x.text}
+                                        </Link>
+                                    ))}
+                                </Flex>
+                            </div>
+                        ))}
+                    </nav>
+                    <Link href='/'>
+                        <Image
+                            src={logo}
+                            alt='лого юнит на тихом'
+                        />
+                    </Link>
+                </Section>
 
                 {/* <button
                     className={s.menuButton}
