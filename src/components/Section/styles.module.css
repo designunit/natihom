@@ -6,10 +6,10 @@
 }
 
 .container>div {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     max-width: 1512px;
     padding: 0 var(--section-spacing);
-    
+
     position: relative;
 }
 
@@ -17,6 +17,11 @@
     position: absolute;
     z-index: -1;
     width: 100%;
+}
+
+.bg>div {
+    width: 100%;
+    overflow-x: visible;
 }
 
 @media screen and (max-width : 480px) {}

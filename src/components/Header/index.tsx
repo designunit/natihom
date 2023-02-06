@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = () => {
                             >
                                 {links.map(x => (
                                     <Link
-                                    key={x.text}
+                                        key={x.text}
                                         href={x.href}
                                     >
                                         {x.text}
@@ -89,10 +89,12 @@ export const Header: React.FC<HeaderProps> = () => {
                         </div>
                     ))}
                 </nav>
-                <Image
-                    src={logo}
-                    alt='лого юнит на тихом'
-                />
+                <Link href='/'>
+                    <Image
+                        src={logo}
+                        alt='лого юнит на тихом'
+                    />
+                </Link>
 
                 {/* <button
                     className={s.menuButton}

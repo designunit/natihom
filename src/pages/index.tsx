@@ -101,6 +101,7 @@ const Index: NextPage = () => {
                 >
                     <Button
                         theme='fancy'
+                        href='/2023'
                     >
                         лето 2023
                     </Button>

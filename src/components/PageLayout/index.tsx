@@ -1,10 +1,16 @@
 import { NextSeo } from 'next-seo'
+import { useRouter } from 'next/router'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 
 export const PageLayout: React.FC<any> = props => {
+    const router = useRouter()
+    const isPage2023 = router.pathname == '/2023'
     return (
-        <main style={{ position: 'relative', marginBottom: '2rem' }}>
+        <main style={{
+            position: 'relative',
+            minHeight: '100vh',
+        }}>
             <NextSeo
                 title='Unit на тихом'
                 description='
@@ -23,6 +29,15 @@ export const PageLayout: React.FC<any> = props => {
                     ]
                 }}
             />
+            
+            <style>{`
+                ${isPage2023 && `
+                    body {
+                        background-color: var(--color-yellow);
+                    }
+                `},
+            `}</style>
+
             <Header />
             {props.children}
             <Footer />

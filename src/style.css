@@ -16,6 +16,10 @@
     --section-spacing: 40px;
 }
 
+#__next {
+    min-height: 100vh;
+}
+
 html,
 body {
     padding: 0;
