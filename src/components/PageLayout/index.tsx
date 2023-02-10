@@ -6,6 +6,7 @@ import { Header } from '../Header'
 export const PageLayout: React.FC<any> = props => {
     const router = useRouter()
     const isPage2023 = router.pathname == '/2023'
+    const isPage2022 = router.pathname == '/2022'
     return (
         <main style={{
             position: 'relative',
@@ -34,6 +35,11 @@ export const PageLayout: React.FC<any> = props => {
                 ${isPage2023 && `
                     body {
                         background-color: var(--color-yellow);
+                    }
+                `},
+                ${isPage2022 && `
+                    body {
+                        background-color: var(--color-red);
                     }
                 `},
             `}</style>
