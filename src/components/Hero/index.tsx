@@ -20,8 +20,8 @@ export const Hero: React.FC<any> = ({ openModal }) => {
             <span style={{
                 fontSize: '1.5rem'
             }} >
-                <b>15-17 июля</b><br />
-                <b> озеро Тихое, Ленобласть</b><br />
+                <b>лето 2023</b><br />
+                {/* <b> озеро Тихое, Ленобласть</b><br /> */}
             </span>
             трёхдневная лесная резиденция<br />
             архитекторов, дизайнеров<br />
@@ -68,7 +68,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         <div className={s.logos}>
 
                             {!isMobile && aboutBlock}
-                            
+
                             <Image
                                 src={unitlogo}
                                 alt=''
@@ -107,15 +107,15 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                                     // className={vhs.abberationBlock}
                                     download
                                 >
-                                    скачать презентацию
+                                    скачать презентацию 2022
                                 </Button>
-                                <Button
+                                {/* <Button
                                     theme='primary'
                                     className={vhs.abberationBlock}
                                     onClick={openModal}
                                 >
                                     зарегистрироваться
-                                </Button>
+                                </Button> */}
                             </div>
                         </div>
 

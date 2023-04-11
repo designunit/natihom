@@ -49,13 +49,13 @@ export const Participation: React.FC<any> = ({ openModal }) => {
                                 Если у вас нет палатки сообщите нам заранее на почту  natihom@unit4.io , мы поможем с ее арендой
                             </div>
 
-                            <Button
+                            {/* <Button
                                 theme='primary'
                                 className={vhs.abberationBlock}
                                 onClick={openModal}
                             >
                                 зарегистрироваться
-                            </Button>
+                            </Button> */}
 
                             <div
                                 style={{
