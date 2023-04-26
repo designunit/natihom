@@ -1,136 +1,203 @@
-import s from './index.module.css'
-import vhs from './vhs.module.css'
-import { Button } from '../Button'
-import React from 'react'
-import Image from 'next/legacy/image'
-import hero from '/public/static/hero.jpg'
-import logo from '/public/static/logo.svg'
-import unitlogo from '/public/static/unitlogo.svg'
-import vstretimsa from '/public/static/vstretimsa.svg'
-import sv from '/public/static/SV Logo Full Black RGB.svg'
+import { NextPage } from 'next'
+import { Button } from 'src/components/Button'
+import { Section } from 'src/components/Section'
+import { Flex } from 'src/components/Flex'
+import Image from 'next/image'
+import { Parallax } from 'react-scroll-parallax'
+import aboutText from '../../../public/aboutText.png'
+import lesRes from '../../../public/lesRes.png'
+import triangle from '../../../public/triangle.gif'
+import board from '../../../public/board.jpg'
+import points from '../../../public/points.gif'
+import arrow from '../../../public/arrow.svg'
+import stripes from '../../../public/stripes.gif'
+import plants from '../../../public/plants.gif'
+import qrtetris from '../../../public/qrtetris.gif'
+import trishape from '../../../public/trishape.png'
 import { useMobile } from 'src/hooks/useMobile'
+import s from './index.module.css'
 
 
 export const Hero: React.FC<any> = ({ openModal }) => {
 
     const isMobile = useMobile()
 
-    const aboutBlock = <div className={s.about}>
-        <p>
-            <span style={{
-                fontSize: '1.5rem'
-            }} >
-                <b>15-17 июля</b><br />
-                <b> озеро Тихое, Ленобласть</b><br />
-            </span>
-            трёхдневная лесная резиденция<br />
-            архитекторов, дизайнеров<br />
-            и всех причастных к городской культуре
-        </p>
-    </div>
     return (
         <>
-            <div style={{
-                position: 'relative'
-            }}>
-                <div className={s.bgContainer}>
-                    <Image
-                        src={hero}
-                        alt=''
-                        layout='fill'
-                        objectFit='cover'
-                        priority
-                        loading='eager'
-                        quality={100}
-                        className={s.bg}
-                    />
-                </div>
-
-                <div className={vhs.scanlines} />
-
-                <div
-                    className={s.container}
+            <Section bg>
+                <Parallax
+                    rotate={[90, 0]}
+                    className={s.triangle}
                 >
-                    <div
-                        className={s.content}
+                    <Image
+                        src={triangle}
+                        alt='анимация типа джой дивижн в триугольнике'
+                    />
+                </Parallax>
+            </Section>
+
+            <div style={{
+                height: '10rem'
+            }} />
+
+            <Section
+                bg
+                className={s.trishape}
+            >
+                <Parallax
+                    speed={-20}
+                    // disabled={isMobile}
+                    style={{
+                        position: 'absolute',
+                        top: 550,
+                        right: 'calc(250px / -2 + var(--section-spacing))', // original is 500px wide
+                    }}
+                >
+                    <Image
+                        src={stripes}
+                        alt='анимация полосок'
+                        style={{
+                            transform: 'scale(.5)',
+                        }}
+                    />
+                </Parallax>
+                <Parallax
+                    speed={10}
+                    rotate={[0, 45]}
+                    style={{
+                        position: 'absolute',
+                        top: 400,
+                        right: -20,
+                    }}
+                >
+                    <Image
+                        src={trishape}
+                        alt='анимация полосок'
+                    />
+                </Parallax>
+
+                <Image
+                    src={plants}
+                    alt='анимация цветочков'
+                    style={{
+                        position: 'absolute',
+                        top: 700,
+                        right: 320,
+                        transform: 'scale(.5)',
+                    }}
+                />
+            </Section>
+
+
+            <Section
+                className={s.aboutText}
+            >
+                <Image
+                    src={aboutText}
+                    alt='текст про фестиваль в целом'
+                />
+                <Flex col
+                    style={{
+                        position: 'absolute',
+                        zIndex: 1,
+                        right: 'var(--section-spacing)',
+                        top: 0,
+                        marginTop: '1rem',
+                        alignItems: 'flex-end',
+                    }}
+                >
+                    <Button
+                        theme='fancy'
+                        href='/2023'
                     >
-                        <div className={s.logo}>
-                            <Image
-                                src={logo}
-                                alt=''
-                                quality={100}
-                                className={vhs.abberation}
-                            />
-                        </div>
+                        лето 2023
+                    </Button>
+                    {!isMobile && (
+                        <Image
+                            src={arrow}
+                            alt='стрелка'
+                            style={{
+                                marginRight: '4rem',
+                            }}
+                        />
+                    )}
+                </Flex>
+            </Section>
 
-                        {isMobile && aboutBlock}
+            <div style={{
+                height: isMobile ? 50 : 240
+            }} />
 
-                        <div className={s.logos}>
+            <Section bg>
+                <Parallax
+                    translateX={[-20, 20]}
+                    className={s.board}
+                    style={{
+                        position: 'relative',
+                        top: -28,
+                    }}
+                >
+                    <Image
+                        src={board}
+                        alt='доска для рукоделия'
+                    />
+                    <Parallax
+                        rotateY={[-45, 45]}
+                        style={{
+                            position: 'absolute',
+                            top: -100,
+                            right: 210,
+                        }}
+                    >
+                        <Image
+                            src={qrtetris}
+                            alt='тетрис с qr кодом'
+                        />
+                    </Parallax>
+                </Parallax>
+            </Section>
 
-                            {!isMobile && aboutBlock}
-                            
-                            <Image
-                                src={unitlogo}
-                                alt=''
-                                quality={100}
-                                objectFit='contain'
-                            />
-                            <Image
-                                src={sv}
-                                alt=''
-                                quality={100}
-                            />
-                        </div>
-                        <div />
-
-                        <div className={s.text}>
-                            <p>
-                                Мы <a href='https://unit4.io/'>unit4.io</a> разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом мы придумали лесную резиденцию архитекторов, дизайнеров и всех причастных.
-                            </p>
-                            <p>
-                                Идея резиденции возникла из всеобщего запроса на поиск смыслов, расширение экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря.
-                            </p>
-                            <p>
-                                Мы запустили проектную лабораторию и со студентами готовим инфраструктуру резиденции на берегу озера. Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.
-                            </p>
-                            <p>
-                                Предлагаем вместе отойти от городской суеты, шума, иллюзорности, мимолетности происходящего в повседневном и профессиональном,  восстав против инфляции смыслов.
-                            </p>
-                            <p>
-                                Мы готовы пойти в новое, медленное, тихое.
-                            </p>
-                            <p>
-                                Встретимся на Тихом
-                            </p>
-                            <div className={s.buttons}>
-                                <Button
-                                    // className={vhs.abberationBlock}
-                                    // download
-                                >
-                                    скачать презентацию
-                                </Button>
-                                <Button
-                                    // theme='primary'
-                                    className={vhs.abberationBlock}
-                                    onClick={openModal}
-                                >
-                                    зарегистрироваться
-                                </Button>
-                            </div>
-                        </div>
-
-                        <div className={s.contacts}>
-                            <div>
-                                по вопросам сотрудничества: <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>
-                            </div>
-                            <div>
-                                {'координатор резиденции:\n'}
-                                Ермолаева Валентина <a href="mailto:ve@unit4.io">ve@unit4.io</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Section
+                className={s.lesRes}
+            >
+                <Image
+                    src={lesRes}
+                    alt='лесная резиденция'
+                />
+                <Flex
+                    style={{
+                        gap: 120,
+                    }}
+                >
+                    <Image
+                        src={points}
+                        alt='анимация графиков'
+                        style={{
+                            flex: '0 1 auto'
+                        }}
+                    />
+                    <Flex col
+                        style={{
+                            maxWidth: 450,
+                        }}
+                    >
+                        <p>
+                            Мы unit4.io разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом мы придумали лесную резиденцию архитекторов, дизайнеров и всех причастных.
+                        </p>
+                        <p>
+                            Идея резиденции возникла из всеобщего запроса на поиск смыслов, расширение экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря.
+                        </p>
+                        <p>
+                            Мы запустили проектную лабораторию и со студентами готовим инфраструктуру резиденции на берегу озера. Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.
+                        </p>
+                        <p>
+                            Предлагаем вместе отойти от городской суеты, шума, иллюзорности, мимолетности происходящего в повседневном и профессиональном, восстав против инфляции смыслов.
+                            <br />
+                            Мы готовы пойти в новое, медленное, тихое.
+                        </p>
+                    </Flex>
+                </Flex>
+            </Section>
         </>
     )
 }
