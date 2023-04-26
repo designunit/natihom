@@ -1,0 +1,23 @@
+@media screen and (max-width : 480px) {
+    .video>div>div {
+        flex-direction: column-reverse;
+    }
+
+    .video iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .photos img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .photos button {
+        width: max-content;
+        font-size: 14px;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+    }
+}
