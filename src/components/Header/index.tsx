@@ -3,15 +3,12 @@ import cx from 'classnames'
 import { slide as MobileMenu } from 'react-burger-menu'
 import Image from 'next/image'
 import logo from '../../../public/logo.png'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Flex } from '../Flex'
 import Link from 'next/link'
 import { Section } from '../Section'
-
-export type HeaderProps = {
-
-}
-
+import { useMobile } from 'src/hooks/useMobile'
+import Hamburger from 'hamburger-react'
 const menu = {
     'связь': [
         {
@@ -53,8 +50,47 @@ const menu = {
     ],
 }
 
-export const Header: React.FC<HeaderProps> = () => {
-    // isOpen, onClickMenu
+const menuStyles = {
+    bmBurgerButton: {
+        position: 'fixed',
+        width: '48px',
+        height: '48px',
+        top: '8px',
+        left: '16px',
+        marginTop: '.125rem',
+        marginRight: '10px',
+        zIndex: '1101',
+    },
+    bmBurgerBars: {
+        background: 'blue',
+    },
+    bmMenuWrap: {
+        top: '0',
+        position: 'fixed',
+        height: '100vh'
+    },
+    bmMenu: {
+        width: '100%',
+        padding: '1rem',
+        backgroundColor: 'white',
+    },
+    bmOverlay: {
+        background: 'var(--color-black)',
+        left: '0',
+    },
+    bmItemList: {
+        marginTop: '6rem',
+        marginLeft: '10px',
+        height: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4rem',
+    }
+}
+
+export const Header: React.FC = () => {
+    const isMobile = useMobile()
+    const [isOpen, setIsOpen] = useState(false)
 
     const headerRef = useRef(null)
 
@@ -93,7 +129,9 @@ export const Header: React.FC<HeaderProps> = () => {
                             </div>
                         ))}
                     </nav>
-                    <Link href='/'>
+                    <Link href='/'
+                        className={s.logo}
+                    >
                         <Image
                             src={logo}
                             alt='лого юнит на тихом'
@@ -101,46 +139,57 @@ export const Header: React.FC<HeaderProps> = () => {
                     </Link>
                 </Section>
 
-                {/* <button
-                    className={s.menuButton}
-                    onClick={onClickMenu}
-                >
-                    <Image
-                        src='/static/menu.svg'
-                        width={16}
-                        height={14}
-                        alt=''
-                    />
-                </button> */}
+                {isMobile && (
+                    <MobileMenu
+                        right
+                        disableAutoFocus
+                        width='100%'
+                        isOpen={isOpen}
+                        styles={menuStyles}
+                        onStateChange={({ isOpen }) => setIsOpen(isOpen)}
+                        customCrossIcon={false}
+                        customBurgerIcon={(
+                            <Hamburger
+                                toggled={isOpen}
+                                size={36}
+                                distance='sm'
+                                color='black'
+                            />
+                        )}
+                    >
+                        {Object.entries(menu).map(([key, links]) => (
+                            <div className={s.navItem}
+                                key={key}
+                            >
+                                <div style={{
+                                    marginBottom: '1rem',
+                                }}>
+                                    {key}<span>&nbsp;</span><span>&nbsp;</span>{'>'}
+                                </div>
+                                <Flex col
+                                    style={{
+                                        gap: '.5rem',
+                                    }}
+                                >
+                                    {links.map(x => (
+                                        <Link
+                                            key={x.text}
+                                            href={x.href}
+                                        >
+                                            {x.text}
+                                        </Link>
+                                    ))}
+                                </Flex>
+                            </div>
+                        ))}
+                    </MobileMenu>
+                )}
             </header>
             <div
                 className={s.headerSpacer}
                 style={{
                     height: headerRef.current?.getBoundingClientRect()?.height
                 }} />
-
-            {/* <MobileMenu
-                right
-                width='100%'
-                isOpen={isOpen}
-                customBurgerIcon={false}
-                customCrossIcon={false}
-                className={s.mobileMenu}
-                itemListClassName={s.mobileMenuList}
-            >
-                <button
-                    className={s.closeMenu}
-                    onClick={onClickMenu}
-                >
-                    <Image
-                        src='/static/closeMenu.svg'
-                        width={14}
-                        height={14}
-                        alt=''
-                    />
-                </button>
-                {props.menu}
-            </MobileMenu> */}
         </>
     )
 }

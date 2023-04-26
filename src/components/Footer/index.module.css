@@ -1,3 +1,15 @@
 .container {
     padding: 1rem 0;
 }
+
+@media screen and (max-width : 480px) {
+    .container {
+        padding-top: 4rem;
+    }
+    
+    .container>div>div>div>:nth-child(2) {
+        width: 100%;
+        flex-direction: row;
+        gap: 8px;
+    }
+}

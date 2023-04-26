@@ -4,16 +4,15 @@
     z-index: 100;
 
     padding: var(--content-spacing) 0;
-
-    background-color: rgba(255, 255, 255, .8);    
 }
+
 /* spacer creates space as if .header was positioned relatevely */
 .headerSpacer {
     position: relative;
     width: 100%;
 }
 
-.headerSection>div{
+.headerSection>div {
     display: flex;
     justify-content: space-between;
 }
@@ -72,7 +71,7 @@
     }
 
     .header {
-        padding: 12px 5% 12px 10%;
+        padding: 12px 10px;
         justify-content: space-between;
     }
 
@@ -85,5 +84,18 @@
         height: 7%;
         width: auto;
         padding: 3%;
+    }
+
+    .logo {
+        margin-left: auto;
+    }
+
+    .logo>img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .headerSection>div {
+        padding: unset;
     }
 }
