@@ -75,7 +75,7 @@
     .trishape {}
 
     .trishape>div>div {
-        top: 100vh !important;
+        top: 90vh !important;
         left: 0 !important;
     }
 

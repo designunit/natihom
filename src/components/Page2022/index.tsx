@@ -14,11 +14,9 @@ export const Page2022 = () => {
     const isMobile = useMobile()
     return (
         <>
-            {!isMobile && (
-                <div style={{
-                    height: '10rem'
-                }} />
-            )}
+            <div style={{
+                height: isMobile ? '6rem' : '10rem',
+            }} />
 
             <Section
                 className={s.video}
