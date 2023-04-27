@@ -54,15 +54,8 @@
     background-color: white;
 }
 
-.closeMenu {
-    border: none;
-    background: none;
-
-    align-self: flex-end;
-    height: 7%;
-    width: auto;
-    padding: 5%;
-    margin: 5px 10px 1rem 0;
+.mobileMenu {
+    display: none;
 }
 
 @media screen and (max-width : 480px) {
@@ -97,5 +90,9 @@
 
     .headerSection>div {
         padding: unset;
+    }
+
+    .mobileMenu {
+        display: unset;
     }
 }

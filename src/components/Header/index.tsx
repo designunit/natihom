@@ -92,13 +92,9 @@ export const Header: React.FC = () => {
     const isMobile = useMobile()
     const [isOpen, setIsOpen] = useState(false)
 
-    const headerRef = useRef(null)
-
     return (
         <>
-            <header className={s.header}
-                ref={headerRef}
-            >
+            <header className={s.header}>
                 <Section
                     className={s.headerSection}
                 >
@@ -139,6 +135,7 @@ export const Header: React.FC = () => {
                     </Link>
                 </Section>
 
+
                 {isMobile && (
                     <MobileMenu
                         right
@@ -148,6 +145,7 @@ export const Header: React.FC = () => {
                         styles={menuStyles}
                         onStateChange={({ isOpen }) => setIsOpen(isOpen)}
                         customCrossIcon={false}
+                        className={s.mobileMenu}
                         customBurgerIcon={(
                             <Hamburger
                                 toggled={isOpen}
@@ -185,11 +183,6 @@ export const Header: React.FC = () => {
                     </MobileMenu>
                 )}
             </header>
-            <div
-                className={s.headerSpacer}
-                style={{
-                    height: headerRef.current?.getBoundingClientRect()?.height
-                }} />
         </>
     )
 }
