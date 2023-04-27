@@ -173,6 +173,10 @@ export const Header: React.FC = () => {
                                         <Link
                                             key={x.text}
                                             href={x.href}
+                                            style={{
+                                                fontSize: 14,
+                                                marginBottom: '.25rem',
+                                            }}
                                         >
                                             {x.text}
                                         </Link>
