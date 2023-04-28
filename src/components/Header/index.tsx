@@ -18,10 +18,10 @@ const menu = {
             text: 'планы на 2023',
             href: '/2023',
         },
-        {
-            text: 'полезная информация',
-            href: '/info',
-        },
+        // {
+        //     text: 'полезная информация',
+        //     href: '/info',
+        // },
     ],
     'связь': [
         {
@@ -187,6 +187,7 @@ export const Header: React.FC = () => {
                     </MobileMenu>
                 )}
             </header>
+            <div className={s.headerSpacer} />
         </>
     )
 }
