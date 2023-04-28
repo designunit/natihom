@@ -4,8 +4,10 @@ import { Button } from '../Button'
 import Link from 'next/link'
 import { Flex } from '../Flex'
 import { Section } from '../Section'
+import { useMobile } from 'src/hooks/useMobile'
 
 export const Footer: React.FC<any> = () => {
+    const isMobile = useMobile()
     return (
         <footer
             className={s.container}
@@ -25,13 +27,13 @@ export const Footer: React.FC<any> = () => {
                     </Flex>
                     <Flex col>
                         <div>
-                            © UNIT4 2023
+                            © UNIT4 {isMobile && (<br />)} 2023
                         </div>
                         <div>
-                            Design by <Link href={'http://serjbaryshev.com/'}>Serge b.</Link>
+                            Design by {isMobile && (<br />)} <Link href={'http://serjbaryshev.com/'}>Serge b.</Link>
                         </div>
                         <div>
-                            website by manhir
+                            website by {isMobile && (<br />)} manhir
                         </div>
                     </Flex>
                 </Flex>

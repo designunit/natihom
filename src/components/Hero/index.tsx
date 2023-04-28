@@ -26,7 +26,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
         <>
             <Section bg>
                 <Parallax
-                    rotate={[90, 0]}
+                    rotate={isMobile ? [360 * 2, 0] : [90, 0]}
                     className={s.triangle}
                 >
                     <Image

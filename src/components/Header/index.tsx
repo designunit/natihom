@@ -1,15 +1,28 @@
 import s from './styles.module.css'
-import cx from 'classnames'
 import { slide as MobileMenu } from 'react-burger-menu'
 import Image from 'next/image'
 import logo from '../../../public/logo.png'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Flex } from '../Flex'
 import Link from 'next/link'
 import { Section } from '../Section'
 import { useMobile } from 'src/hooks/useMobile'
 import Hamburger from 'hamburger-react'
 const menu = {
+    'о фестевале': [
+        {
+            text: 'как это было в 2022',
+            href: '/2022',
+        },
+        {
+            text: 'планы на 2023',
+            href: '/2023',
+        },
+        {
+            text: 'полезная информация',
+            href: '/info',
+        },
+    ],
     'связь': [
         {
             text: 'чАтик в телеге',
@@ -24,30 +37,16 @@ const menu = {
             href: 'https://web.telegram.org/',
         },
     ],
-    'о фестевале': [
-        {
-            text: 'как это было в 2022',
-            href: '/back-in-22',
-        },
-        {
-            text: 'планы на 2023',
-            href: '/plans-for-23',
-        },
-        {
-            text: 'полезная информация',
-            href: '/useful-info',
-        },
-    ],
-    'полезное': [
-        {
-            text: 'интересные статейки',
-            href: '/articles',
-        },
-        {
-            text: 'интересные книжульки',
-            href: '/books',
-        },
-    ],
+    // 'полезное': [
+    //     {
+    //         text: 'интересные статейки',
+    //         href: '/articles',
+    //     },
+    //     {
+    //         text: 'интересные книжульки',
+    //         href: '/books',
+    //     },
+    // ],
 }
 
 const menuStyles = {
@@ -177,6 +176,7 @@ export const Header: React.FC = () => {
                                                 fontSize: 14,
                                                 marginBottom: '.25rem',
                                             }}
+                                            onClick={() => setIsOpen(false)}
                                         >
                                             {x.text}
                                         </Link>

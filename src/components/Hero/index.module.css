@@ -7,7 +7,7 @@
 
     /* TRIANGLE */
     .triangle {
-        left: 4rem;
+        /* left: 4rem; */
     }
 
     .triangle>img {
@@ -68,7 +68,6 @@
 
     .lesRes p {
         margin: 0;
-        font-size: 9px;
     }
 
     /* TRISHAPE */

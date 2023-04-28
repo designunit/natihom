@@ -81,6 +81,7 @@
 
     .logo {
         margin-left: auto;
+        z-index: 1101;
     }
 
     .logo>img {
