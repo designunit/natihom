@@ -7,6 +7,9 @@ export const PageLayout: React.FC<any> = props => {
     const router = useRouter()
     const isPage2023 = router.pathname == '/2023'
     const isPage2022 = router.pathname == '/2022'
+    const isPageOpenCall = router.pathname == '/volunteers'
+
+    const isBgYellow = isPage2023 || isPageOpenCall
     return (
         <main style={{
             position: 'relative',
@@ -30,9 +33,9 @@ export const PageLayout: React.FC<any> = props => {
                     ]
                 }}
             />
-            
+
             <style>{`
-                ${isPage2023 && `
+                ${isBgYellow && `
                     body {
                         background-color: var(--color-yellow);
                     }
