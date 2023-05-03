@@ -50,4 +50,8 @@
         padding: 8px 16px;
         font-size: 16px;
     }
+
+    .fancy {
+        font-size: 28px;
+    }
 }

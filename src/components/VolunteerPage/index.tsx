@@ -135,7 +135,9 @@ export const VolunteerPage = ({ onClick }) => {
             </Section>
 
             {data.map((x, i) => (
-                <Section>
+                <Section
+                    key={i}
+                >
                     <Flex
                         style={{
                             marginBottom: '8rem',

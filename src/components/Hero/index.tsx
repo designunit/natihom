@@ -146,7 +146,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         style={{
                             position: 'absolute',
                             top: -100,
-                            right: 210,
+                            ...(isMobile ? { left: '30%' } : { right: 210 })
                         }}
                     >
                         <Image
@@ -155,7 +155,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         />
                     </Parallax>
                 </Parallax>
-            </Section>
+            </Section >
 
             <Section
                 className={s.lesRes}
