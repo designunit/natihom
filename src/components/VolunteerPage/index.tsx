@@ -5,7 +5,12 @@ import Image from 'next/image'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
 import openCall from '../../../public/openCall.jpg'
+import cog from '../../../public/cog.png'
+import eraserhead from '../../../public/eraserhead.gif'
+import ramsy from '../../../public/ramsy.gif'
+import springCircle from '../../../public/springCircle.png'
 import { Title } from '../Title'
+import { Parallax } from 'react-scroll-parallax'
 
 const data = [
     {
@@ -56,6 +61,28 @@ const data = [
                 <p style={{ fontWeight: 700, }}>
                     Внимание! Наши строители строят объекты инфраструктуры фестиваля. Если вы хотите построить свой арт-объект или реализовать другую идею, отправляйте свои заявки на почту <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>
                 </p>
+                <Section bg>
+                    <Parallax
+                        scaleY={[1, 1.5]}
+                        scaleX={[1, .7]}
+                        shouldAlwaysCompleteAnimation
+                        style={{
+                            position: 'absolute',
+                            left: '-30%',
+                            transformOrigin: 'top center'
+                        }}
+                    >
+                        <Image
+                            style={{
+                                transformOrigin: 'center top'
+                            }}
+                            src={springCircle}
+                            alt='хромированная пружинка'
+                            width={400}
+                            height={400}
+                        />
+                    </Parallax >
+                </Section>
             </Flex>
         )
     },
@@ -80,6 +107,23 @@ const data = [
                 <p>
                     Мы ждем: умеющих и любящих готовить, ответственных, веселых и аккуратных людей. (Можно с детьми). Очень важно, чтобы тебя не раздражала вся эта кутерьма, происходящая на кухне — шум, дети, мытье посуды, вечно голодные и не всегда довольные люди.
                 </p>
+                <Section bg>
+                    <Parallax
+                        opacity={[0, 3.5]}
+                        easing={[.5, .1, .5, -.1]}
+                        shouldAlwaysCompleteAnimation
+                        style={{
+                            position: 'absolute',
+                            right: 0,
+                        }}
+                    >
+                        <Image
+                            src={ramsy}
+                            alt='гордон рамзи'
+                            className={s.ramsy}
+                        />
+                    </Parallax >
+                </Section>
             </Flex>
         )
     },
@@ -128,10 +172,34 @@ export const VolunteerPage = ({ onClick }) => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         marginLeft: !isMobile && '3rem',
+                        color: 'white',
+                        ...(isMobile && { fontSize: 18 })
                     }}
                 >
                     OPEN CALL ДЛЯ ВОЛОНТЕРОВ
                 </Title>
+                <Section bg
+                    style={{
+                        zIndex: 2,
+                    }}
+                >
+                    <Parallax
+                        rotateY={[0, 180]}
+                        translateY={[0, 50]}
+                        shouldAlwaysCompleteAnimation
+                        style={{
+                            position: 'absolute',
+                            top: -200,
+                            right: -20,
+                        }}
+                    >
+                        <Image
+                            src={cog}
+                            alt='хромированная снежинка'
+                            className={s.cog}
+                        />
+                    </Parallax >
+                </Section>
             </Section>
 
             {data.map((x, i) => (
@@ -164,6 +232,26 @@ export const VolunteerPage = ({ onClick }) => {
                 </Section>
             ))}
 
+            <Section bg>
+                <Parallax
+                    rotateZ={[-180, 0]}
+                    translateX={[-100, 50]}
+                    shouldAlwaysCompleteAnimation
+                    style={{
+                        position: 'absolute',
+                        top: -300,
+                    }}
+                >
+                    <Image
+                        src={eraserhead}
+                        alt='eraserhead'
+                        width={350}
+                        height={350}
+                        className={s.eraserhead}
+                    />
+                </Parallax >
+            </Section>
+
             <Section>
                 <Flex
                     style={{
@@ -183,7 +271,7 @@ export const VolunteerPage = ({ onClick }) => {
                         присоедениться
                     </Button>
                 </Flex>
-            </Section>
+            </Section >
         </>
     )
 }

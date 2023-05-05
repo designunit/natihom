@@ -8,5 +8,10 @@
 }
 
 @media screen and (max-width : 480px) {
-    
+
+    .cog,
+    .eraserhead,
+    .ramsy {
+        width: min(200px, 50vw);
+    }
 }
