@@ -8,45 +8,51 @@ import Link from 'next/link'
 import { Section } from '../Section'
 import { useMobile } from 'src/hooks/useMobile'
 import Hamburger from 'hamburger-react'
+import { useRouter } from 'next/router'
 const menu = {
-    'о фестевале': [
+    'о резиденции': [
+        {
+            text: 'анонс 2023',
+            href: '/2023',
+        },
         {
             text: 'как это было в 2022',
             href: '/2022',
         },
-        {
-            text: 'планы на 2023',
-            href: '/2023',
+        { // неактивно
+            text: 'программа',
+            href: false,
         },
-        // {
-        //     text: 'полезная информация',
-        //     href: '/info',
-        // },
+        { // неактивно
+            text: 'правила',
+            href: false,
+        },
+
     ],
     'связь': [
-        {
-            text: 'чАтик в телеге',
-            href: 'https://web.telegram.org/',
+        { // неактивно
+            text: 'команда',
+            href: '/team'
         },
         {
-            text: 'буржуазный инстаграм',
-            href: 'https://web.telegram.org/',
-        },
-        {
-            text: 'уютная ЖЭЖЭшка ',
-            href: 'https://web.telegram.org/',
+            text: 'канал в телеграме',
+            href: 'https://t.me/unitnatihom',
         },
     ],
-    // 'полезное': [
-    //     {
-    //         text: 'интересные статейки',
-    //         href: '/articles',
-    //     },
-    //     {
-    //         text: 'интересные книжульки',
-    //         href: '/books',
-    //     },
-    // ],
+    'стать частью': [
+        {
+            text: 'купить билет',
+            href: false,
+        },
+        {
+            text: 'стать волонтером',
+            href: '/volunteers',
+        },
+        {
+            text: 'учавствовать в конкурсе',
+            href: false,
+        },
+    ],
 }
 
 const menuStyles = {
@@ -90,10 +96,16 @@ const menuStyles = {
 export const Header: React.FC = () => {
     const isMobile = useMobile()
     const [isOpen, setIsOpen] = useState(false)
+    const router = useRouter()
+    const spechialHeader = router.pathname == '/volunteers'
 
     return (
         <>
-            <header className={s.header}>
+            <header className={s.header}
+                style={spechialHeader ? {
+                    background: '#fffd',
+                } : {}}
+            >
                 <Section
                     className={s.headerSection}
                 >
@@ -112,7 +124,16 @@ export const Header: React.FC = () => {
                                         gap: '.5rem',
                                     }}
                                 >
-                                    {links.map(x => (
+                                    {links.map(x => !x.href ? (
+                                        <div
+                                            key={x.text}
+                                            style={{
+                                                opacity: .5,
+                                            }}
+                                        >
+                                            {x.text}
+                                        </div>
+                                    ) : (
                                         <Link
                                             key={x.text}
                                             href={x.href}
@@ -168,7 +189,16 @@ export const Header: React.FC = () => {
                                         gap: '.5rem',
                                     }}
                                 >
-                                    {links.map(x => (
+                                    {links.map(x => !x.href ? (
+                                        <div
+                                            key={x.text}
+                                            style={{
+                                                opacity: .5,
+                                            }}
+                                        >
+                                            {x.text}
+                                        </div>
+                                    ) : (
                                         <Link
                                             key={x.text}
                                             href={x.href}
@@ -186,7 +216,7 @@ export const Header: React.FC = () => {
                         ))}
                     </MobileMenu>
                 )}
-            </header>
+            </header >
             <div className={s.headerSpacer} />
         </>
     )

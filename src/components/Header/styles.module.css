@@ -10,7 +10,7 @@
 .headerSpacer {
     position: relative;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
 }
 
 .headerSection>div {
@@ -70,7 +70,7 @@
     }
 
     .headerSpacer {
-        height: 2rem;
+        height: 8rem;
     }
 
     .menuButton {

@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
 import openCall from '../../../public/openCall.jpg'
-import cog from '../../../public/cog.png'
+import bubbles from '../../../public/bubbles.png'
+import spring from '../../../public/spring.png'
 import eraserhead from '../../../public/eraserhead.gif'
 import ramsy from '../../../public/ramsy.gif'
 import springCircle from '../../../public/springCircle.png'
@@ -24,12 +25,15 @@ const data = [
         text: (
             <Flex
                 col
+                style={{
+                    gap: 0,
+                }}
             >
                 <p>
-                    Вы первый к кому приходят гости фестиваля со всеми вопросами и переживаниями. Мы заранее собираем всю нужную информацию, за пару дней до начала фестиваля оформляем стенды. На самом фестивале — посменно дежурим и общаемся с посетителями. А ещё ставим телефоны на зарядку и продаём красивые футболки.
+                    Вы первый к кому приходят гости резиденции со всеми вопросами и переживаниями. Мы заранее собираем всю нужную информацию, за пару дней до начала резиденции оформляем стенды. На самом резиденции — посменно дежурим и общаемся с посетителями. А ещё ставим телефоны на зарядку и продаём красивые футболки.
                 </p>
                 <p>
-                    «Инфоцентр» также работает в онлайн - формате до фестиваля.Мы общаемся с подписчиками в социальных сетях, отвечаем на вопросы из почты и с сайта.Это не страшно и много времени не занимает — всему научим!
+                    «Инфоцентр» также работает в онлайн - формате до резиденции. Мы общаемся с подписчиками в социальных сетях, отвечаем на вопросы из почты и с сайта.Это не страшно и много времени не занимает — всему научим!
                 </p>
                 <p>
                     Мы будем рады людям, которые: ответственны и инициативны, умеют находить общий язык с другими людьми, быстро учатся и ещё быстрее соображают, способны сохранять спокойствие в самых невообразимых ситуациях.
@@ -48,9 +52,12 @@ const data = [
         text: (
             <Flex
                 col
+                style={{
+                    gap: 0,
+                }}
             >
                 <p>
-                    Все постройки мы возводим заново, а после фестиваля — разбираем, поэтому строители нужны нам всегда.
+                    Все постройки мы возводим заново, а после резиденции — разбираем, поэтому строители нужны нам всегда.
                 </p>
                 <p>
                     В команду строителей мы ищем людей с разными навыками и опытом:
@@ -59,27 +66,24 @@ const data = [
                     Мы будем рады если: у тебя есть опыт в строительстве, ты умеешь читать чертежи и работать с людьми, ты быстро учишься, в состоянии забить гвоздь, тебе можно доверить шуруповёрт, и ты очень хочешь строить. Мы очень приветствуем исполнительность, дисциплинированность, физическую выносливость и бережное отношение к инструменту.
                 </p>
                 <p style={{ fontWeight: 700, }}>
-                    Внимание! Наши строители строят объекты инфраструктуры фестиваля. Если вы хотите построить свой арт-объект или реализовать другую идею, отправляйте свои заявки на почту <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>
+                    Внимание! Наши строители строят объекты инфраструктуры резиденции. Если вы хотите построить свой арт-объект или реализовать другую идею, отправляйте свои заявки на почту <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>
                 </p>
                 <Section bg>
                     <Parallax
-                        scaleY={[1, 1.5]}
-                        scaleX={[1, .7]}
-                        shouldAlwaysCompleteAnimation
+                        // scaleY={[1, 1.5]}
+                        // scaleX={[1, .7]}
+                        // shouldAlwaysCompleteAnimation
                         style={{
                             position: 'absolute',
-                            left: '-30%',
-                            transformOrigin: 'top center'
+                            left: '-100%',
+                            transformOrigin: 'top center',
                         }}
                     >
                         <Image
-                            style={{
-                                transformOrigin: 'center top'
-                            }}
                             src={springCircle}
                             alt='хромированная пружинка'
-                            width={400}
-                            height={400}
+                            width={800}
+                            height={800}
                         />
                     </Parallax >
                 </Section>
@@ -97,17 +101,20 @@ const data = [
         text: (
             <Flex
                 col
+                style={{
+                    gap: 0,
+                }}
             >
                 <p>
                     Наша задача — накормить и напоить всех волонтеров, организаторов, спикеров, журналистов, фотографов и партнеров, учитывая пожелания и особенности (если они есть).
                 </p>
                 <p>
-                    Кухня работает ежедневно и без выходных: есть хочется всем и всегда. Работники кухни топят, чистят, режут, готовят, моют, раздают и поддерживают чистоту и порядок. Три раза в день кухня становится центром фестивальной жизни. А ещё в дни фестиваля мы работаем в ночь.
+                    Кухня работает ежедневно и без выходных: есть хочется всем и всегда. Работники кухни топят, чистят, режут, готовят, моют, раздают и поддерживают чистоту и порядок. Три раза в день кухня становится центром фестивальной жизни. А ещё в дни резиденции мы работаем в ночь.
                 </p>
                 <p>
                     Мы ждем: умеющих и любящих готовить, ответственных, веселых и аккуратных людей. (Можно с детьми). Очень важно, чтобы тебя не раздражала вся эта кутерьма, происходящая на кухне — шум, дети, мытье посуды, вечно голодные и не всегда довольные люди.
                 </p>
-                <Section bg>
+                {/* <Section bg>
                     <Parallax
                         opacity={[0, 3.5]}
                         easing={[.5, .1, .5, -.1]}
@@ -123,7 +130,7 @@ const data = [
                             className={s.ramsy}
                         />
                     </Parallax >
-                </Section>
+                </Section> */}
             </Flex>
         )
     },
@@ -132,15 +139,18 @@ const data = [
             <Title
                 level={2}
             >
-                БИОСТАНЦИЯ
+                ЭКОСТАНЦИЯ
             </Title>
         ),
         text: (
             <Flex
                 col
+                style={{
+                    gap: 0,
+                }}
             >
                 <p>
-                    Наша главная задача — сделать так, чтобы после фестиваля остался минимальный экологический след. Мы собираем отходы и отправляем на переработку то, что можно переработать, вывозим на полигон то, что переработать нельзя, и учим посетителей отличать одно от другого. Организуем точки сбора мусора и место его хранения, раздаем пакеты для раздельного сбора, следим за чистотой на поляне. А ещё ставим шатер от наших партнеров, где рассказываем всем желающим, как беречь природу и делать мир чище и уютнее.
+                    Наша главная задача — сделать так, чтобы после резиденции остался минимальный экологический след. Мы собираем отходы и отправляем на переработку то, что можно переработать, вывозим на полигон то, что переработать нельзя, и учим посетителей отличать одно от другого. Организуем точки сбора мусора и место его хранения, раздаем пакеты для раздельного сбора, следим за чистотой на поляне. А ещё ставим шатер от наших партнеров, где рассказываем всем желающим, как беречь природу и делать мир чище и уютнее.
                 </p>
                 <p>
                     Мы будем рады как творческим девушкам, так и выносливым богатырям — задач хватит на всех. Особенно будем ценить: дружелюбных, экологически просвещенных или стремящихся к этому. Тех, кто любит и ценит природу, физически выносливых и готовых остаться на разбор.
@@ -154,39 +164,50 @@ export const VolunteerPage = ({ onClick }) => {
     const isMobile = useMobile()
     return (
         <>
-            <Section>
-                <div
-                    className={s.topImage}
-                >
-                    <Image
-                        src={openCall}
-                        alt=''
-                        fill
-                    />
-                </div>
-                <Title
+            <Section
+                style={{
+                    position: 'relative',
+                }}
+            >
+                <Parallax
+                    // rotateZ={[-180, 0]}
+                    // translateX={[-100, 50]}
+                    // shouldAlwaysCompleteAnimation
                     style={{
                         position: 'absolute',
-                        zIndex: 1,
-                        left: 'var(--section-spacing)',
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        marginLeft: !isMobile && '3rem',
-                        color: 'white',
-                        ...(isMobile && { fontSize: 18 })
+                        zIndex: -1,
+                        top: '-100%',
+                        left: '20%',
                     }}
                 >
-                    OPEN CALL ДЛЯ ВОЛОНТЕРОВ
+                    <div>
+                        <Image
+                            src={spring}
+                            alt=''
+                        />
+                    </div>
+                </Parallax>
+                <Title
+                    style={{
+                        marginLeft: !isMobile && '3rem',
+                        fontFamily: 'Eskos',
+                        fontSize: '10rem',
+                        lineHeight: '10rem',
+                        ...(isMobile && { fontSize: '5rem', lineHeight: '5rem' }),
+                    }}
+                >
+                    OPEN CALL<br />
+                    ДЛЯ ВОЛОНТЕРОВ
                 </Title>
                 <Section bg
                     style={{
-                        zIndex: 2,
+                        zIndex: -1,
                     }}
                 >
                     <Parallax
-                        rotateY={[0, 180]}
-                        translateY={[0, 50]}
-                        shouldAlwaysCompleteAnimation
+                        // rotateY={[0, 180]}
+                        // translateY={[0, 50]}
+                        // shouldAlwaysCompleteAnimation
                         style={{
                             position: 'absolute',
                             top: -200,
@@ -194,7 +215,7 @@ export const VolunteerPage = ({ onClick }) => {
                         }}
                     >
                         <Image
-                            src={cog}
+                            src={bubbles}
                             alt='хромированная снежинка'
                             className={s.cog}
                         />
@@ -202,37 +223,30 @@ export const VolunteerPage = ({ onClick }) => {
                 </Section>
             </Section>
 
-            {data.map((x, i) => (
-                <Section
-                    key={i}
+            <Section>
+                <Flex
+                    style={{
+                        flexWrap: 'wrap',
+                    }}
                 >
-                    <Flex
-                        style={{
-                            marginBottom: '8rem',
-                        }}
-                    >
-                        {i % 2 == 1 && (
-                            <div style={{
-                                flex: '1 0 33%',
-                            }} />
-                        )}
-                        <Flex
-                            col
-                            className={s.flexCol}
+                    {data.map((x, i) => (
+                        <Section
+                            key={i}
+                            className={s.blockSection}
                         >
-                            {x.title}
-                            {x.text}
-                        </Flex>
-                        {i % 2 == 0 && (
-                            <div style={{
-                                flex: '1 0 33%',
-                            }} />
-                        )}
+                    <Flex
+                        col
+                        className={s.flexCol}
+                    >
+                        {x.title}
+                        {x.text}
                     </Flex>
-                </Section>
-            ))}
+            </Section>
+                    ))}
+        </Flex >
+            </Section >
 
-            <Section bg>
+{/* <Section bg>
                 <Parallax
                     rotateZ={[-180, 0]}
                     translateX={[-100, 50]}
@@ -250,27 +264,27 @@ export const VolunteerPage = ({ onClick }) => {
                         className={s.eraserhead}
                     />
                 </Parallax >
-            </Section>
+            </Section> */}
 
-            <Section>
-                <Flex
-                    style={{
-                        justifyContent: 'center',
-                        marginBottom: '8rem',
-                    }}
-                >
-                    <Button
-                        theme='fancy'
-                        style={{
-                            maxWidth: '35rem',
-                            paddingLeft: '3rem',
-                            paddingRight: '3rem',
-                        }}
-                        onClick={onClick}
-                    >
-                        присоедениться
-                    </Button>
-                </Flex>
+    < Section >
+    <Flex
+        style={{
+            justifyContent: 'center',
+            marginBottom: '8rem',
+            marginTop: '3rem',
+        }}
+    >
+        <Button
+            theme='fancy'
+            style={{
+                maxWidth: '35rem',
+                padding: '3rem 2rem',
+            }}
+            onClick={onClick}
+        >
+            присоедениться
+        </Button>
+    </Flex>
             </Section >
         </>
     )
