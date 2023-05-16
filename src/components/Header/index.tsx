@@ -9,6 +9,7 @@ import { Section } from '../Section'
 import { useMobile } from 'src/hooks/useMobile'
 import Hamburger from 'hamburger-react'
 import { useRouter } from 'next/router'
+
 const menu = {
     'о резиденции': [
         {
@@ -103,7 +104,7 @@ export const Header: React.FC = () => {
         <>
             <header className={s.header}
                 style={spechialHeader ? {
-                    background: '#fffd',
+                    background: '#defffcdd',
                 } : {}}
             >
                 <Section

@@ -20,7 +20,7 @@ const roles = [
     'Инфоцентр',
     'МАСТЕРСКАЯ',
     'КУХНЯ',
-    'БИОСТАНЦИЯ',
+    'ЭКОСТАНЦИЯ',
 ]
 
 export const VolunteerForm: React.FC<any> = () => {

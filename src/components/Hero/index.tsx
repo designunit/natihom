@@ -94,7 +94,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
             >
                 <Image
                     src={aboutText}
-                    alt='текст про фестиваль в целом'
+                    alt='текст про резиденцию в целом'
                 />
                 <Flex col
                     style={{

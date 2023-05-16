@@ -1,15 +1,13 @@
 import { NextPage } from 'next'
 import React, { useState } from 'react'
 import { Modal } from 'src/components/Modal'
-import { VolunteerPage } from 'src/components/VolunteerPage'
+import { PageVolunteers } from 'src/components/PageVolunteers'
 
 const Page: NextPage = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
         <>
-            <VolunteerPage
-                onClick={() => setModalIsOpen(true)}
-            />
+            <PageVolunteers />
             <Modal
                 tag='volunteers'
             />

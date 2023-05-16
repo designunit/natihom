@@ -4,7 +4,7 @@ import { Flex } from 'src/components/Flex'
 import Image from 'next/image'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
-import bubbles from '../../../public/bubbles.png'
+import blob from '../../../public/blob.gif'
 import spring from '../../../public/spring.png'
 import springCircle from '../../../public/springCircle.png'
 import { Title } from '../Title'
@@ -67,25 +67,6 @@ const data = [
                 <p style={{ fontWeight: 700, }}>
                     Внимание! Наши строители строят объекты инфраструктуры резиденции. Если вы хотите построить свой арт-объект или реализовать другую идею, отправляйте свои заявки на почту <a href='mailto:natihom@unit4.io'>natihom@unit4.io</a>
                 </p>
-                <Section bg>
-                    <Parallax
-                        // scaleY={[1, 1.5]}
-                        // scaleX={[1, .7]}
-                        // shouldAlwaysCompleteAnimation
-                        style={{
-                            position: 'absolute',
-                            left: '-100%',
-                            transformOrigin: 'top center',
-                        }}
-                    >
-                        <Image
-                            src={springCircle}
-                            alt='хромированная пружинка'
-                            width={800}
-                            height={800}
-                        />
-                    </Parallax >
-                </Section>
             </Flex>
         )
     },
@@ -159,7 +140,7 @@ const data = [
     },
 ]
 
-export const VolunteerPage = () => {
+export const PageVolunteers = () => {
     const isMobile = useMobile()
     const { setModalState } = useContext(ModalContext)
     const onClick = useCallback(() => {
@@ -168,7 +149,7 @@ export const VolunteerPage = () => {
             modalIsOpen: true,
         })
     }, [])
-    
+
     return (
         <>
             <Section
@@ -176,24 +157,26 @@ export const VolunteerPage = () => {
                     position: 'relative',
                 }}
             >
-                <Parallax
-                    // rotateZ={[-180, 0]}
-                    // translateX={[-100, 50]}
-                    // shouldAlwaysCompleteAnimation
-                    style={{
-                        position: 'absolute',
-                        zIndex: -1,
-                        top: '-100%',
-                        left: '20%',
-                    }}
-                >
-                    <div>
+                <Section>
+                    <Parallax
+                        // scaleY={[1, 1.5]}
+                        // scaleX={[1, .7]}
+                        // shouldAlwaysCompleteAnimation
+                        style={{
+                            position: 'absolute',
+                            zIndex: -1,
+                            top: '-100px',
+                            left: '45%',
+                        }}
+                    >
                         <Image
-                            src={spring}
-                            alt=''
+                            src={blob}
+                            alt='хромированная пружинка'
+                            width={300}
+                            height={300}
                         />
-                    </div>
-                </Parallax>
+                    </Parallax>
+                </Section>
                 <Title
                     style={{
                         marginLeft: !isMobile && '3rem',
@@ -207,31 +190,29 @@ export const VolunteerPage = () => {
                     OPEN CALL<br />
                     ДЛЯ ВОЛОНТЕРОВ
                 </Title>
-                <Section bg
-                    style={{
-                        zIndex: -1,
-                    }}
-                >
-                    <Parallax
-                        // rotateY={[0, 180]}
-                        // translateY={[0, 50]}
-                        // shouldAlwaysCompleteAnimation
-                        style={{
-                            position: 'absolute',
-                            top: -200,
-                            right: -20,
-                        }}
-                    >
-                        <Image
-                            src={bubbles}
-                            alt='хромированная снежинка'
-                            className={s.cog}
-                        />
-                    </Parallax >
-                </Section>
             </Section>
 
             <Section>
+                <Section bg>
+                    <Parallax
+                        rotateZ={[0, -45]}
+                        translateY={[0, 50]}
+                        shouldAlwaysCompleteAnimation
+                        style={{
+                            position: 'absolute',
+                            top: '200px',
+                            left: '60%',
+                        }}
+                    >
+                        <Image
+                            src={springCircle}
+                            alt='хромированная снежинка'
+                            className={s.cog}
+                            width={500}
+                            height={500}
+                        />
+                    </Parallax>
+                </Section>
                 <Flex
                     style={{
                         flexWrap: 'wrap',
@@ -286,7 +267,8 @@ export const VolunteerPage = () => {
                         theme='fancy'
                         style={{
                             maxWidth: '35rem',
-                            padding: '3rem 2rem',
+                            padding: '2.5rem 2rem',
+                            margin: '0 auto',
                         }}
                         onClick={onClick}
                     >

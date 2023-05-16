@@ -39,7 +39,7 @@ const data = [
         description: 'координатор студии DESIGN UNIT 4\nпродюсер резиденции',
         image: valuha,
     },
-    
+
     {
         name: 'Данияр Юсупов',
         description: 'сооснователь студии\nDESIGN UNIT 4\nэксперт конкурса',
@@ -98,11 +98,14 @@ export const PageTeam = () => {
             >
                 {!isMobile && (
                     <Parallax
-                        scale={[1, .25]}
+                        rotateZ={[-360 * 1, 0]}
+                        scale={[.5, .5]}
+                        shouldAlwaysCompleteAnimation
                         style={{
                             position: 'absolute',
                             left: '25%',
                             top: -50,
+                            transformOrigin: '35% center',
                         }}
                     >
                         <Image
@@ -154,6 +157,7 @@ export const PageTeam = () => {
                     className={s.title}
                     style={{
                         fontFamily: 'Eskos',
+                        marginBottom: '8rem',
                     }}
                 >
                     команда
@@ -173,9 +177,12 @@ export const PageTeam = () => {
                     className={s.movie}
                 >
                     <Parallax
-                        scale={[1, .25]}
+                        scale={[.5, .5]}
+                        rotateZ={[-360 * 1, 0]}
+                        shouldAlwaysCompleteAnimation
                         style={{
                             position: 'relative',
+                            transformOrigin: '35% center',
                         }}
                     >
                         <Image

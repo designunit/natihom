@@ -8,8 +8,10 @@ export const PageLayout: React.FC<any> = props => {
     const isPage2023 = router.pathname == '/2023'
     const isPage2022 = router.pathname == '/2022'
     const isPageTeam = router.pathname == '/team'
+    const isPageVol = router.pathname == '/volunteers'
 
-    const isBgYellow = isPage2023 || isPageTeam
+    const isBgYellow = isPage2023
+    const isBgBlue = isPageVol || isPageTeam
     return (
         <main style={{
             position: 'relative',
@@ -35,6 +37,11 @@ export const PageLayout: React.FC<any> = props => {
             />
 
             <style>{`
+                ${isBgBlue && `
+                    body {
+                        background-color: var(--color-blue);
+                    }
+                `}
                 ${isBgYellow && `
                     body {
                         background-color: var(--color-yellow);
