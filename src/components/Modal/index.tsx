@@ -32,17 +32,14 @@ export const Modal: React.FC<{
             ariaHideApp={false}
         >
             <>
-                modal content
                 {/* {tag == 'default' && (
                     <JoinForm
                         setModalIsOpen={setModalIsOpen}
                     />
-                )}
-                {tag == 'volunteers' && (
-                    <VolunteerForm
-                        setModalIsOpen={setModalIsOpen}
-                    />
                 )} */}
+                {tag == 'volunteers' && (
+                    <VolunteerForm />
+                )}
             </>
         </ReactModal>
     )

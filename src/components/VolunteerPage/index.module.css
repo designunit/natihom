@@ -1,18 +1,17 @@
 .flexCol h2 {
     width: fit-content;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .blockSection {
     flex: 1 0 calc(50% - var(--content-spacing));
-    height: 100%;
+    --color: #DEFFFC8c;
+    background-color: var(--color);
 }
 
 .flexCol {
-    --color: #fee1ef8c;
     padding: 2rem;
     gap: 0;
-    background-color: var(--color);
 }
 .blockSection>div {
     padding: unset;

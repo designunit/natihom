@@ -128,7 +128,9 @@ export const Header: React.FC = () => {
                                         <div
                                             key={x.text}
                                             style={{
+                                                fontSize: 14,
                                                 opacity: .5,
+                                                display: 'none',
                                             }}
                                         >
                                             {x.text}
@@ -193,7 +195,9 @@ export const Header: React.FC = () => {
                                         <div
                                             key={x.text}
                                             style={{
+                                                fontSize: 14,
                                                 opacity: .5,
+                                                display: 'none',
                                             }}
                                         >
                                             {x.text}

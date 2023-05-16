@@ -11,9 +11,6 @@ const Team: React.FC<{ data: any[] }> = ({ data }) => (
         <Flex className={s.flex}>
             {data.map((x, i) => (
                 <Flex className={s.item} key={i}>
-                    <div className={s.name}>
-                        {x.name}
-                    </div>
                     <div className={s.imgContainer}>
                         <Image
                             className={s.img}
@@ -21,6 +18,9 @@ const Team: React.FC<{ data: any[] }> = ({ data }) => (
                             alt=''
                             fill
                         />
+                    </div>
+                    <div className={s.name}>
+                        {x.name}
                     </div>
                     <div className={s.description}>
                         {x.description}

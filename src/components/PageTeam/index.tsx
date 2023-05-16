@@ -3,8 +3,8 @@ import { Section } from 'src/components/Section'
 import Image from 'next/image'
 import { Parallax } from 'react-scroll-parallax'
 import disnry from '../../../public/disnry.gif'
-import img56 from '../../../public/img56.png'
-import img7 from '../../../public/img7.png'
+import img56 from '../../../public/img56.webp'
+import img7 from '../../../public/img7.webp'
 
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
@@ -163,13 +163,6 @@ export const PageTeam = () => {
             <Team
                 data={data}
             />
-            {isMobile && (
-                <Section
-                    className={s.mobileButton}
-                >
-                    {button}
-                </Section>
-            )}
 
             <div style={{
                 height: 69,

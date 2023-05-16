@@ -4,14 +4,13 @@ import { Flex } from 'src/components/Flex'
 import Image from 'next/image'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
-import openCall from '../../../public/openCall.jpg'
 import bubbles from '../../../public/bubbles.png'
 import spring from '../../../public/spring.png'
-import eraserhead from '../../../public/eraserhead.gif'
-import ramsy from '../../../public/ramsy.gif'
 import springCircle from '../../../public/springCircle.png'
 import { Title } from '../Title'
 import { Parallax } from 'react-scroll-parallax'
+import { useCallback, useContext } from 'react'
+import { ModalContext } from 'src/context/modal'
 
 const data = [
     {
@@ -160,8 +159,16 @@ const data = [
     },
 ]
 
-export const VolunteerPage = ({ onClick }) => {
+export const VolunteerPage = () => {
     const isMobile = useMobile()
+    const { setModalState } = useContext(ModalContext)
+    const onClick = useCallback(() => {
+        setModalState({
+            tag: 'volunteers',
+            modalIsOpen: true,
+        })
+    }, [])
+    
     return (
         <>
             <Section
@@ -193,6 +200,7 @@ export const VolunteerPage = ({ onClick }) => {
                         fontFamily: 'Eskos',
                         fontSize: '10rem',
                         lineHeight: '10rem',
+                        textAlign: 'left',
                         ...(isMobile && { fontSize: '5rem', lineHeight: '5rem' }),
                     }}
                 >
@@ -234,19 +242,19 @@ export const VolunteerPage = ({ onClick }) => {
                             key={i}
                             className={s.blockSection}
                         >
-                    <Flex
-                        col
-                        className={s.flexCol}
-                    >
-                        {x.title}
-                        {x.text}
-                    </Flex>
-            </Section>
+                            <Flex
+                                col
+                                className={s.flexCol}
+                            >
+                                {x.title}
+                                {x.text}
+                            </Flex>
+                        </Section>
                     ))}
-        </Flex >
+                </Flex >
             </Section >
 
-{/* <Section bg>
+            {/* <Section bg>
                 <Parallax
                     rotateZ={[-180, 0]}
                     translateX={[-100, 50]}
@@ -266,25 +274,25 @@ export const VolunteerPage = ({ onClick }) => {
                 </Parallax >
             </Section> */}
 
-    < Section >
-    <Flex
-        style={{
-            justifyContent: 'center',
-            marginBottom: '8rem',
-            marginTop: '3rem',
-        }}
-    >
-        <Button
-            theme='fancy'
-            style={{
-                maxWidth: '35rem',
-                padding: '3rem 2rem',
-            }}
-            onClick={onClick}
-        >
-            присоедениться
-        </Button>
-    </Flex>
+            < Section >
+                <Flex
+                    style={{
+                        justifyContent: 'center',
+                        marginBottom: '8rem',
+                        marginTop: '3rem',
+                    }}
+                >
+                    <Button
+                        theme='fancy'
+                        style={{
+                            maxWidth: '35rem',
+                            padding: '3rem 2rem',
+                        }}
+                        onClick={onClick}
+                    >
+                        присоедениться
+                    </Button>
+                </Flex>
             </Section >
         </>
     )
