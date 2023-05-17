@@ -5,6 +5,7 @@ import { JoinForm } from '../JoinForm'
 import { VolunteerForm } from '../VolunteerForm'
 import { useContext, useEffect } from 'react'
 import { ModalContext } from 'src/context/modal'
+import Script from 'next/script'
 
 
 export type ModalProps = Omit<ReactModal.Props, 'closeTimeoutMS'>
@@ -32,11 +33,29 @@ export const Modal: React.FC<{
             ariaHideApp={false}
         >
             <>
-                {/* {tag == 'default' && (
-                    <JoinForm
-                        setModalIsOpen={setModalIsOpen}
-                    />
-                )} */}
+                {/* <JoinForm
+                    setModalIsOpen={setModalIsOpen}
+                /> */}
+                {tag == 'default' && (
+                    <>
+                        <Script
+                            id='timepad-script'
+                            charSet='UTF-8'
+                            strategy='afterInteractive'
+
+                            data-timepad-customized="186656"
+                            data-timepad-widget-v2="event_register"
+                            src="https://timepad.ru/js/tpwf/loader/min/loader.js"
+
+                            data-twf2s-event--id='2077224'
+                        // data-twf2s-display='popup'
+                        >
+                            {`(function { return {
+                                "initialRoute": "button",
+                            }})()`}
+                        </Script>
+                    </>
+                )}
                 {tag == 'volunteers' && (
                     <VolunteerForm />
                 )}
