@@ -10,13 +10,6 @@ import spring from '../../../public/spring.png'
 import skoro from '../../../public/skoro.svg'
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
-import dynamic from 'next/dynamic'
-
-// this shit causes hydaration missmatch but idk how to render it only client-side
-const TimePadScript = dynamic(
-    () => import('../TimePad').then(x => x.TimePad),
-    // { ssr: false },
-)
 
 export const Page2023 = () => {
     const isMobile = useMobile()
@@ -36,7 +29,6 @@ export const Page2023 = () => {
 
     return (
         <>
-            <TimePadScript />
             <Section bg
                 className={s.bubbles}
             >

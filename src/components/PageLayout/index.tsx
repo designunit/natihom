@@ -3,6 +3,13 @@ import { useRouter } from 'next/router'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 
+// this shit causes hydaration missmatch but idk how to render it only client-side
+import dynamic from 'next/dynamic'
+const TimePadScript = dynamic(
+    () => import('../TimePad').then(x => x.TimePad),
+    // { ssr: false },
+)
+
 export const PageLayout: React.FC<any> = props => {
     const router = useRouter()
     const isPage2023 = router.pathname == '/2023'
@@ -17,6 +24,7 @@ export const PageLayout: React.FC<any> = props => {
             position: 'relative',
             minHeight: '100vh',
         }}>
+            <TimePadScript />
             <NextSeo
                 title='Unit на тихом'
                 description='
