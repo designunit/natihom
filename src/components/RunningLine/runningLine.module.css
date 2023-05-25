@@ -1,47 +1,53 @@
 .container {
-    position: absolute;
+    position: fixed;
     left: 0;
+    z-index: 100;
     width: 100%;
     display: flex;
+    flex-wrap: nowrap;
     gap: 2rem;
     padding: 1rem 0;
-    background: transparent;
+    background: black;
     overflow: hidden;
-
-    border-left: none;
-    border-right: none;
+    color: white;
 }
 
-.container > * {
-    flex-shrink: 0;
-    padding-right: .5rem;
-    min-width: 100%;
+.container>* {
+    display: block;
+    flex: 1 1 auto;
+    width: fit-content;
     white-space: nowrap;
     font-size: 2rem;
 }
 
-.left > * {
+.left>* {
     animation: animLeft 20s infinite linear;
 }
 
-.right > * {
+.right>* {
     animation: animRight 20s infinite linear;
+}
+
+.inverse {
+    filter: invert(1);
 }
 
 @keyframes animLeft {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     to {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 }
 
 @keyframes animRight {
     from {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
+
     to {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
 }

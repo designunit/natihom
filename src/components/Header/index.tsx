@@ -64,7 +64,7 @@ const menuStyles = {
         height: '48px',
         top: '8px',
         left: '16px',
-        marginTop: '.125rem',
+        marginTop: 'calc(var(--content-spacing) + 2.5rem )',
         marginRight: '10px',
         zIndex: '1101',
     },
@@ -86,7 +86,7 @@ const menuStyles = {
         left: '0',
     },
     bmItemList: {
-        marginTop: '6rem',
+        marginTop: '12rem',
         marginLeft: '10px',
         height: 'auto',
         display: 'flex',
@@ -103,6 +103,20 @@ export const Header: React.FC = () => {
 
     return (
         <>
+            <RunningLine
+                direction={'right'}
+                animationDuration={'25s'}
+            >
+                {'скоро обьявим архитектурный конкурс оставайтесь на '}
+                <a
+                    href='https://t.me/unitnatihom'
+                    style={{
+                        color: ' white',
+                    }}
+                >
+                    связи
+                </a>
+            </RunningLine>
             <header className={s.header}
                 style={spechialHeader ? {
                     background: '#defffcdd',
@@ -222,20 +236,6 @@ export const Header: React.FC = () => {
                         ))}
                     </MobileMenu>
                 )}
-                <RunningLine
-                    direction={'right'}
-                    animationDuration={'25s'}
-                >
-                    {'скоро обьявим архитектурный конкурс, оставайтесь на '}
-                    <a
-                        href='https://t.me/unitnatihom'
-                        style={{
-                            color: 'white',
-                        }}
-                    >
-                        связи
-                    </a>
-                </RunningLine>
             </header>
             <div className={s.headerSpacer} />
         </>
