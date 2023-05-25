@@ -7,6 +7,7 @@ import aboutText from '../../../public/aboutText.png'
 import glitch from '../../../public/glitch.gif'
 import cog from '../../../public/cog.png'
 import textImg from '../../../public/2022Text.png'
+import img92 from '../../../public/img92.webp'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
 import { Autoplay, Navigation } from 'swiper'
@@ -27,8 +28,36 @@ export const Page2022 = () => {
             <Section
                 className={s.video}
             >
-                <Flex>
-                    <Flex col>
+                <Flex
+                    style={{
+                        justifyContent: 'space-between',
+                    }}
+                >
+
+                    <Section bg>
+                        <Parallax
+                            scale={[1, 1.5]}
+                            shouldAlwaysCompleteAnimation
+                            style={{
+                                position: 'absolute',
+                                top: 100,
+                                left: '53%',
+                            }}
+                        >
+                            <Image
+                                src={img92}
+                                alt=''
+                                width={200}
+                                height={200}
+                            />
+                        </Parallax>
+                    </Section>
+                    <Flex
+                        col
+                        style={{
+                            flex: '0 1 50%',
+                        }}
+                    >
                         <b>место: оз. Тихое</b>
                         <b>Даты: 16-18 Августа 2022</b>
                         <span> <b>Музыканты:</b> BARKAL, DRKBLCK, LE BEAU SERGE, Dj Countryman,Low Priority, Dj Countryman, Derun, Ply Tone, MR. GUYVER</span>
@@ -36,15 +65,16 @@ export const Page2022 = () => {
                         <span>Мы разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом мы придумали лесную резиденцию архитекторов, дизайнеров и всех причастных. Идея резиденции возникла из всеобщего запроса на поиск смыслов, расширение экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря. Мы запустили проектную лабораторию и со студентами готовим инфраструктуру резиденции на берегу озера. Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.</span>
                     </Flex>
                     <iframe
-                        src="https://www.youtube.com/embed/7E0ot9iJm_k"
+                        src="https://www.youtube.com/embed/4eXg4cZT4l8"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         style={{
-                            flex: '1 0 50%',
+                            flex: '0 1 auto',
                             border: 'none',
-                            aspectRatio: '16 / 9',
+                            aspectRatio: '9 / 16',
                         }}
                     />
+
                 </Flex>
             </Section>
 
