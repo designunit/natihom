@@ -9,6 +9,12 @@ import cog from '../../../public/cog.png'
 import textImg from '../../../public/2022Text.png'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
+import { Autoplay, Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/autoplay'
 
 export const Page2022 = () => {
     const isMobile = useMobile()
@@ -125,21 +131,52 @@ export const Page2022 = () => {
                 }}
                 className={s.photos}
             >
-                <Button
-                    href='https://disk.yandex.ru/d/nO97CIb7jZjImA'
+                <div
                     style={{
                         position: 'absolute',
                         top: 'calc(var(--section-spacing) * 1)',
                         right: 'calc(var(--section-spacing) * 2)',
+                        background: 'white',
+                        fontSize: '4rem',
+                        padding: '1rem',
                     }}
                 >
-                    всякие фотки
-                </Button>
+                    ↓↓↓ фото2022
+                </div>
                 <Image
                     src={textImg}
                     alt='текст на фоне людей'
                 />
             </Section>
+            <div
+                className={s.swiperContainer}
+            >
+                <Swiper
+                    slidesPerView={1}
+                    modules={[Navigation, Autoplay]}
+                    loop
+                    autoplay={{
+                        delay: 5000,
+                    }}
+                    navigation
+                    wrapperClass={s.swiperWrapper}
+                >
+                    {Array(25).fill(null).map((x, i) => (
+                        <SwiperSlide
+                            key={i}
+                            style={{
+                                minHeight: '90vh',
+                            }}
+                        >
+                            <Image
+                                src={`/2022/img (${i + 1}).JPG`}
+                                alt={''}
+                                fill
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
         </>
     )
 }

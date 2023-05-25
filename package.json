@@ -24,7 +24,8 @@
     "react-modal": "^3.11.2",
     "react-parallax-tilt": "^1.7.43",
     "react-scroll-parallax": "^3.3.2",
-    "react-use": "^17.4.0"
+    "react-use": "^17.4.0",
+    "swiper": "^9.3.2"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",

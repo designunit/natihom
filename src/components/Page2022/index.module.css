@@ -1,23 +1,38 @@
-@media screen and (max-width : 1024px) {
-    .video>div>div {
-        flex-direction: column-reverse;
-    }
+ .swiperContainer :global(:is(.swiper-button-prev, .swiper-button-next)) {
+     color: black;
+     background: white;
+ }
 
-    .video iframe {
-        width: 100%;
-        height: auto;
-    }
+ .swiperContainer {
+     max-width: 1512px;
+     padding: 0 var(--section-spacing);
+     margin: 0 auto;
+ }
 
-    .photos img {
-        width: 100% !important;
-        height: auto !important;
-    }
+ .swiperContainer>div {
+     position: relative;
+ }
 
-    .photos button {
-        width: max-content;
-        font-size: 14px;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%);
-    }
-}
+ @media screen and (max-width : 1024px) {
+     .video>div>div {
+         flex-direction: column-reverse;
+     }
+
+     .video iframe {
+         width: 100%;
+         height: auto;
+     }
+
+     .photos img {
+         width: 100% !important;
+         height: auto !important;
+     }
+
+     .photos button {
+         width: max-content;
+         font-size: 14px;
+         left: 50% !important;
+         top: 50% !important;
+         transform: translate(-50%, -50%);
+     }
+ }
