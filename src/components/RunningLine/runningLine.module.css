@@ -1,0 +1,47 @@
+.container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    background: transparent;
+    overflow: hidden;
+
+    border-left: none;
+    border-right: none;
+}
+
+.container > * {
+    flex-shrink: 0;
+    padding-right: .5rem;
+    min-width: 100%;
+    white-space: nowrap;
+    font-size: 2rem;
+}
+
+.left > * {
+    animation: animLeft 20s infinite linear;
+}
+
+.right > * {
+    animation: animRight 20s infinite linear;
+}
+
+@keyframes animLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}
+
+@keyframes animRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}

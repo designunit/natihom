@@ -9,6 +9,7 @@ import { Section } from '../Section'
 import { useMobile } from 'src/hooks/useMobile'
 import Hamburger from 'hamburger-react'
 import { useRouter } from 'next/router'
+import { RunningLine } from '../RunningLine'
 
 const menu = {
     'о резиденции': [
@@ -221,7 +222,21 @@ export const Header: React.FC = () => {
                         ))}
                     </MobileMenu>
                 )}
-            </header >
+                <RunningLine
+                    direction={'right'}
+                    animationDuration={'25s'}
+                >
+                    {'скоро обьявим архитектурный конкурс, оставайтесь на '}
+                    <a
+                        href='https://t.me/unitnatihom'
+                        style={{
+                            color: 'white',
+                        }}
+                    >
+                        связи
+                    </a>
+                </RunningLine>
+            </header>
             <div className={s.headerSpacer} />
         </>
     )
