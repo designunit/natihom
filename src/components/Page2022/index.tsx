@@ -1,4 +1,3 @@
-import { Button } from 'src/components/Button'
 import { Section } from 'src/components/Section'
 import { Flex } from 'src/components/Flex'
 import Image from 'next/image'
@@ -7,17 +6,15 @@ import aboutText from '../../../public/aboutText.png'
 import glitch from '../../../public/glitch.gif'
 import cog from '../../../public/cog.png'
 import textImg from '../../../public/2022Text.png'
-import img92 from '../../../public/img92.webp'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
 import { Autoplay, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import dynamic from 'next/dynamic'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
-// import ReactPlayer from 'react-player'
-import dynamic from 'next/dynamic'
 
 const ReactPlayer = dynamic(() => import('react-player'), {
     ssr: false
@@ -39,29 +36,10 @@ export const Page2022 = () => {
                         justifyContent: 'space-between',
                     }}
                 >
-
-                    {/* <Section bg>
-                        <Parallax
-                            scale={[1, 1.5]}
-                            shouldAlwaysCompleteAnimation
-                            style={{
-                                position: 'absolute',
-                                top: 100,
-                                left: '53%',
-                            }}
-                        >
-                            <Image
-                                src={img92}
-                                alt=''
-                                width={200}
-                                height={200}
-                            />
-                        </Parallax>
-                    </Section> */}
                     <Flex
                         col
                         style={{
-                            flex: '0 1 50%',
+                            flex: '1 1 50%',
                         }}
                     >
                         <b>место: оз. Тихое</b>
@@ -70,23 +48,16 @@ export const Page2022 = () => {
                         <span><b>Спикеры:</b> BARKAL, DRKBLCK, LE BEAU SERGE, Dj Countryman,Low Priority, Dj Countryman, Derun, Ply Tone, MR. GUYVER</span>
                         <span>Мы разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом мы придумали лесную резиденцию архитекторов, дизайнеров и всех причастных. Идея резиденции возникла из всеобщего запроса на поиск смыслов, расширение экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря. Мы запустили проектную лабораторию и со студентами готовим инфраструктуру резиденции на берегу озера. Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.</span>
                     </Flex>
-                    {/* <iframe
-                        src="https://www.youtube.com/embed/DPEGClo4OAA?autoplay=1"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        style={{
-                            position: 'relative',
-                            flex: '1 1 auto',
-                            border: 'none',
-                            aspectRatio: '16 / 9',
-                        }}
-                    /> */}
-                    <ReactPlayer
-                        url='/video-2022.mp4'
-                        playing
-                        muted
-                    />
-
+                    <div
+                        className={s.playerContainer}
+                    >
+                        <ReactPlayer
+                            url='/video-2022.mp4'
+                            playing
+                            muted
+                            loop
+                        />
+                    </div>
                 </Flex>
             </Section>
 
@@ -100,11 +71,7 @@ export const Page2022 = () => {
                         scaleX={[1, 1.5]}
                         translateX={[0, 25]}
                         shouldAlwaysCompleteAnimation
-                        // disabled={isMobile}
                         style={{
-                            // position: 'absolute',
-                            // top: 400,
-                            // right: -20,
                         }}
                     >
                         <Image
@@ -115,7 +82,6 @@ export const Page2022 = () => {
                     <Parallax
                         rotate={[0, 360]}
                         shouldAlwaysCompleteAnimation
-                        // disabled={isMobile}
                         style={{
                             position: 'absolute',
                             top: 0,
@@ -167,7 +133,7 @@ export const Page2022 = () => {
                 </Section>
             )}
 
-            <Section
+            {/* <Section
                 style={{
                     top: isMobile ? 0 : '-13rem',
                 }}
@@ -189,7 +155,7 @@ export const Page2022 = () => {
                     src={textImg}
                     alt='текст на фоне людей'
                 />
-            </Section>
+            </Section> */}
             <div
                 className={s.swiperContainer}
             >
