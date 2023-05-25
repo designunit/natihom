@@ -13,6 +13,14 @@
      position: relative;
  }
 
+ .video iframe::after {
+     position: absolute;
+     z-index: 1;
+     width: 100%;
+     height: 100%;
+     background-color: blue;
+ }
+
  @media screen and (max-width : 1024px) {
      .video>div>div {
          flex-direction: column-reverse;

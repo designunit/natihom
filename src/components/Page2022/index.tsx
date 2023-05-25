@@ -16,6 +16,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
+// import ReactPlayer from 'react-player'
+import dynamic from 'next/dynamic'
+
+const ReactPlayer = dynamic(() => import('react-player'), {
+    ssr: false
+})
 
 export const Page2022 = () => {
     const isMobile = useMobile()
@@ -34,7 +40,7 @@ export const Page2022 = () => {
                     }}
                 >
 
-                    <Section bg>
+                    {/* <Section bg>
                         <Parallax
                             scale={[1, 1.5]}
                             shouldAlwaysCompleteAnimation
@@ -51,7 +57,7 @@ export const Page2022 = () => {
                                 height={200}
                             />
                         </Parallax>
-                    </Section>
+                    </Section> */}
                     <Flex
                         col
                         style={{
@@ -64,15 +70,21 @@ export const Page2022 = () => {
                         <span><b>Спикеры:</b> BARKAL, DRKBLCK, LE BEAU SERGE, Dj Countryman,Low Priority, Dj Countryman, Derun, Ply Tone, MR. GUYVER</span>
                         <span>Мы разрабатываем средовые проекты разных масштабов: от урны до мастерплана. Этим летом мы придумали лесную резиденцию архитекторов, дизайнеров и всех причастных. Идея резиденции возникла из всеобщего запроса на поиск смыслов, расширение экосистемы профессионального сообщества в непривычном формате и средовом окружении леса и палаточного лагеря. Мы запустили проектную лабораторию и со студентами готовим инфраструктуру резиденции на берегу озера. Лекции, воркшопы и дискуссии об архитектуре и городе, культуре и искусстве, настоящем и будущем, музыка, танцы, арт, фудкорт, чиллзона закат и рассвет.</span>
                     </Flex>
-                    <iframe
-                        src="https://www.youtube.com/embed/4eXg4cZT4l8"
+                    {/* <iframe
+                        src="https://www.youtube.com/embed/DPEGClo4OAA?autoplay=1"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         style={{
-                            flex: '0 1 auto',
+                            position: 'relative',
+                            flex: '1 1 auto',
                             border: 'none',
-                            aspectRatio: '9 / 16',
+                            aspectRatio: '16 / 9',
                         }}
+                    /> */}
+                    <ReactPlayer
+                        url='/video-2022.mp4'
+                        playing
+                        muted
                     />
 
                 </Flex>
