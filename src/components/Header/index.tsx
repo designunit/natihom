@@ -99,7 +99,7 @@ export const Header: React.FC = () => {
     const isMobile = useMobile()
     const [isOpen, setIsOpen] = useState(false)
     const router = useRouter()
-    const spechialHeader = router.pathname == '/volunteers'
+    const spechialHeader = false // router.pathname == '/volunteers'
 
     return (
         <>
