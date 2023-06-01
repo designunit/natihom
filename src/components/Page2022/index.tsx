@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
+import { useState } from 'react'
 
 const ReactPlayer = dynamic(() => import('react-player'), {
     ssr: false
@@ -21,12 +22,32 @@ const ReactPlayer = dynamic(() => import('react-player'), {
 
 export const Page2022 = () => {
     const isMobile = useMobile()
+
+    const [buffer, setBuffer] = useState(false)
     return (
         <>
+            <Section bg>
+                <Parallax
+                    scaleX={[1, 1.5]}
+                    translateX={[0, -25]}
+                    shouldAlwaysCompleteAnimation
+                    style={{
+                        position: 'absolute',
+                        left: '20%',
+                        top: -160,
+                    }}
+                >
+                    <Image
+                        src={glitch}
+                        alt='гличуха'
+                        width={320 * .5}
+                        height={480 * .5}
+                    />
+                </Parallax>
+            </Section>
             <div style={{
                 height: isMobile ? '6rem' : '10rem',
             }} />
-
             <Section
                 className={s.video}
             >
@@ -55,29 +76,40 @@ export const Page2022 = () => {
                             playing
                             muted
                             loop
+                            onBuffer={() => setBuffer(true)}
+                            onBufferEnd={() => setBuffer(false)}
                         />
+                        {buffer && (
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    zIndex: 1,
+                                    top: 0,
+                                    left: 0,
+                                    bottom: 0,
+                                    right: 0,
+                                    color: 'white',
+                                    background: 'radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <span>
+                                    видео подгружается
+                                </span>
+                            </div>
+                        )}
                     </div>
                 </Flex>
             </Section>
 
             <div style={{
-                height: 30,
+                height: isMobile ? '6rem' : '10rem',
             }} />
 
             {!isMobile ? (
                 <Section bg>
-                    <Parallax
-                        scaleX={[1, 1.5]}
-                        translateX={[0, 25]}
-                        shouldAlwaysCompleteAnimation
-                        style={{
-                        }}
-                    >
-                        <Image
-                            src={glitch}
-                            alt='гличуха'
-                        />
-                    </Parallax>
                     <Parallax
                         rotate={[0, 360]}
                         shouldAlwaysCompleteAnimation
@@ -117,73 +149,58 @@ export const Page2022 = () => {
                     </Parallax>
                 </Section>
             )}
-
-            {!isMobile && (
-                <Section>
-                    <Flex>
-                        <div style={{
-                            flex: '1 0 33%'
-                        }} />
+            <Section
+                className={s.galleryContainer}
+            >
+                <Flex
+                    className={s.galleryFlex}
+                >
+                    <div
+                        className={s.swiperContainer}
+                    >
+                        <Swiper
+                            slidesPerView={1}
+                            modules={[Navigation, Autoplay]}
+                            loop
+                            autoplay={{
+                                delay: 5000,
+                            }}
+                            navigation
+                        // wrapperClass={s.swiperWrapper}
+                        >
+                            {Array(25).fill(null).map((x, i) => (
+                                <SwiperSlide
+                                    key={i}
+                                    style={{
+                                        minHeight: '90vh',
+                                    }}
+                                >
+                                    <Image
+                                        src={`/2022/img (${i + 1}).JPG`}
+                                        alt={''}
+                                        fill
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                    <div
+                        style={{
+                            position: 'relative',
+                            paddingBottom: '50%',
+                        }}
+                    >
                         <Image
                             src={aboutText}
                             alt='текст про резиденцию в целом'
-                        />
-                    </Flex>
-                </Section>
-            )}
-
-            {/* <Section
-                style={{
-                    top: isMobile ? 0 : '-13rem',
-                }}
-                className={s.photos}
-            >
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 'calc(var(--section-spacing) * 1)',
-                        right: 'calc(var(--section-spacing) * 2)',
-                        background: 'white',
-                        fontSize: '4rem',
-                        padding: '1rem',
-                    }}
-                >
-                    ↓↓↓ фото2022
-                </div>
-                <Image
-                    src={textImg}
-                    alt='текст на фоне людей'
-                />
-            </Section> */}
-            <div
-                className={s.swiperContainer}
-            >
-                <Swiper
-                    slidesPerView={1}
-                    modules={[Navigation, Autoplay]}
-                    loop
-                    autoplay={{
-                        delay: 5000,
-                    }}
-                    navigation
-                    wrapperClass={s.swiperWrapper}
-                >
-                    {Array(25).fill(null).map((x, i) => (
-                        <SwiperSlide
-                            key={i}
+                            fill
                             style={{
-                                minHeight: '90vh',
+                                objectPosition: 'center top',
                             }}
-                        >
-                            <Image
-                                src={`/2022/img (${i + 1}).JPG`}
-                                alt={''}
-                                fill
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
+                        />
+                    </div>
+                </Flex>
+            </Section>
         </>
     )
 }

@@ -4,16 +4,21 @@
  }
 
  .swiperContainer {
-     max-width: 1512px;
+     max-width: min(1512px, 50%);
+     position: relative;
      padding: 0 var(--section-spacing);
      margin: 0 auto;
+     flex: 1 1 50%;
  }
 
  .swiperContainer>div {
      position: relative;
+
+     border: dotted 4px black;
  }
 
  .playerContainer {
+     position: relative;
      flex: 1 1 50%;
  }
 
@@ -27,11 +32,33 @@
      background-image: url('/openCall.jpg');
  }
 
+ .galleryContainer>div {
+     max-width: min(100vw, 1512px);
+     margin-bottom: 4rem;
+ }
+
  @media screen and (max-width : 1024px) {
-     .video>div {}
 
      .video>div>div {
          flex-direction: column-reverse;
+     }
+
+     .swiperContainer {
+         max-width: 100%;
+         margin: unset;
+     }
+
+     .galleryFlex {
+         flex-direction: column;
+         align-items: stretch;
+         max-width: 100%;
+     }
+
+     /* about text-image */
+     .galleryFlex>div:nth-child(2) {
+         position: relative;
+         width: 100%;
+         padding-bottom: 50%;
      }
 
      .photos img {
