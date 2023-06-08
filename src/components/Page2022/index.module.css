@@ -4,11 +4,9 @@
  }
 
  .swiperContainer {
-     max-width: min(1512px, 50%);
      position: relative;
      padding: 0 var(--section-spacing);
-     margin: 0 auto;
-     flex: 1 1 50%;
+     max-width: min(1512px, 100%);
  }
 
  .swiperContainer>div {

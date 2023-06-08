@@ -20,8 +20,8 @@ import danil from '../../../public/team/danil.jpg'
 import voka from '../../../public/team/voka.jpg'
 import nastuha from '../../../public/team/nastuha.jpg'
 import roberto from '../../../public/team/roberto.jpg'
-
-
+import maria from '../../../public/team/maria.jpg'
+import marina from '../../../public/team/marina.jpg'
 
 const data = [
     {
@@ -52,7 +52,7 @@ const data = [
     },
     {
         name: 'Сергей Барышев',
-        description: 'дизайнер студии',
+        description: 'дизайнер студии\nнарисовал этот сайт',
         image: serega,
     },
     {
@@ -75,22 +75,20 @@ const data = [
         description: 'Архитектор студии\nкуратор конкурсных команд',
         image: roberto,
     },
+    {
+        name: 'Мария Рябова',
+        description: 'Помощник продюсера\n(Логистика резиденции)',
+        image: maria,
+    },
+    {
+        name: 'Марина Васильева',
+        description: 'координатор волонтерского направления',
+        image: marina,
+    },
 ]
 
 export const PageTeam = () => {
     const isMobile = useMobile()
-    const button = (
-        <Button
-            href='/wtf'
-            style={!isMobile ? {} : {
-                fontSize: 10,
-                width: 'fit-content',
-            }}
-        >
-            записаться<br />
-            в ранние пташки
-        </Button>
-    )
     return (
         <>
             <Section bg

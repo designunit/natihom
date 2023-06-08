@@ -107,15 +107,16 @@ export const Header: React.FC = () => {
                 direction={'right'}
                 animationDuration={'25s'}
             >
-                {'скоро обьявим архитектурный конкурс оставайтесь на '}
+                {'Анонс образовательной и музыкальной программ, а также конкурс: СКОРО! ОСТАВАЙТЕСТЬ НА '}
                 <a
                     href='https://t.me/unitnatihom'
                     style={{
                         color: ' white',
                     }}
                 >
-                    связи
+                    СВЯЗИ
                 </a>
+                {'!'}
             </RunningLine>
             <header className={s.header}
                 style={spechialHeader ? {
