@@ -60,7 +60,21 @@
     display: none;
 }
 
+.ticketButton {
+    margin: auto 0;
+}
+
 @media screen and (max-width : 1024px) {
+    .ticketButton {
+        /* margin: unset; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ticketButton>button {
+        margin-right: -48px;
+    }
+
     .nav {
         display: none;
     }
@@ -87,7 +101,6 @@
     }
 
     .logo {
-        margin-left: auto;
         z-index: 1101;
     }
 

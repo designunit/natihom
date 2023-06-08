@@ -3,6 +3,7 @@ import { Flex } from 'src/components/Flex'
 import Image from 'next/image'
 import { Parallax } from 'react-scroll-parallax'
 import glitch from '../../../public/glitch.gif'
+import summer2022 from '../../../public/summer2022.svg'
 import cog from '../../../public/cog.png'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
@@ -83,7 +84,7 @@ export const Page2022 = () => {
                     style={{
                         position: 'absolute',
                         left: '20%',
-                        top: -160,
+                        top: 50,
                     }}
                 >
                     <Image
@@ -94,8 +95,17 @@ export const Page2022 = () => {
                     />
                 </Parallax>
             </Section>
+            <Section>
+                <Image
+                    src={summer2022}
+                    alt=''
+                    style={{
+                        width: '100%',
+                    }}
+                />
+            </Section>
             <div style={{
-                height: isMobile ? '6rem' : '10rem',
+                height: isMobile ? '4rem' : '8rem',
             }} />
             <Section
                 className={s.video}

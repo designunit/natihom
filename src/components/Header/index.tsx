@@ -10,6 +10,7 @@ import { useMobile } from 'src/hooks/useMobile'
 import Hamburger from 'hamburger-react'
 import { useRouter } from 'next/router'
 import { RunningLine } from '../RunningLine'
+import { Button } from '../Button'
 
 const menu = {
     'о резиденции': [
@@ -164,8 +165,23 @@ export const Header: React.FC = () => {
                             </div>
                         ))}
                     </nav>
+
+                    <div
+                        className={s.ticketButton}
+                    >
+                        <Button
+                            style={!isMobile ? {} : {
+                                fontSize: 10,
+                                width: 'fit-content',
+                            }}
+                            id='timepad_twf_register_2077224'
+                        >
+                            купить билет
+                        </Button>
+                    </div>
                     <Link href='/'
                         className={s.logo}
+                        onClick={() => setIsOpen(false)}
                     >
                         <Image
                             src={logo}
