@@ -6,14 +6,63 @@ import glitch from '../../../public/glitch.gif'
 import cog from '../../../public/cog.png'
 import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
-import { Autoplay, Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import dynamic from 'next/dynamic'
-
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/autoplay'
 import { useState } from 'react'
+import Masonry from 'react-masonry-css'
+
+import img1 from '../../../public/2022/img (1).jpg'
+import img2 from '../../../public/2022/img (2).jpg'
+import img3 from '../../../public/2022/img (3).jpg'
+import img4 from '../../../public/2022/img (4).jpg'
+import img5 from '../../../public/2022/img (5).jpg'
+import img6 from '../../../public/2022/img (6).jpg'
+import img7 from '../../../public/2022/img (7).jpg'
+import img8 from '../../../public/2022/img (8).jpg'
+import img9 from '../../../public/2022/img (9).jpg'
+import img10 from '../../../public/2022/img (10).jpg'
+import img11 from '../../../public/2022/img (11).jpg'
+import img12 from '../../../public/2022/img (12).jpg'
+import img13 from '../../../public/2022/img (13).jpg'
+import img14 from '../../../public/2022/img (14).jpg'
+import img15 from '../../../public/2022/img (15).jpg'
+import img16 from '../../../public/2022/img (16).jpg'
+import img17 from '../../../public/2022/img (17).jpg'
+import img18 from '../../../public/2022/img (18).jpg'
+import img19 from '../../../public/2022/img (19).jpg'
+import img20 from '../../../public/2022/img (20).jpg'
+import img21 from '../../../public/2022/img (21).jpg'
+import img22 from '../../../public/2022/img (22).jpg'
+import img23 from '../../../public/2022/img (23).jpg'
+import img24 from '../../../public/2022/img (24).jpg'
+import img25 from '../../../public/2022/img (25).jpg'
+
+const imgArray = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+    img16,
+    img17,
+    img18,
+    img19,
+    img20,
+    img21,
+    img22,
+    img23,
+    img24,
+    img25
+]
 
 const ReactPlayer = dynamic(() => import('react-player'), {
     ssr: false
@@ -29,6 +78,7 @@ export const Page2022 = () => {
                 <Parallax
                     scaleX={[1, 1.5]}
                     translateX={[0, -25]}
+                    translateY={[0, 200]}
                     shouldAlwaysCompleteAnimation
                     style={{
                         position: 'absolute',
@@ -107,13 +157,17 @@ export const Page2022 = () => {
             }} />
 
             {!isMobile ? (
-                <Section bg>
+                <Section bg
+                    style={{
+                        zIndex: 3,
+                    }}
+                >
                     <Parallax
                         rotate={[0, 360]}
                         shouldAlwaysCompleteAnimation
                         style={{
                             position: 'absolute',
-                            top: 0,
+                            top: -100,
                             right: -20,
                         }}
                     >
@@ -147,40 +201,40 @@ export const Page2022 = () => {
                     </Parallax>
                 </Section>
             )}
-            <Section
-                className={s.galleryContainer}
-            >
-                <div
-                    className={s.swiperContainer}
+
+            <Section>
+                <Masonry
+                    breakpointCols={{
+                        default: 3,
+                        768: 2,
+                        480: 1,
+                    }}
+                    className={s.mansoryContainer}
+                    columnClassName={s.mansoryCol}
                 >
-                    <Swiper
-                        slidesPerView={1}
-                        modules={[Navigation, Autoplay]}
-                        loop
-                        autoplay={{
-                            delay: 5000,
-                        }}
-                        navigation
-                        spaceBetween={0}
-                    >
-                        {Array(25).fill(null).map((x, i) => (
-                            <SwiperSlide
+                    {imgArray.map((x, i) => (
+                        <>
+                            <div
                                 key={i}
                                 style={{
-                                    minHeight: '90vh',
+                                    position: 'relative',
+                                    aspectRatio: `${x.width} / ${x.height}`,
                                 }}
                             >
                                 <Image
-                                    src={`/2022/img (${i + 1}).JPG`}
+                                    src={x}
                                     alt={''}
                                     fill
-                                    className={s.swiperImage}
-                                    priority
+                                    style={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
                                 />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+                            </div>
+                        </>
+                    ))}
+                </Masonry>
             </Section>
         </>
     )

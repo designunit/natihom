@@ -15,9 +15,9 @@
      /* border: dotted 4px black; */
  }
 
- .swiperImage {
-    background: ;
- }
+ /* .swiperImage {
+     background: ;
+ } */
 
  .playerContainer {
      position: relative;
@@ -37,6 +37,22 @@
  .galleryContainer>div {
      max-width: min(100vw, 1512px);
      margin-bottom: 4rem;
+ }
+
+ /* MANSORY */
+ .mansoryContainer {
+     display: flex;
+     margin-left: -1rem;
+     width: auto;
+ }
+
+ .mansoryCol {
+     padding-left: 1rem;
+     background-clip: padding-box;
+ }
+
+ .mansoryCol>div {
+     margin-bottom: 1rem;
  }
 
  @media screen and (max-width : 1024px) {
