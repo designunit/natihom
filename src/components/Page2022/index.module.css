@@ -12,7 +12,11 @@
  .swiperContainer>div {
      position: relative;
 
-     border: dotted 4px black;
+     /* border: dotted 4px black; */
+ }
+
+ .swiperImage {
+    background: ;
  }
 
  .playerContainer {

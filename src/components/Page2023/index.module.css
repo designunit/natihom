@@ -43,7 +43,8 @@
     }
 
     .movie>div>div {
-        left: 0 !important;
+        right: -50% !important;
+
     }
 
     .movie>div>div>img {

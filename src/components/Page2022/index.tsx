@@ -174,6 +174,8 @@ export const Page2022 = () => {
                                     src={`/2022/img (${i + 1}).JPG`}
                                     alt={''}
                                     fill
+                                    className={s.swiperImage}
+                                    priority
                                 />
                             </SwiperSlide>
                         ))}

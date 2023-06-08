@@ -8,6 +8,7 @@ import aug23 from '../../../public/aug23.svg'
 import bubbles from '../../../public/bubbles.png'
 import spring from '../../../public/spring.png'
 import skoro from '../../../public/skoro.svg'
+import miniMap from '../../../public/miniMap.jpg'
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
 
@@ -95,11 +96,13 @@ export const Page2023 = () => {
             </Section>
 
             {isMobile && (
-                <Section
-                    className={s.mobileButton}
-                >
-                    {button}
-                </Section>
+                <>
+                    <Section
+                        className={s.mobileButton}
+                    >
+                        {button}
+                    </Section>
+                </>
             )}
 
             <div style={{
@@ -130,26 +133,73 @@ export const Page2023 = () => {
                             flex: '1 0 auto',
                         }}
                     >
-                        {!isMobile && button}
+                        {!isMobile && (
+                            <>
+                                <Flex
+                                    col
+                                    style={{
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    {button}
+                                    <a
+                                        href='https://yandex.ru/navi/?whatshere%5Bpoint%5D=29.928332%2C60.999350&whatshere%5Bzoom%5D=18&lang=ru&from=navi'
+                                        style={{
+                                            marginTop: '4rem',
+                                        }}
+                                    >
+                                        Где резиденция ↴ ↴ ↴
+                                    </a>
+                                    <Image
+                                        src={miniMap}
+                                        alt='место резиденции на карте'
+                                    />
+                                </Flex>
+                            </>
+                        )}
                     </div>
                 </Flex>
             </Section>
             {isMobile && (
-                <Section
-                    className={s.movie}
-                >
-                    <Parallax
-                        scale={[1, .25]}
+                <>
+                    <Section
+                        bg
+                        className={s.movie}
+                    >
+                        <Parallax
+                            scale={[1, .25]}
+                            style={{
+                                position: 'relative',
+                            }}
+                        >
+                            <Image
+                                src={movie}
+                                alt='кадры старого фильма'
+                            />
+                        </Parallax>
+                    </Section>
+                    <Flex
+                        col
                         style={{
-                            position: 'relative',
+
+                            alignItems: 'center',
+                            marginTop: '4rem',
                         }}
                     >
+                        <a
+                            href='https://yandex.ru/navi/?whatshere%5Bpoint%5D=29.928332%2C60.999350&whatshere%5Bzoom%5D=18&lang=ru&from=navi'
+                        >
+                            Где резиденция ↴ ↴ ↴
+                        </a>
                         <Image
-                            src={movie}
-                            alt='кадры старого фильма'
+                            src={miniMap}
+                            alt='место резиденции на карте'
+                            style={{
+                                width: 'min(100%, 90vw)',
+                            }}
                         />
-                    </Parallax>
-                </Section>
+                    </Flex>
+                </>
             )}
         </>
     )

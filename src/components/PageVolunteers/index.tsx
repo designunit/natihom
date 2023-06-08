@@ -6,6 +6,7 @@ import { useMobile } from 'src/hooks/useMobile'
 import s from './index.module.css'
 import blob from '../../../public/blob.gif'
 import spring from '../../../public/spring.png'
+import openCall from '../../../public/openCall.png'
 import springCircle from '../../../public/springCircle.png'
 import { Title } from '../Title'
 import { Parallax } from 'react-scroll-parallax'
@@ -177,19 +178,13 @@ export const PageVolunteers = () => {
                         />
                     </Parallax>
                 </Section>
-                <Title
+                <Image
+                    src={openCall}
+                    alt=''
                     style={{
-                        marginLeft: !isMobile && '3rem',
-                        fontFamily: 'Eskos',
-                        fontSize: '10rem',
-                        lineHeight: '10rem',
-                        textAlign: 'left',
-                        ...(isMobile && { fontSize: '5rem', lineHeight: '5rem' }),
+                        maxWidth: '100%',
                     }}
-                >
-                    OPEN CALL<br />
-                    ДЛЯ ВОЛОНТЕРОВ
-                </Title>
+                />
             </Section>
 
             <Section>
