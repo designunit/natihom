@@ -1,5 +1,5 @@
-import { createBreakpoint } from "react-use";
+import { useMedia } from 'react-use'
 
 export function useMobile() {
-    return createBreakpoint({ mobile: 0, desktop: 1280 })() === 'mobile'
+    return useMedia('(max-width: 1024px)', true)
 } 

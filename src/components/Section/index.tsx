@@ -1,17 +1,24 @@
 import classNames from 'classnames'
+import React, { CSSProperties } from 'react'
 import s from './styles.module.css'
 
-export type SectionProps = {
-    backgroundColor?: string
+export type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
     className?: string
+    bg?: boolean
+    internalStyle?: CSSProperties
 }
 
-export const Section: React.FC<SectionProps> = ({ backgroundColor = 'white', ...props }) => {
+export const Section: React.FC<SectionProps> = ({ bg = false, className, children, internalStyle, ...props }) => {
     return (
-        <div className={classNames(s.stories, props.className)} style={{
-            backgroundColor,
-        }}>
-            {props.children}
-        </div>
+        <div
+            {...props}
+            className={classNames(s.container, bg && s.bg, className)}
+        >
+            <div
+                style={internalStyle}
+            >
+                {children}
+            </div>
+        </div >
     )
 }

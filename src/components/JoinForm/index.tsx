@@ -129,7 +129,6 @@ export const JoinForm: React.FC<any> = ({ setModalIsOpen }) => {
 
             <Button
                 type='submit'
-                theme='primary'
                 disabled={buttonDisabled}
             >
                 {button}

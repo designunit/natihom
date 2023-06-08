@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--content-spacing);
+}
+
+.col {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.container>* {
+    flex: 1 1 auto;
+}
+
+@media screen and (max-width : 480px) {
+    .container {
+        flex-direction: column;
+    }
+}

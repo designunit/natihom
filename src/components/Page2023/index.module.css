@@ -1,0 +1,54 @@
+@media screen and (max-width : 1024px) {
+
+    .bubbles>div>div:nth-child(1) {
+        right: 0 !important;
+        top: -10px !important;
+    }
+
+    .bubbles>div>div:nth-child(1)>img {
+        width: max(50vw, 150px);
+        height: auto !important;
+    }
+
+    .bubbles>div>div:nth-child(2) {
+        top: 270px !important;
+        right: 50px !important;
+    }
+
+    .bubbles>div>div:nth-child(2)>img {
+        width: max(20vw, 200px);
+        height: auto !important;
+    }
+
+    .aug23 {
+        width: max(30vw, 200px) !important;
+    }
+
+    .skoro>div>div {
+        gap: 0;
+    }
+
+    .skoro>div>div>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mobileButton {
+        padding-top: 69px;
+    }
+
+    .mobileButton>div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .movie>div>div {
+        right: -50% !important;
+
+    }
+
+    .movie>div>div>img {
+        width: max(70vw, 500px);
+        height: auto !important;
+    }
+}

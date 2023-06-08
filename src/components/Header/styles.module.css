@@ -1,29 +1,40 @@
 .header {
     position: fixed;
     width: 100%;
-
-    display: flex;
-    align-items: center;
     z-index: 100;
+    top: calc(2rem + 2rem);
 
-    padding: 4px 10% 4px 10%;
-
-    background-color: white;
-    
-    box-shadow: 0 3px 5px rgba(9, 17, 51, 0.1)
+    padding: var(--content-spacing) 0;
 }
 
-.menu {
-    flex: 1;
+/* spacer creates space as if .header was positioned relatevely */
+.headerSpacer {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+}
+
+.headerSection>div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.nav {
+    width: fit-content;
+    display: flex;
+    gap: calc(var(--content-spacing) * 5);
+}
+
+.navItem {
+    text-transform: uppercase;
 }
 
 .menuButton {
     display: none;
 }
 
-.mobileMenu a, .mobileMenu button:not(.closeMenu) {
+.mobileMenu a,
+.mobileMenu button:not(.closeMenu) {
     font-family: var(--font-family-hero);
     font-size: 36px;
     line-height: 2rem;
@@ -45,35 +56,37 @@
     background-color: white;
 }
 
-.closeMenu {
-    border: none;
-    background: none;
-
-    align-self: flex-end;
-    height: 7%;
-    width: auto;
-    padding: 5%;
-    margin: 5px 10px 1rem 0;
+.mobileMenu {
+    display: none;
 }
 
-.transparent {
-    background-color: transparent;
+.ticketButton {
+    margin: auto 0;
 }
 
-@media screen and (max-width : 1280px) {
-    .header {
-        padding: 4px 5%;
+@media screen and (max-width : 1024px) {
+    .ticketButton {
+        /* margin: unset; */
+        margin-left: auto;
+        margin-right: auto;
     }
-}
 
-@media screen and (max-width : 480px) {
-    .menu {
+    .ticketButton>button {
+        margin-right: -48px;
+    }
+
+    .nav {
         display: none;
     }
 
     .header {
-        padding: 12px 5% 12px 10%;
+        top: 4.5rem;
+        padding: 10px;
         justify-content: space-between;
+    }
+
+    .headerSpacer {
+        height: 8rem;
     }
 
     .menuButton {
@@ -85,5 +98,22 @@
         height: 7%;
         width: auto;
         padding: 3%;
+    }
+
+    .logo {
+        z-index: 1101;
+    }
+
+    .logo>img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .headerSection>div {
+        padding: unset;
+    }
+
+    .mobileMenu {
+        display: unset;
     }
 }
