@@ -5,7 +5,7 @@ import { Parallax } from 'react-scroll-parallax'
 import disnry from '../../../public/disnry.gif'
 import img56 from '../../../public/img56.webp'
 import img7 from '../../../public/img7.webp'
-
+import team from '../../../public/team.png'
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
 import Team from '../Team'
@@ -151,15 +151,24 @@ export const PageTeam = () => {
             <Section
                 className={s.skoro}
             >
-                <div
+                {/* <div
                     className={s.title}
                     style={{
                         fontFamily: 'Eskos',
-                        marginBottom: '8rem',
                     }}
                 >
                     команда
-                </div>
+                </div> */}
+                <Image
+                    src={team}
+                    alt=''
+                    className={s.imgTeam}
+                    style={{
+                        width: 'min(100%, 90vw)',
+                        marginBottom: '8rem',
+                        height: '100%',
+                    }}
+                />
             </Section>
 
             <Team

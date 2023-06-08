@@ -142,14 +142,13 @@ export const Page2023 = () => {
                                     }}
                                 >
                                     {button}
-                                    <a
-                                        href='https://yandex.ru/navi/?whatshere%5Bpoint%5D=29.928332%2C60.999350&whatshere%5Bzoom%5D=18&lang=ru&from=navi'
+                                    <span
                                         style={{
                                             marginTop: '4rem',
                                         }}
                                     >
-                                        Где резиденция ↴ ↴ ↴
-                                    </a>
+                                        место резиденции ↴ ↴ ↴
+                                    </span>
                                     <Image
                                         src={miniMap}
                                         alt='место резиденции на карте'
@@ -186,11 +185,9 @@ export const Page2023 = () => {
                             marginTop: '4rem',
                         }}
                     >
-                        <a
-                            href='https://yandex.ru/navi/?whatshere%5Bpoint%5D=29.928332%2C60.999350&whatshere%5Bzoom%5D=18&lang=ru&from=navi'
-                        >
-                            Где резиденция ↴ ↴ ↴
-                        </a>
+                        <span>
+                            место резиденции ↴ ↴ ↴
+                        </span>
                         <Image
                             src={miniMap}
                             alt='место резиденции на карте'

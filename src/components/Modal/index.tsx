@@ -1,7 +1,6 @@
 import s from './styles.module.css'
 
 import ReactModal from 'react-modal'
-import { JoinForm } from '../JoinForm'
 import { VolunteerForm } from '../VolunteerForm'
 import { useContext, useEffect } from 'react'
 import { ModalContext } from 'src/context/modal'
@@ -10,9 +9,7 @@ import Script from 'next/script'
 
 export type ModalProps = Omit<ReactModal.Props, 'closeTimeoutMS'>
 
-export const Modal: React.FC<{
-    tag?: string
-}> = ({ tag = 'default' }) => {
+export const Modal: React.FC<any> = () => {
     const { modalState, setModalState } = useContext(ModalContext)
     const delay = 250
 
@@ -32,11 +29,9 @@ export const Modal: React.FC<{
             overlayClassName={s.overlay}
             ariaHideApp={false}
         >
+            {console.log(modalState.tag)}
             <>
-                {/* <JoinForm
-                    setModalIsOpen={setModalIsOpen}
-                /> */}
-                {tag == 'default' && (
+                {modalState.tag == 'default' && (
                     <>
                         <Script
                             id='timepad-script'
@@ -48,7 +43,6 @@ export const Modal: React.FC<{
                             src="https://timepad.ru/js/tpwf/loader/min/loader.js"
 
                             data-twf2s-event--id='2077224'
-                        // data-twf2s-display='popup'
                         >
                             {`(function { return {
                                 "initialRoute": "button",
@@ -56,7 +50,7 @@ export const Modal: React.FC<{
                         </Script>
                     </>
                 )}
-                {tag == 'volunteers' && (
+                {modalState.tag == 'volunteers' && (
                     <VolunteerForm />
                 )}
             </>

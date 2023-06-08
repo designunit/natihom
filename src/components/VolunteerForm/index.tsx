@@ -150,11 +150,16 @@ export const VolunteerForm: React.FC<any> = () => {
                 ))}
             </select>
 
-            <textarea
+            <input
                 {...register('social')}
+                placeholder='ссылка на вашу соц. сеть'
+                className={s.textline}
+            />
+            <textarea
+                {...register('about')}
                 className={s.textarea}
                 rows={8}
-                placeholder='ссылка на вашу соц. сеть'
+                placeholder='мы любим читать сопроводительные письма'
             />
 
             <Button

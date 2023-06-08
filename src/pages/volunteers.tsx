@@ -8,9 +8,7 @@ const Page: NextPage = () => {
     return (
         <>
             <PageVolunteers />
-            <Modal
-                tag='volunteers'
-            />
+            <Modal />
         </>
     )
 }

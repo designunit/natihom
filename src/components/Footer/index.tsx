@@ -22,7 +22,7 @@ export const Footer: React.FC<any> = () => {
                             по вопросам сотрудничества: <Link href='mailto:natihom@unit4.io'>natihom@unit4.io</Link>
                         </div>
                         <div>
-                            координатор резиденции: Ермолаева Валентина <Link href='mailto:ve@unit4.io'>ve@unit4.io</Link>
+                            продюсер резиденции: Ермолаева Валентина <Link href='mailto:ve@unit4.io'>ve@unit4.io</Link>
                         </div>
                     </Flex>
                     <Flex col>
