@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button } from '../Button'
 import Image from 'next/image'
-import logo from '/public/static/logo-small.svg'
+import logo from '/public/logo-small.svg'
 import { Title } from '../Title'
 
 const state = {

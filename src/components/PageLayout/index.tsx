@@ -35,9 +35,9 @@ export const PageLayout: React.FC<any> = props => {
                 openGraph={{
                     images: [
                         {
-                            url: '/static/logo-small.png',
-                            width: 283,
-                            height: 283,
+                            url: '/logo.png',
+                            width: 106,
+                            height: 105,
                             type: 'image/png',
                         }
                     ]
