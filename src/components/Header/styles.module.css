@@ -5,6 +5,7 @@
     top: calc(2rem + 2rem);
 
     padding: var(--content-spacing) 0;
+    --gradient: linear-gradient(139deg, rgba(34, 193, 195, 1) 25%, rgba(253, 187, 45, 1) 48%, rgba(242, 78, 91, 1) 91%);
 }
 
 /* spacer creates space as if .header was positioned relatevely */
@@ -64,6 +65,34 @@
     margin: auto 0;
 }
 
+.cta {
+    border: none !important;
+    position: relative;
+}
+
+/* .cta>span {
+    background: var(--gradient);
+    background-size: 300% 300%;
+	animation: foil 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px;
+    border-radius: inherit;
+    background: var(--gradient);
+    background-size: 300% 300%;
+	animation: foil 5s ease infinite;
+}
+
 @media screen and (max-width : 1024px) {
     .ticketButton {
         /* margin: unset; */
@@ -115,5 +144,19 @@
 
     .mobileMenu {
         display: unset;
+    }
+}
+
+@keyframes foil {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }

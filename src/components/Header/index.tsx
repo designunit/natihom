@@ -175,8 +175,11 @@ export const Header: React.FC = () => {
                                 width: 'fit-content',
                             }}
                             id='timepad_twf_register_2077224'
+                            className={s.cta}
                         >
-                            купить билет
+                            <span>
+                                купить билет
+                            </span>
                         </Button>
                     </div>
                     <Link href='/'

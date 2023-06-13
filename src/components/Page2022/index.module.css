@@ -11,17 +11,13 @@
 
  .swiperContainer>div {
      position: relative;
-
-     /* border: dotted 4px black; */
  }
 
- /* .swiperImage {
-     background: ;
- } */
 
  .playerContainer {
      position: relative;
      flex: 1 1 50%;
+     aspect-ratio: 640 / 360;
  }
 
  .playerContainer video {

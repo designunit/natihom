@@ -1,10 +1,9 @@
-import { NextPage } from 'next'
 import { Button } from 'src/components/Button'
 import { Section } from 'src/components/Section'
 import { Flex } from 'src/components/Flex'
 import Image from 'next/image'
 import { Parallax } from 'react-scroll-parallax'
-import aboutText from '../../../public/aboutText.png'
+import aboutText from '../../../public/aboutText.avif'
 import lesRes from '../../../public/lesRes.png'
 import triangle from '../../../public/triangle.gif'
 import board from '../../../public/board.jpg'
@@ -32,6 +31,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     <Image
                         src={triangle}
                         alt='анимация типа джой дивижн в триугольнике'
+                        priority
                     />
                 </Parallax>
             </Section>
@@ -46,11 +46,10 @@ export const Hero: React.FC<any> = ({ openModal }) => {
             >
                 <Parallax
                     speed={-20}
-                    // disabled={isMobile}
                     style={{
                         position: 'absolute',
                         top: 550,
-                        right: 'calc(250px / -2 + var(--section-spacing))', // original is 500px wide
+                        right: 'calc(250px / -2 + var(--section-spacing))',
                     }}
                 >
                     <Image
@@ -95,6 +94,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                 <Image
                     src={aboutText}
                     alt='текст про резиденцию в целом'
+                    priority
                 />
                 <Flex col
                     style={{
@@ -109,8 +109,12 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     <Button
                         theme='fancy'
                         href='/2023'
+                        style={{
+                            paddingRight: isMobile ? '.9em' : '1.75em',
+                            paddingLeft: isMobile ? '.9em' : '1.75em',
+                        }}
                     >
-                        лето 2023
+                        11-13 августа
                     </Button>
                     {!isMobile && (
                         <Image

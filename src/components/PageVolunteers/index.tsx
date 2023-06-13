@@ -184,6 +184,7 @@ export const PageVolunteers = () => {
                     style={{
                         maxWidth: '100%',
                     }}
+                    priority
                 />
             </Section>
 

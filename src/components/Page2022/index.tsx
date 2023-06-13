@@ -102,6 +102,7 @@ export const Page2022 = () => {
                     style={{
                         width: '100%',
                     }}
+                    priority
                 />
             </Section>
             <div style={{
