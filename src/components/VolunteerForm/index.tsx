@@ -7,7 +7,7 @@ import logo from '/public/logo.png'
 import { Title } from 'src/components/Title'
 import { Button } from 'src/components/Button'
 import { ModalContext } from 'src/context/modal'
-import { Flex } from '../Flex'
+import fetchOk from '../../../public/fetchOk.svg'
 
 const state = {
     start: 'отправить',
@@ -24,7 +24,7 @@ const roles = [
 ]
 
 export const VolunteerForm: React.FC<any> = () => {
-    const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+    const { register, handleSubmit, formState: { errors, isValid }, watch } = useForm({
         mode: 'onChange',
     })
     const [button, setButton] = React.useState(state.start)
@@ -33,6 +33,7 @@ export const VolunteerForm: React.FC<any> = () => {
     const { modalState, setModalState } = React.useContext(ModalContext)
 
     const onSubmit = useCallback(async data => {
+        return
         setButton(state.fetch)
 
         await fetch(
@@ -59,21 +60,20 @@ export const VolunteerForm: React.FC<any> = () => {
             })
     }, [])
 
+    const fieldAbout = watch('about', '')
+
     if (button == state.ok) {
         return (
             <>
-                <div
+                <Image
+                    src={fetchOk}
+                    alt={''}
                     style={{
-                        fontFamily: 'Eskos',
-                        fontSize: '8rem',
-                        lineHeight: '8rem',
                         height: '100%',
                         margin: 'auto',
-                        textAlign: 'center',
+                        transform: 'scale(1.25)',
                     }}
-                >
-                    ГОТОВО
-                </div>
+                />
                 <Button
                     style={{
                         width: 'fit-content',
@@ -155,12 +155,30 @@ export const VolunteerForm: React.FC<any> = () => {
                 placeholder='ссылка на вашу соц. сеть'
                 className={s.textline}
             />
-            <textarea
-                {...register('about')}
-                className={s.textarea}
-                rows={8}
-                placeholder='мы любим читать сопроводительные письма'
-            />
+            <div
+                style={{
+                    position: 'relative',
+                    width: '100%',
+                }}
+            >
+                <textarea
+                    {...register('about', { maxLength: 20000 })}
+                    className={s.textarea}
+                    rows={8}
+                    placeholder='мы любим читать сопроводительные письма'
+                />
+                <div
+                    style={{
+                        color: fieldAbout.length > 20000 && 'red',
+                        position: 'absolute',
+                        zIndex: 1,
+                        bottom: '.5rem',
+                        right: '.5rem',
+                    }}
+                >
+                    {`${fieldAbout.length}/20000`}
+                </div>
+            </div>
 
             <Button
                 type='submit'

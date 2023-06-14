@@ -29,7 +29,6 @@ export const Modal: React.FC<any> = () => {
             overlayClassName={s.overlay}
             ariaHideApp={false}
         >
-            {console.log(modalState.tag)}
             <>
                 {modalState.tag == 'default' && (
                     <>
