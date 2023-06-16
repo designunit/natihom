@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { Modal } from 'src/components/Modal'
 import { ModalContext, ModalStateType } from 'src/context/modal'
 import { ParallaxProvider } from 'react-scroll-parallax'
+import { YMetrika } from 'src/components/YMetrika'
 
 const App: AppType = ({ Component, pageProps }) => {
     const router = useRouter()
@@ -46,6 +47,10 @@ const App: AppType = ({ Component, pageProps }) => {
                     content='width=device-width, maximum-scale=1.0'
                 />
             </Head>
+
+            <YMetrika
+                account='93986867'
+            />
 
             <ModalContext.Provider value={{ modalState, setModalState }}>
                 <ParallaxProvider>
