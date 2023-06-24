@@ -21,9 +21,12 @@ export const Page2023 = () => {
                 fontSize: 10,
                 width: 'fit-content',
             }}
+            className={s.cta}
             id='timepad_twf_register_2077224'
         >
-            купить билет
+            <span>
+                купить билет
+            </span>
         </Button>
     )
 

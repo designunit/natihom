@@ -70,14 +70,6 @@
     position: relative;
 }
 
-/* .cta>span {
-    background: var(--gradient);
-    background-size: 300% 300%;
-	animation: foil 5s ease infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
 .cta:before {
     content: "";
     position: absolute;

@@ -1,3 +1,24 @@
+.cta {
+    border: none !important;
+    position: relative;
+    --gradient: linear-gradient(139deg, rgba(34, 193, 195, 1) 25%, rgba(253, 187, 45, 1) 48%, rgba(242, 78, 91, 1) 91%);
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px;
+    border-radius: inherit;
+    background: var(--gradient);
+    background-size: 300% 300%;
+    animation: foil 5s ease infinite;
+}
+
 @media screen and (max-width : 1024px) {
 
     .bubbles>div>div:nth-child(1) {
@@ -50,5 +71,19 @@
     .movie>div>div>img {
         width: max(70vw, 500px);
         height: auto !important;
+    }
+}
+
+@keyframes foil {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }

@@ -1,0 +1,17 @@
+.buttons {
+    align-items: baseline;
+    justify-content: center;
+}
+
+.buttons>button {
+    flex: 0 1 auto;
+}
+
+.titleImages {
+    justify-content: space-between;
+}
+.titleImages>img {
+    display: block;
+    width: auto !important;
+    flex: 1 0 300px;
+}
