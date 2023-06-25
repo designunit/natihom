@@ -10,8 +10,21 @@
 .titleImages {
     justify-content: space-between;
 }
+
 .titleImages>img {
     display: block;
     width: auto !important;
     flex: 1 0 300px;
+}
+
+.buttonFancy {
+    padding-left: 1.7em;
+    padding-right: 1.7em;
+}
+
+@media screen and (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 }

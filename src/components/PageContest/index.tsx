@@ -13,160 +13,166 @@ import ruki from '../../../public/ruki.gif'
 import bubble2 from '../../../public/bubble2.png'
 import { Button } from '../Button'
 import { Roadmap } from '../Roadmap'
+import { StrictMode } from 'react'
 
 const titleImgsSize = .85
 
-const roadmapData = [
-    {
-        title: (
-            <>
-                Старт Конкурса
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    Регистрация c 26 июня 2023 по 10 июля 2023 года. Зарегистрированные команды и участники получат ссылку на установочный зум.
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Установочный зум
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    11 июля 2023, 19:00. Описание Конкурса. постановка задачи и разбор Положений о Конкурсе и Технического задани, Ответы на вопросы.
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Прием предложений
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    Заявки принимаются с 12 июля 2023 до 16 июля 2023, 23:59 utc+3 (в соответствии с составом, указанным в п.3 Положений о Конкурсе и Техническим заданием) на электронную почту natihom@unit4.io.
-                </span>
-                <Section bg>
-                    <Parallax
-                        style={{
-                            position: 'absolute',
-                            right: 0,
-                            top: 115,
-                        }}
-                    >
-                        <Image
-                            src={ruki}
-                            alt='руки + шиза'
-                        />
-                    </Parallax>
-                </Section>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Установочная встреча с участниками
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    не позднее 20 июля 2023. Описание проектной лаборатории. Разбор предложений участников. Формирование графика реализации.
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Старт Проектной лаборатории
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    21 июля 2023 - 2 августа 2023 года работа с кураторами, доработка проектов и детализация решений.
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Публикация проектов с указанием авторства.
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    не позднее не позднее 3 августа 2023, 23:59 utc+3 участники, попавшие в шорт-лист, становятся резидентами “unitна тихом”
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Выезд на площадку
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    Проведения резиденции и старт стройки 8 августа 2023.
-                </span>
-            </>
-        )
-    },
-    {
-        title: (
-            <>
-                Стройка
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    8 августа 2023 - 10 августа 2023
-                </span>
-            </>
-        ),
-    },
-    {
-        title: (
-            <>
-                Открытие фестиваля
-            </>
-        ),
-        text: (
-            <>
-                <span>
-                    11 августа 2023, 13:00 utc+3
-                </span>
-            </>
-        ),
-    },
-]
 
 export const PageContest = () => {
     const isMobile = useMobile()
 
+    const roadmapData = [
+        {
+            title: (
+                <>
+                    Старт Конкурса
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        Регистрация c 26 июня 2023 по 10 июля 2023 года. Зарегистрированные команды и участники получат ссылку на установочный зум.
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Установочный зум
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        11 июля 2023, 19:00. Описание Конкурса. постановка задачи и разбор Положений о Конкурсе и Технического задани, Ответы на вопросы.
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Прием предложений
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        Заявки принимаются с 12 июля 2023 до 16 июля 2023, 23:59 utc+3 (в соответствии с составом, указанным в п.3 Положений о Конкурсе и Техническим заданием) на электронную почту natihom@unit4.io.
+                    </span>
+                    {!isMobile && (
+                        <Section bg>
+                            <Parallax
+                                style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    top: 115,
+                                }}
+                            >
+                                <Image
+                                    src={ruki}
+                                    alt='руки + шиза'
+                                />
+                            </Parallax>
+                        </Section>
+                    )}
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Установочная встреча с участниками
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        не позднее 20 июля 2023. Описание проектной лаборатории. Разбор предложений участников. Формирование графика реализации.
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Старт Проектной лаборатории
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        21 июля 2023 - 2 августа 2023 года работа с кураторами, доработка проектов и детализация решений.
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Публикация проектов с указанием авторства.
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        не позднее не позднее 3 августа 2023, 23:59 utc+3 участники, попавшие в шорт-лист, становятся резидентами “unitна тихом”
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Выезд на площадку
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        Проведения резиденции и старт стройки 8 августа 2023.
+                    </span>
+                </>
+            )
+        },
+        {
+            title: (
+                <>
+                    Стройка
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        8 августа 2023 - 10 августа 2023
+                    </span>
+                </>
+            ),
+        },
+        {
+            title: (
+                <>
+                    Открытие фестиваля
+                </>
+            ),
+            text: (
+                <>
+                    <span>
+                        11 августа 2023, 13:00 utc+3
+                    </span>
+                </>
+            ),
+        },
+    ]
+
     return (
         <>
-            <div style={{
-                height: isMobile ? '6rem' : '10rem',
-            }} />
+            {!isMobile && (
+                <div style={{
+                    height: '10rem',
+                }} />
+            )}
 
             <Section>
                 <Flex
@@ -180,31 +186,36 @@ export const PageContest = () => {
                         height={contestOpenCall.height * titleImgsSize}
                         style={{
                             maxWidth: '100%',
+                            ...(isMobile && {
+                                flex: '1 0 auto',
+                            })
                         }}
                     />
-                    <Image
-                        src={contestSubtitle}
-                        alt=''
-                        priority
-                        width={contestSubtitle.width * titleImgsSize}
-                        height={contestSubtitle.height * titleImgsSize}
-                        style={{
-                            maxWidth: '100%',
-                        }}
-                    />
+                    {!isMobile && (
+                        <Image
+                            src={contestSubtitle}
+                            alt=''
+                            priority
+                            width={contestSubtitle.width * titleImgsSize}
+                            height={contestSubtitle.height * titleImgsSize}
+                            style={{
+                                maxWidth: '100%',
+                            }}
+                        />
+                    )}
                 </Flex>
             </Section>
 
             <Section bg>
                 <Parallax
-                    scale={[1, 0]}
+                    scale={[(isMobile ? .5 : 1), 0]}
                     translateY={[0, 50]}
                     translateX={[0, 25]}
                     shouldAlwaysCompleteAnimation
                     style={{
                         position: 'absolute',
                         left: '10%',
-                        top: -100,
+                        top: isMobile ? -200 : - 100,
                     }}
                 >
                     <Image
@@ -219,24 +230,26 @@ export const PageContest = () => {
             }} />
 
             <Section>
-                <Section bg>
-                    <Parallax
-                        translateY={[0, 200]}
-                        translateX={[0, 150]}
-                        rotateY={[0, 400]}
-                        shouldAlwaysCompleteAnimation
-                        style={{
-                            position: 'absolute',
-                            left: '10%',
-                            top: 120,
-                        }}
-                    >
-                        <Image
-                            src={arrowDown}
-                            alt='стрелочка вниз'
-                        />
-                    </Parallax>
-                </Section>
+                {!isMobile && (
+                    <Section bg>
+                        <Parallax
+                            translateY={[0, 200]}
+                            translateX={[0, 150]}
+                            rotateY={[0, 400]}
+                            shouldAlwaysCompleteAnimation
+                            style={{
+                                position: 'absolute',
+                                left: '10%',
+                                top: 120,
+                            }}
+                        >
+                            <Image
+                                src={arrowDown}
+                                alt='стрелочка вниз'
+                            />
+                        </Parallax>
+                    </Section>
+                )}
                 <Flex>
                     <div style={{
                         flex: '1 0 50%',
@@ -271,7 +284,6 @@ export const PageContest = () => {
                 </Flex>
             </Section>
 
-
             <Section bg>
                 <Parallax
                     scale={[1, 0]}
@@ -279,18 +291,27 @@ export const PageContest = () => {
                     translateX={[0, -150]}
                     rotate={[0, -180]}
                     shouldAlwaysCompleteAnimation
+                    disabled={isMobile}
                     style={{
                         position: 'absolute',
-                        right: '5%',
-                        top: -100,
+                        right: isMobile ? '-15%' : '5%',
+                        top: isMobile ? -25 : -100,
                     }}
                 >
                     <Image
                         src={bubble2}
                         alt='пузырики'
+                        width={bubble2.width * (isMobile ? .5 : 1)}
+                        height={bubble2.height * (isMobile ? .5 : 1)}
                     />
                 </Parallax>
             </Section>
+
+            {isMobile && (
+                <div style={{
+                    height: '6rem'
+                }} />
+            )}
 
             <Section>
                 <Image
@@ -303,9 +324,11 @@ export const PageContest = () => {
                 />
             </Section>
 
-            <div style={{
-                height: isMobile ? '6rem' : '10rem',
-            }} />
+            {!isMobile && (
+                <div style={{
+                    height: '6rem'
+                }} />
+            )}
 
             <Section>
                 <Roadmap
@@ -323,9 +346,11 @@ export const PageContest = () => {
                 >
                     <Button
                         theme='fancy'
+                        className={s.buttonFancy}
                         style={{
-                            paddingRight: isMobile ? '.9em' : '1.75em',
-                            paddingLeft: isMobile ? '.9em' : '1.75em',
+                            fontSize: isMobile ? 10 : 32,
+                            width: isMobile && '200px',
+                            padding: isMobile && '1.8em',
                         }}
                     >
                         <span>
@@ -334,9 +359,11 @@ export const PageContest = () => {
                     </Button>
                     <Button
                         style={{
-                            fontSize: 31.5,
-                            paddingRight: isMobile ? '.9em' : '1.75em',
-                            paddingLeft: isMobile ? '.9em' : '1.75em',
+                            fontSize: isMobile ? 'inherit' : 31.5,
+                            width: isMobile && '200px',
+                            paddingLeft: '1.75em',
+                            paddingRight: '1.75em',
+                            padding: isMobile && '1.4em 1em'
                         }}
                     >
                         <span>
