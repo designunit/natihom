@@ -1,10 +1,11 @@
 import s from './styles.module.css'
 
 import ReactModal from 'react-modal'
-import { VolunteerForm } from '../VolunteerForm'
 import { useContext, useEffect } from 'react'
 import { ModalContext } from 'src/context/modal'
 import Script from 'next/script'
+import { ContestForm } from '../ContestForm'
+import { VolunteerForm } from '../VolunteerForm'
 
 
 export type ModalProps = Omit<ReactModal.Props, 'closeTimeoutMS'>
@@ -51,6 +52,9 @@ export const Modal: React.FC<any> = () => {
                 )}
                 {modalState.tag == 'volunteers' && (
                     <VolunteerForm />
+                )}
+                {modalState.tag == 'contest' && (
+                    <ContestForm />
                 )}
             </>
         </ReactModal>

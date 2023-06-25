@@ -23,7 +23,7 @@ const roles = [
     'ЭКОСТАНЦИЯ',
 ]
 
-export const VolunteerForm: React.FC<any> = () => {
+export const ContestForm: React.FC<any> = () => {
     const { register, handleSubmit, formState: { errors, isValid }, watch } = useForm({
         mode: 'onChange',
     })
@@ -32,11 +32,11 @@ export const VolunteerForm: React.FC<any> = () => {
 
     const { modalState, setModalState } = React.useContext(ModalContext)
 
-    const onSubmit = useCallback(async data => {        
+    const onSubmit = useCallback(async data => {
         setButton(state.fetch)
 
         await fetch(
-            '/api/volunteers',
+            '/api/contest',
             {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -90,6 +90,10 @@ export const VolunteerForm: React.FC<any> = () => {
             </>
         )
     }
+
+    return (
+        <h1>это форма для конкурса, она не готова</h1>
+    )
 
     return (
         <form

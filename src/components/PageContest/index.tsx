@@ -13,13 +13,15 @@ import ruki from '../../../public/ruki.gif'
 import bubble2 from '../../../public/bubble2.png'
 import { Button } from '../Button'
 import { Roadmap } from '../Roadmap'
-import { StrictMode } from 'react'
+import { useContext } from 'react'
+import { ModalContext } from 'src/context/modal'
 
 const titleImgsSize = .85
 
 
 export const PageContest = () => {
     const isMobile = useMobile()
+    const { setModalState } = useContext(ModalContext)
 
     const roadmapData = [
         {
@@ -165,6 +167,13 @@ export const PageContest = () => {
             ),
         },
     ]
+
+    const onFancyClick = () => {
+        setModalState({
+            modalIsOpen: true,
+            tag: 'contest',
+        })
+    }
 
     return (
         <>
@@ -352,6 +361,7 @@ export const PageContest = () => {
                             width: isMobile && '200px',
                             padding: isMobile && '1.8em',
                         }}
+                        onClick={onFancyClick}
                     >
                         <span>
                             подать заявку

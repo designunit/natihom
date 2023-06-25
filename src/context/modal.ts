@@ -2,7 +2,7 @@ import { createContext, Dispatch, SetStateAction } from 'react'
 
 export type ModalStateType = {
     modalIsOpen: boolean,
-    tag: 'default' | 'volunteers'
+    tag: 'default' | 'volunteers' | 'contest'
 }
 
 export type ModalContextType = {
