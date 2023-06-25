@@ -20,6 +20,7 @@ export const Roadmap = ({ data }) => {
                         style={{
                             flex: isMobile ? '1 1 100%' : '0 0 40%',
                             textAlign: isMobile ? 'left' : (isSide ? 'right' : 'left'),
+                            alignItems: 'stretch',
                             ...(isMobile && {
                                 marginBottom: '4rem',
                             })
