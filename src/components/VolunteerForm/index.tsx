@@ -33,7 +33,6 @@ export const VolunteerForm: React.FC<any> = () => {
     const { modalState, setModalState } = React.useContext(ModalContext)
 
     const onSubmit = useCallback(async data => {
-        return
         setButton(state.fetch)
 
         await fetch(
