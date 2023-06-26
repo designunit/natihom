@@ -92,10 +92,6 @@ export const ContestForm: React.FC<any> = () => {
     }
 
     return (
-        <h1>это форма для конкурса, она не готова</h1>
-    )
-
-    return (
         <form
             onSubmit={handleSubmit(onSubmit)}
             className={s.form}
@@ -117,46 +113,10 @@ export const ContestForm: React.FC<any> = () => {
             </div>
 
             <input
-                {...register('name', { required: true })}
-                type='text'
+                {...register('captain', { required: true })}
+                type='tel'
                 className={s.textline}
-                placeholder='*Имя'
-            />
-
-            <div className={s.doubleRow}>
-                <input
-                    {...register('tel', { required: true })}
-                    type='tel'
-                    className={s.textline}
-                    placeholder='*Телефон'
-                />
-
-                <input
-                    {...register('email', { required: true })}
-                    type='email'
-                    className={s.textline}
-                    placeholder='*Емейл'
-                />
-            </div>
-
-            <select
-                {...register('role', { required: true })}
-                className={s.select}
-            >
-                {roles.map((x, i) => (
-                    <option
-                        key={i}
-                        value={x}
-                    >
-                        {x}
-                    </option>
-                ))}
-            </select>
-
-            <input
-                {...register('social')}
-                placeholder='ссылка на вашу соц. сеть'
-                className={s.textline}
+                placeholder='*Имя Фамилия руководителя команды'
             />
             <div
                 style={{
@@ -165,10 +125,10 @@ export const ContestForm: React.FC<any> = () => {
                 }}
             >
                 <textarea
-                    {...register('about', { maxLength: 20000 })}
+                    {...register('team', { required: true, maxLength: 20000 })}
                     className={s.textarea}
                     rows={8}
-                    placeholder='мы любим читать сопроводительные письма'
+                    placeholder='*Имя Фамилия участников команды или участника'
                 />
                 <div
                     style={{
@@ -182,6 +142,29 @@ export const ContestForm: React.FC<any> = () => {
                     {`${fieldAbout.length}/20000`}
                 </div>
             </div>
+
+            <span
+                style={{
+                    paddingTop: '1rem'
+                }}
+            >
+                Контактные данные
+            </span>
+            <input
+                {...register('email')}
+                placeholder='Почта'
+                className={s.textline}
+            />
+            <input
+                {...register('tel')}
+                placeholder='Телефон'
+                className={s.textline}
+            />
+            <input
+                {...register('social')}
+                placeholder='Ссылка на соцсети'
+                className={s.textline}
+            />
 
             <Button
                 type='submit'
