@@ -21,7 +21,7 @@ export const Roadmap = ({ data }) => {
                             flex: isMobile ? '1 1 100%' : '0 0 40%',
                             textAlign: isMobile ? 'left' : (isSide ? 'right' : 'left'),
                             alignItems: 'stretch',
-                            ...(isMobile && {
+                            ...(isMobile && (i !== data.length - 1) && {
                                 marginBottom: '4rem',
                             })
                         }}
@@ -55,14 +55,14 @@ export const Roadmap = ({ data }) => {
                                     position: 'absolute',
                                     left: 'calc(50% + 1px)',
                                     top: 0,
-                                    bottom: isMobile ? `4rem` : 0,
+                                    bottom: isMobile && (i !== data.length - 1) ? `4rem` : 0,
                                     borderLeft: 'solid 1px black'
                                 }} />
                                 <div style={{ // horizontal
                                     position: 'absolute',
                                     width: '50%',
                                     left: `calc(${isSide || isMobile ? '0%' : '50%'} + 1px)`,
-                                    top: isMobile ? 'calc(50% - 2rem)' : 'calc(50% - 1px)',
+                                    top: isMobile && (i !== data.length - 1) ? 'calc(50% - 2rem)' : 'calc(50% - 1px)',
                                     borderBottom: 'solid 1px black'
                                 }} />
                                 <div style={{ // side
