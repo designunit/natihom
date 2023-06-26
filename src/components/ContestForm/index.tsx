@@ -16,24 +16,18 @@ const state = {
     error: 'что-то поломалось ):\nеще раз?',
 }
 
-const roles = [
-    'Инфоцентр',
-    'МАСТЕРСКАЯ',
-    'КУХНЯ',
-    'ЭКОСТАНЦИЯ',
-]
-
 export const ContestForm: React.FC<any> = () => {
-    const { register, handleSubmit, formState: { errors, isValid }, watch } = useForm({
+    const { register, handleSubmit, watch } = useForm({
         mode: 'onChange',
     })
     const [button, setButton] = React.useState(state.start)
     const buttonDisabled = [state.fetch, state.ok].includes(button)
 
-    const { modalState, setModalState } = React.useContext(ModalContext)
+    const { setModalState } = React.useContext(ModalContext)
 
     const onSubmit = useCallback(async data => {
         setButton(state.fetch)
+        console.log(JSON.stringify(data))
 
         await fetch(
             '/api/contest',
@@ -49,7 +43,7 @@ export const ContestForm: React.FC<any> = () => {
                 setTimeout(() => {
                     setModalState({
                         modalIsOpen: false,
-                        tag: 'volunteers',
+                        tag: 'contest',
                     })
                 }, 3000)
             })
@@ -59,7 +53,7 @@ export const ContestForm: React.FC<any> = () => {
             })
     }, [])
 
-    const fieldAbout = watch('about', '')
+    const fieldTeam = watch('team', '')
 
     if (button == state.ok) {
         return (
@@ -132,14 +126,14 @@ export const ContestForm: React.FC<any> = () => {
                 />
                 <div
                     style={{
-                        color: fieldAbout.length > 20000 && 'red',
+                        color: fieldTeam.length > 20000 && 'red',
                         position: 'absolute',
                         zIndex: 1,
                         bottom: '.5rem',
                         right: '.5rem',
                     }}
                 >
-                    {`${fieldAbout.length}/20000`}
+                    {`${fieldTeam.length}/20000`}
                 </div>
             </div>
 
@@ -153,10 +147,12 @@ export const ContestForm: React.FC<any> = () => {
             <input
                 {...register('email')}
                 placeholder='Почта'
+                type='email'
                 className={s.textline}
             />
             <input
                 {...register('tel')}
+                type='tel'
                 placeholder='Телефон'
                 className={s.textline}
             />
