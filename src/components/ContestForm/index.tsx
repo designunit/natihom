@@ -27,7 +27,6 @@ export const ContestForm: React.FC<any> = () => {
 
     const onSubmit = useCallback(async data => {
         setButton(state.fetch)
-        console.log(JSON.stringify(data))
 
         await fetch(
             '/api/contest',
