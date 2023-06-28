@@ -87,13 +87,13 @@ export const Page2023 = () => {
             >
                 <Flex col>
                     <Image
-                        src={skoro}
-                        alt='скоро'
-                    />
-                    <Image
                         src={aug23}
                         alt='август 2023'
                         className={s.aug23}
+                    />
+                    <Image
+                        src={skoro}
+                        alt='скоро'
                     />
                 </Flex>
             </Section>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import s from './index.module.css'
 import { useCallback } from 'react'
-import { Controller, useFieldArray, useForm } from 'react-hook-form'
+import { useFieldArray, useForm } from 'react-hook-form'
 import Image from 'next/image'
 import logo from '/public/logo.png'
 import { Title } from 'src/components/Title'
@@ -19,7 +19,7 @@ const state = {
 }
 
 export const ContestForm: React.FC<any> = () => {
-    const { register, handleSubmit, watch, control } = useForm({
+    const { register, handleSubmit, control } = useForm({
         mode: 'onChange',
     })
     const [button, setButton] = React.useState(state.start)
