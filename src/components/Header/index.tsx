@@ -108,7 +108,7 @@ export const Header: React.FC = () => {
                 direction={'right'}
                 animationDuration={'25s'}
             >
-                {'Анонс образовательной и музыкальной программ, а также конкурс: СКОРО! ОСТАВАЙТЕСТЬ НА '}
+                {'Анонс образовательной и музыкальной программ: СКОРО! ОСТАВАЙТЕСТЬ НА '}
                 <a
                     href='https://t.me/unitnatihom'
                     style={{

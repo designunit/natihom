@@ -27,7 +27,7 @@ export const PageContest = () => {
         {
             title: (
                 <>
-                    Старт Конкурса и регистрация.
+                    Старт Конкурса и регистрация
                 </>
             ),
             text: (
@@ -36,7 +36,7 @@ export const PageContest = () => {
                         Регистрация на участие на сайте Зарегистрированные команды и участники получат ссылку на установочный зум
                     </span>
                     <span>
-                        26 июня - 10 июля 2023 года (включительно)
+                        28 июня - 10 июля 2023 года (включительно)
                     </span>
                 </>
             ),
@@ -44,7 +44,7 @@ export const PageContest = () => {
         {
             title: (
                 <>
-                    Установочный зум:
+                    Установочный зум
                 </>
             ),
             text: (
@@ -61,7 +61,7 @@ export const PageContest = () => {
         {
             title: (
                 <>
-                    Старт приема предложений.
+                    Старт приема предложений
                 </>
             ),
             text: (
@@ -416,7 +416,7 @@ export const PageContest = () => {
                         onClick={onFancyClick}
                     >
                         <span>
-                            подать заявку
+                            регистрация
                         </span>
                     </Button>
                     <Button
@@ -427,6 +427,8 @@ export const PageContest = () => {
                             paddingRight: '1.75em',
                             padding: isMobile && '1.4em 1em'
                         }}
+                        href='/сompetition-UNIT-na-tihom-2023.pdf'
+                        
                     >
                         <span>
                             скачать положение
