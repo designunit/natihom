@@ -1,0 +1,30 @@
+.buttons {
+    align-items: baseline;
+    justify-content: center;
+}
+
+.buttons>:is(button, a) {
+    flex: 0 1 auto;
+}
+
+.titleImages {
+    justify-content: space-between;
+}
+
+.titleImages>img {
+    display: block;
+    width: auto !important;
+    flex: 1 0 300px;
+}
+
+.buttonFancy {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

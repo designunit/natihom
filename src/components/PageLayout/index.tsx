@@ -16,8 +16,9 @@ export const PageLayout: React.FC<any> = props => {
     const isPage2022 = router.pathname == '/2022'
     const isPageTeam = router.pathname == '/team'
     const isPageVol = router.pathname == '/volunteers'
+    const isPageContest = router.pathname == '/contest'
 
-    const isBgYellow = isPage2023
+    const isBgYellow = isPage2023 || isPageContest
     const isBgBlue = isPageVol || isPageTeam
     return (
         <main style={{
@@ -49,7 +50,7 @@ export const PageLayout: React.FC<any> = props => {
                     body {
                         background-color: var(--color-blue);
                     }
-                `}
+                `},
                 ${isBgYellow && `
                     body {
                         background-color: var(--color-yellow);

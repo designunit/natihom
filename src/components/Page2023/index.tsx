@@ -21,9 +21,12 @@ export const Page2023 = () => {
                 fontSize: 10,
                 width: 'fit-content',
             }}
+            className={s.cta}
             id='timepad_twf_register_2077224'
         >
-            купить билет
+            <span>
+                купить билет
+            </span>
         </Button>
     )
 
@@ -84,13 +87,13 @@ export const Page2023 = () => {
             >
                 <Flex col>
                     <Image
-                        src={skoro}
-                        alt='скоро'
-                    />
-                    <Image
                         src={aug23}
                         alt='август 2023'
                         className={s.aug23}
+                    />
+                    <Image
+                        src={skoro}
+                        alt='скоро'
                     />
                 </Flex>
             </Section>

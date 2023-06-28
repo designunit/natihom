@@ -22,18 +22,18 @@ const menu = {
             text: 'как это было в 2022',
             href: '/2022',
         },
-        { // неактивно
+        {
             text: 'программа',
             href: false,
         },
-        { // неактивно
+        {
             text: 'правила',
             href: false,
         },
 
     ],
     'связь': [
-        { // неактивно
+        {
             text: 'команда',
             href: '/team'
         },
@@ -52,8 +52,8 @@ const menu = {
             href: '/volunteers',
         },
         {
-            text: 'учавствовать в конкурсе',
-            href: false,
+            text: 'конкурс ландшафтных объектов',
+            href: '/contest',
         },
     ],
 }
@@ -105,10 +105,10 @@ export const Header: React.FC = () => {
     return (
         <>
             <RunningLine
-                direction={'right'}
+                direction={'left'}
                 animationDuration={'25s'}
             >
-                {'Анонс образовательной и музыкальной программ, а также конкурс: СКОРО! ОСТАВАЙТЕСТЬ НА '}
+                {'Анонс образовательной и музыкальной программ: СКОРО! ОСТАВАЙТЕСТЬ НА '}
                 <a
                     href='https://t.me/unitnatihom'
                     style={{
