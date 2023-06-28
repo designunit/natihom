@@ -1,13 +1,15 @@
 import * as React from 'react'
 import s from './index.module.css'
 import { useCallback } from 'react'
-import { useForm } from 'react-hook-form'
+import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import Image from 'next/image'
 import logo from '/public/logo.png'
 import { Title } from 'src/components/Title'
 import { Button } from 'src/components/Button'
 import { ModalContext } from 'src/context/modal'
 import fetchOk from '../../../public/fetchOk.svg'
+import { Flex } from '../Flex'
+import { useMobile } from 'src/hooks/useMobile'
 
 const state = {
     start: 'отправить',
@@ -17,13 +19,18 @@ const state = {
 }
 
 export const ContestForm: React.FC<any> = () => {
-    const { register, handleSubmit, watch } = useForm({
+    const { register, handleSubmit, watch, control } = useForm({
         mode: 'onChange',
     })
     const [button, setButton] = React.useState(state.start)
     const buttonDisabled = [state.fetch, state.ok].includes(button)
 
     const { setModalState } = React.useContext(ModalContext)
+
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: 'team',
+    })
 
     const onSubmit = useCallback(async data => {
         setButton(state.fetch)
@@ -51,8 +58,6 @@ export const ContestForm: React.FC<any> = () => {
                 console.log(await e)
             })
     }, [])
-
-    const fieldTeam = watch('team', '')
 
     if (button == state.ok) {
         return (
@@ -84,6 +89,8 @@ export const ContestForm: React.FC<any> = () => {
         )
     }
 
+    const isMobile = useMobile()
+
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
@@ -105,36 +112,64 @@ export const ContestForm: React.FC<any> = () => {
                 />
             </div>
 
-            <input
-                {...register('captain', { required: true })}
-                type='tel'
-                className={s.textline}
-                placeholder='*Имя Фамилия руководителя команды'
-            />
-            <div
+            <span
                 style={{
-                    position: 'relative',
-                    width: '100%',
+                    paddingTop: '1rem'
                 }}
             >
-                <textarea
-                    {...register('team', { required: true, maxLength: 20000 })}
-                    className={s.textarea}
-                    rows={8}
-                    placeholder='*Имя Фамилия участников команды или участника'
-                />
-                <div
+                Команда
+            </span>
+            <Flex col
+                style={{
+                    width: '100%',
+                    alignItems: 'center',
+                }}
+            >
+                {fields.map((item, index) => (
+                    <div
+                        key={item.id}
+                        style={{
+                            width: 'min(100%, 48em)',
+                        }}
+                    >
+                        <Flex
+                            style={{
+                                flexDirection: 'row',
+                                gap: '.5rem',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <input
+                                {...register(`team.${index}`)}
+                                className={s.textline}
+                                placeholder='Имя Фамилия участника команды'
+                            />
+                            <Button
+                                type="button"
+                                onClick={() => remove(index)}
+                                style={{
+                                    fontSize: '.75rem',
+                                    padding: isMobile ? '.5rem' : '.5rem 1rem',
+                                    ...(isMobile && {
+                                        width: 'fit-content',
+                                    })
+                                }}
+                            >
+                                удалить
+                            </Button>
+                        </Flex>
+                    </div>
+                ))}
+                <Button
                     style={{
-                        color: fieldTeam.length > 20000 && 'red',
-                        position: 'absolute',
-                        zIndex: 1,
-                        bottom: '.5rem',
-                        right: '.5rem',
+                        padding: isMobile ? '.5rem' : '.5rem min(50%, 8em)',
                     }}
+                    type='button'
+                    onClick={() => append('')}
                 >
-                    {`${fieldTeam.length}/20000`}
-                </div>
-            </div>
+                    Добавить участника
+                </Button>
+            </Flex>
 
             <span
                 style={{
@@ -143,6 +178,12 @@ export const ContestForm: React.FC<any> = () => {
             >
                 Контактные данные
             </span>
+            <input
+                {...register('captain', { required: true })}
+                type='tel'
+                className={s.textline}
+                placeholder='*Имя Фамилия руководителя команды'
+            />
             <input
                 {...register('email')}
                 placeholder='Почта'

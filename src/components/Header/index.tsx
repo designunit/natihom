@@ -105,7 +105,7 @@ export const Header: React.FC = () => {
     return (
         <>
             <RunningLine
-                direction={'right'}
+                direction={'left'}
                 animationDuration={'25s'}
             >
                 {'Анонс образовательной и музыкальной программ: СКОРО! ОСТАВАЙТЕСТЬ НА '}
