@@ -19,6 +19,7 @@ const state = {
 }
 
 export const ContestForm: React.FC<any> = () => {
+    const isMobile = useMobile()
     const { register, handleSubmit, control } = useForm({
         mode: 'onChange',
     })
@@ -88,8 +89,6 @@ export const ContestForm: React.FC<any> = () => {
             </>
         )
     }
-
-    const isMobile = useMobile()
 
     return (
         <form
