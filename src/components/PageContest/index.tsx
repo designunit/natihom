@@ -18,7 +18,6 @@ import { ModalContext } from 'src/context/modal'
 
 const titleImgsSize = .85
 
-
 export const PageContest = () => {
     const isMobile = useMobile()
     const { setModalState } = useContext(ModalContext)
@@ -405,7 +404,7 @@ export const PageContest = () => {
                 <Flex
                     className={s.buttons}
                 >
-                    <Button
+                    {/* <Button
                         theme='fancy'
                         className={s.buttonFancy}
                         style={{
@@ -418,7 +417,7 @@ export const PageContest = () => {
                         <span>
                             регистрация
                         </span>
-                    </Button>
+                    </Button> */}
                     <Button
                         style={{
                             fontSize: isMobile ? 'inherit' : 31.5,
