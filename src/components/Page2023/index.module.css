@@ -19,6 +19,61 @@
     animation: foil 5s ease infinite;
 }
 
+.programItem {
+    width: 100%;
+    align-items: center;
+}
+
+.programItem>p:first-child {
+    font-size: 1.25em;
+}
+
+.programItemFlex {
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row !important;
+}
+
+.programItemFlex>p {
+    flex: 0 1 auto;
+    display: block;
+}
+
+.programItemFlex>:first-child {
+    min-width: fit-content;
+    padding: .25rem;
+    background-color: #000;
+    color: white;
+    width: fit-content;
+}
+
+.programItemFlex>:last-child {
+    text-align: right;
+}
+
+.programItemFlex span {
+    font-style: italic;
+}
+
+.program {
+    gap: 3em;
+}
+
+.black {
+    padding: .25rem;
+    background-color: #000;
+    color: white;
+    width: fit-content;
+}
+
+.lektoriy>div {
+    flex: 1 1 100%;
+}
+.lektoriy h1 {
+    text-align: left;
+}
+
 @media screen and (max-width : 1024px) {
 
     .bubbles>div>div:nth-child(1) {
@@ -71,6 +126,17 @@
     .movie>div>div>img {
         width: max(70vw, 500px);
         height: auto !important;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .program {
+        flex-wrap: wrap;
+        gap: 7em;
+    }
+
+    .noMobile {
+        display: none;
     }
 }
 

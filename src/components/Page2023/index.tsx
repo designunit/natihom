@@ -11,6 +11,10 @@ import skoro from '../../../public/skoro.svg'
 import miniMap from '../../../public/miniMap.jpg'
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
+import program from '../../../public/program.svg'
+import lektoriy from '../../../public/lektoriy.svg'
+import { Title } from '../Title'
+import classNames from 'classnames'
 
 export const Page2023 = () => {
     const isMobile = useMobile()
@@ -183,7 +187,6 @@ export const Page2023 = () => {
                     <Flex
                         col
                         style={{
-
                             alignItems: 'center',
                             marginTop: '4rem',
                         }}
@@ -201,6 +204,412 @@ export const Page2023 = () => {
                     </Flex>
                 </>
             )}
+
+            <div style={{
+                height: '10rem'
+            }} />
+
+            <Section>
+                <Section
+                    className={s.skoro}
+                >
+                    <Flex>
+                        <Image
+                            src={program}
+                            alt='заголовок Программа'
+                        />
+                    </Flex>
+                </Section>
+
+                <Flex
+                    className={s.program}
+                >
+                    <Flex
+                        col
+                        className={s.programItem}
+                    >
+                        <p>11 августа [пт]</p>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                13:00
+                            </p>
+                            <p>
+                                Начало регистрации
+                                <br />
+                                <br />
+                                Начало работы фудкорта
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                14:00 - 21:00
+                            </p>
+                            <p>
+                                Лаборатория <br />
+                                звука noise/ambient
+                                <br />
+                                <br />
+                                <span>
+                                    [ main stage ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                15:30 - 19:00
+                            </p>
+                            <p>
+                                Медитативная <br /> прогулка-перфоманс <br />
+                                от Конно-драматического <br /> театра «ВелесО»
+                                <br />
+                                <br />
+                                <span>
+                                    [ каменный стол ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                19:30
+                            </p>
+                            <p>
+                                Ужин
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                21:30
+                            </p>
+                            <p>
+                                Открытие резиденции <br />
+                                Приветственное слово <br />
+                                UNIT на тихом 2023
+                            </p>
+                        </Flex>
+                    </Flex>
+
+                    <Flex
+                        col
+                        className={s.programItem}
+                    >
+                        <p>12 августа [сб]</p>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                09:00
+                            </p>
+                            <p>
+                                Подъем
+                                <br />
+                                <br />
+                                Возобновление <br />
+                                работы фудкорта
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                10:30
+                            </p>
+                            <p>
+                                Старт лектория <br />
+                                <br />
+                                <span>
+                                    [ main stage ] <br />
+                                    [ амфитеатр ] <br />
+                                    [ закулисье ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                14:00
+                            </p>
+                            <p>
+                                Обед
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                15:00
+                            </p>
+                            <p>
+                                Продолжение лектория
+                                <br />
+                                <br />
+                                <span>
+                                    [ main stage ] <br />
+                                    [ амфитеатр ] <br />
+                                    [ закулисье ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                19:30
+                            </p>
+                            <p>
+                                Ужин
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                20:30 - 22:30
+                            </p>
+                            <p>
+                                Спектакль <br />
+                                Конно-драматического <br />
+                                театра «ВелесО»
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                22:30 – 3:30
+                            </p>
+                            <p>
+                                Party
+                                <br />
+                                <br />
+                                <span>
+                                    [ main stage ]
+                                </span>
+                            </p>
+                        </Flex>
+                    </Flex>
+
+                    <Flex
+                        col
+                        className={s.programItem}
+                    >
+                        <p>13 августа [вс]</p>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                11:00
+                            </p>
+                            <p>
+                                Возобновление <br />
+                                работы фудкорта
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                13:00
+                            </p>
+                            <p>
+                                Митап-игра
+                                <br />
+                                <br />
+                                <span>
+                                    [ закулисье ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                15:00
+                            </p>
+                            <p>
+                                Обед
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                16:00 - 17:00
+                            </p>
+                            <p>
+                                Музыкальная <br />
+                                поэтическая группа <br />
+                                «Девы Евы»
+                                <br />
+                                <br />
+                                <span>
+                                    [ main stage ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                после 17:00
+                            </p>
+                            <p>
+                                Плавающее закрытие
+                            </p>
+                        </Flex>
+                    </Flex>
+                </Flex>
+            </Section>
+
+            <div style={{
+                height: '10rem'
+            }} />
+
+            <Section>
+                <Section
+                    className={s.skoro}
+                >
+                    <Flex>
+                        <Image
+                            src={lektoriy}
+                            alt='заголовок Лекторий'
+                        />
+                    </Flex>
+                    <p style={{
+                        textAlign: 'center',
+                        padding: '3rem 0',
+                    }}>
+                        лекции, воркшопы, дискуссии <br />
+                        архитектура и город, культура и искусство, настоящее и будущее
+                    </p>
+                </Section>
+
+                <Flex
+                    className={classNames(s.program, s.lektoriy)}
+                >
+                    <Flex col>
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            секция
+                        </div>
+                        <Title>
+                            РЕ-ЮНИТ
+                            <br className={s.noMobile} />
+                            <br className={s.noMobile} />
+                        </Title>
+
+                        <div className={s.black}
+                            style={{
+                                width: '100%',
+                                textAlign: 'center',
+                                padding: '1rem',
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            [ main stage ]
+                        </div>
+                        <p>
+                            Центральная площадка на главной поляне. Хэдлайнеры
+                            лектория в любопытных комбинациях, многообразие
+                            дисциплин и направлений деятельности в точке сборки.
+                            Три ключевых события в формате панельных дискуссий
+                            и открытых диалогов.
+                        </p>
+
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            темы
+                        </div>
+                        <p>
+                            Конструирование реальностей <br /> <br />
+                            Архитектура как форма знания.
+                            Инструмент сшивания разного <br /> <br />
+                            Как создавать?
+                        </p>
+                    </Flex>
+
+                    <Flex col>
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            секция
+                        </div>
+                        <Title>
+                            ИСКУССТВО <br />
+                            ВЗАИМОДЕЙСТВИЯ
+                        </Title>
+
+                        <div className={s.black}
+                            style={{
+                                width: '100%',
+                                textAlign: 'center',
+                                padding: '1rem',
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            [ амфитеатр ]
+                        </div>
+                        <p>
+                            Склон, спрятанный в соснах у руин финского дома. Три
+                            события в формате паблик-токов, лекций, тренингов,
+                            экскурсий-медитаций. От архитектуры тела через инклюзию
+                            к восприятию и вниманию к окружающему. Меняется среда —
+                            меняемся мы.
+                        </p>
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            темы
+                        </div>
+                        <p>
+                            Архитектура тела <br /> <br />
+                            Универсальный
+                            [ инклюзивный ] дизайн <br /> <br />
+                            Sound n Space: biological approach
+                            тело.звук.пространство.
+                            биологических подход <br /> <br />
+                            Настроиться на уровень леса, шума
+                        </p>
+                    </Flex>
+
+                    <Flex col>
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            секция
+                        </div>
+                        <Title>
+                            ПЕ-РЕ-
+                            <br className={s.noMobile} />
+                            <br className={s.noMobile} />
+                        </Title>
+
+                        <div className={s.black}
+                            style={{
+                                width: '100%',
+                                textAlign: 'center',
+                                padding: '1rem',
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            [ закулисье ]
+                        </div>
+                        <p>
+                            Опушка с видом на Вуоксу. Четыре события в формате
+                            паблик-токов, лекций, экскурсий-перфомансов, воркшопов,
+                            шоурумов. ПЕРЕ-фокусировка внимания, осмысленный
+                            бизнес и пересборка рабочих процессов, околоприродные
+                            технологии и бережное отношение к окружению, природе,
+                            пространству, людям.
+                        </p>
+                        <div className={s.black}
+                            style={{
+                                marginBottom: '-1.5rem',
+                            }}
+                        >
+                            темы
+                        </div>
+                        <p>
+                            ПЕРЕ-фокусировка внимания. <br /><br />
+                            Осмысленный бизнес
+                            и пересборка рабочих процессов <br /><br />
+                            Доход от отходов <br />
+                            Устойчивость и целостный подход
+                            в дизайне живых систем.
+                            Нюансы практики, а что дальше?
+
+                        </p>
+                    </Flex>
+                </Flex>
+            </Section>
         </>
     )
 }
