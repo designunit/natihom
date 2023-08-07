@@ -240,20 +240,7 @@ export const Page2023 = () => {
                                 Начало работы фудкорта
                             </p>
                         </Flex>
-                        <Flex className={s.programItemFlex} >
-                            <p>
-                                14:00 - 21:00
-                            </p>
-                            <p>
-                                Лаборатория <br />
-                                звука noise/ambient
-                                <br />
-                                <br />
-                                <span>
-                                    [ main stage ]
-                                </span>
-                            </p>
-                        </Flex>
+
                         <Flex className={s.programItemFlex} >
                             <p>
                                 15:30 - 19:00
@@ -265,6 +252,20 @@ export const Page2023 = () => {
                                 <br />
                                 <span>
                                     [ каменный стол ]
+                                </span>
+                            </p>
+                        </Flex>
+                        <Flex className={s.programItemFlex} >
+                            <p>
+                                16:00 - 22:00
+                            </p>
+                            <p>
+                                Лаборатория <br />
+                                звука noise/ambient
+                                <br />
+                                <br />
+                                <span>
+                                    [ main stage ]
                                 </span>
                             </p>
                         </Flex>
@@ -608,6 +609,27 @@ export const Page2023 = () => {
 
                         </p>
                     </Flex>
+                </Flex>
+            </Section>
+
+            <div style={{
+                height: '10rem'
+            }} />
+
+            <Section>
+                <Flex
+                    className={s.buttonsFlex}
+                >
+                    <Button
+                        href='/about.pdf'
+                    >
+                        подробнее о резиденции
+                    </Button>
+                    <Button
+                        href='/auditorium.pdf'
+                    >
+                        программа лектория
+                    </Button>
                 </Flex>
             </Section>
         </>

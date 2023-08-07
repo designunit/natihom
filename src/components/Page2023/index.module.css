@@ -74,6 +74,13 @@
     text-align: left;
 }
 
+.buttonsFlex {
+    justify-content: space-around;
+}
+.buttonsFlex>a {
+    flex: 0 1 auto;
+}
+
 @media screen and (max-width : 1024px) {
 
     .bubbles>div>div:nth-child(1) {
