@@ -1,10 +1,10 @@
 import { NextPage } from 'next'
-import { Hero } from 'src/components/Hero'
+import { Page2023 } from 'src/components/Page2023'
 
-const Index: NextPage = () => {
+const Page: NextPage = () => {
     return (
-        <Hero />
+        <Page2023 />
     )
 }
 
-export default Index
+export default Page

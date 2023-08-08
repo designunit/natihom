@@ -14,10 +14,10 @@ import { Button } from '../Button'
 
 const menu = {
     'о резиденции': [
-        {
-            text: 'анонс 2023',
-            href: '/2023',
-        },
+        // {
+        //     text: 'анонс 2023',
+        //     href: '/2023',
+        // },
         {
             text: 'как это было в 2022',
             href: '/2022',
@@ -104,7 +104,7 @@ export const Header: React.FC = () => {
 
     return (
         <>
-            <RunningLine
+            {/* <RunningLine
                 direction={'left'}
                 animationDuration={'25s'}
             >
@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
                     СВЯЗИ
                 </a>
                 {'!'}
-            </RunningLine>
+            </RunningLine> */}
             <header className={s.header}
                 style={spechialHeader ? {
                     background: '#defffcdd',
