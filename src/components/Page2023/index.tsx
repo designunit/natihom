@@ -8,7 +8,7 @@ import aug23 from '../../../public/aug23.svg'
 import bubbles from '../../../public/bubbles.png'
 import spring from '../../../public/spring.png'
 import skoro from '../../../public/skoro.svg'
-import miniMap from '../../../public/miniMap.jpg'
+import index2024 from '../../../public/index2024.jpg'
 import s from './index.module.css'
 import { useMobile } from 'src/hooks/useMobile'
 import program from '../../../public/program.svg'
@@ -36,7 +36,7 @@ export const Page2023 = () => {
 
     return (
         <>
-            <Section bg
+            {/* <Section bg
                 className={s.bubbles}
             >
                 {!isMobile && (
@@ -80,13 +80,47 @@ export const Page2023 = () => {
                         alt='пузырики'
                     />
                 </Parallax>
+            </Section> */}
+            <Section>
+                <Flex style={{
+                    maxWidth: '100vw',
+                    gap: '4rem',
+                }}>
+                    <div style={{
+                        position: 'relative',
+                        flex: '1 0 auto',
+                        width: 'min(100%, 480px)',
+                        minHeight: 380,
+                    }}>
+                        <Image
+                            src={index2024}
+                            alt='лес'
+                            fill
+                        />
+                    </div>
+
+                    <div>
+                        <p>
+                            август 23-25. 2024 <br />
+                            <span style={{
+                                fontSize: '5rem',
+                                fontWeight: 'bold',
+                            }}>
+                                in unit
+                            </span>
+                        </p>
+
+                        <p><a href='https://unit4.io'>unit4.io</a> — проектная студия из Петербурга, работающая с пространством и средой, этим летом повторит третью лесную резиденцию архитекторов, дизайнеров и всех причастных к городской культуре.</p>
+                        <p>Мы задумывали нашу резиденцию как место диалога людей разных сфер, разных, но схожих в общей идее создания, создания нового. И мы точно не хотим терять это.</p>
+                        <p>Диалоги о цепляющем, жгучем, бодрящем, былым, настоящим, скользящем будущем. Только тихое, сосны, мы и наше.</p>
+                        <p>В этом году мы проведем unit-на-тихом в более узком кругу, в кругу тех, кто точно знает зачем. Это про то, что вы можете и хотите создать с нами вместе — узнать/построить/исследовать/рассказать/почувствовать.</p>
+                        <p>in-unit затаёное доброе тихое</p>
+                        <p>До встречи у истоков, на тихом Тихом!</p>
+                    </div>
+                </Flex>
             </Section>
 
-            <div style={{
-                height: '10rem'
-            }} />
-
-            <Section
+            {/* <Section
                 className={s.skoro}
             >
                 <Flex col>
@@ -632,7 +666,7 @@ export const Page2023 = () => {
                         программа лектория
                     </Button>
                 </Flex>
-            </Section>
+            </Section> */}
         </>
     )
 }

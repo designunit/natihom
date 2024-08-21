@@ -43,10 +43,10 @@ const menu = {
         },
     ],
     'стать частью': [
-        {
-            text: 'купить билет',
-            href: false,
-        },
+        // {
+        //     text: 'купить билет',
+        //     href: false,
+        // },
         {
             text: 'стать волонтером',
             href: '/volunteers',
@@ -166,7 +166,8 @@ export const Header: React.FC = () => {
                         ))}
                     </nav>
 
-                    <div
+                    <div />
+                    {/* <div
                         className={s.ticketButton}
                     >
                         <Button
@@ -181,7 +182,7 @@ export const Header: React.FC = () => {
                                 купить билет
                             </span>
                         </Button>
-                    </div>
+                    </div> */}
                     <Link href='/'
                         className={s.logo}
                         onClick={() => setIsOpen(false)}
